@@ -21,8 +21,9 @@ p {
 
 /*Header*/
 header{
+    padding-top: 100px;
     background:#141414;
-    height:750px;
+    height:800px;
     display:flex;
     justify-content:center;
 }
@@ -648,7 +649,7 @@ header .right_side .bottom_line {
     width:100%;
     min-height: 680px;
     height:auto;
-    padding: 1em 0;
+    padding: 0 0 1em 0;
     border-top: 7px solid #38478f;
     background-color: rgba(246, 249, 252, 0.60);
     border-radius: 0.5em;
@@ -667,7 +668,7 @@ header .right_side .bottom_line {
     width:100%;
     min-height: 680px;
     height:auto;
-    padding: 1em 0;
+    padding: 0 0 1em 0;
     border-top: 7px solid #38478f;
     background-color: rgba(246, 249, 252, 0.60);
     border-radius: 0.5em;
