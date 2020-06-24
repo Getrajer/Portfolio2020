@@ -12,7 +12,7 @@
 
 .title_container {
     text-align: center;
-    margin: 7em 0;
+    margin: 11em 0 6em 0;
     width: 100%;
     max-width: 800px;
     background-color: #f6fbff;
@@ -160,15 +160,16 @@ button {
 }
 
 .p_title h3{
-    font-size: 4rem;
+    font-size: 5.5rem;
     color: white;
     text-align: center;
-    letter-spacing: 8px;
+    letter-spacing: 10px;
+    font-weight: 700;
     cursor:pointer;
     transition: color 0.5s;
 }
 .p_title h3:hover{
-    color: #008a9d;
+    color: #38478f;
 }
 
 .close_button{
@@ -187,10 +188,13 @@ button {
     color: #008a9d;
 }
 
-
 @media screen and (max-width: 1800px){
     .teaser_data_s{
         display:none
+    }
+
+    .projects_container {
+        background-color: #38478f;
     }
 
     .teaser_data_t {
@@ -251,6 +255,7 @@ button {
         margin: 0 0 15em 0;
     }
 
+
     .title_container {
         text-align: center;
         font-size: 2rem;
@@ -283,7 +288,7 @@ button {
         letter-spacing: 4px;
         padding: 0.5em 0.2em;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.70);
+        background-color: rgba(0, 0, 0, 1);
         transition: color 0.5s;
     }
 
@@ -294,9 +299,6 @@ button {
 }
 
 @media screen and (max-width: 600px) {
-    .p_title h3 {
-        font-size:1.5rem;
-    }
 
     .p_content{
         padding:0;

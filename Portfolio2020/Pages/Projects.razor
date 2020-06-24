@@ -6,7 +6,6 @@
 
 @if (display_clothe == false && display_math == false && display_ezsat == false && display_restaurant == false && display_coffe == false && display_bank == false && display_JS_games == false && display_data_sharp == false && display_data_structures == false)
 {
-
     <div class="page_container">
         <div class="title">
             <div class="title_container">
@@ -15,7 +14,6 @@
         </div>
 
         <section class="projects">
-
 
             <div class="projects_container">
 
@@ -195,7 +193,6 @@
     <button class="close_button" @onclick="DisplayCoffe">Close</button>
 }
 
-
 @if (display_bank == true)
 {
     <button class="close_button" @onclick="DisplayBank">Close</button>
@@ -217,8 +214,6 @@
 }
 
 @code {
-
-
     protected bool display_bank = false;
 
     public void DisplayBank()
@@ -247,7 +242,6 @@
         }
     }
 
-
     protected bool display_math = false;
 
     public void DisplayMath()
@@ -261,7 +255,6 @@
             display_math = false;
         }
     }
-
 
     protected bool display_ezsat = false;
 
@@ -290,7 +283,6 @@
             display_restaurant = false;
         }
     }
-
 
     protected bool display_coffe = false;
 
@@ -333,7 +325,6 @@
             display_data_sharp = false;
         }
     }
-
 
     protected bool display_data_structures = false;
 

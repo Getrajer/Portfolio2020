@@ -21,7 +21,7 @@ p {
 
 /*Header*/
 header{
-    padding-top: 100px;
+    padding-top: 80px;
     background:#141414;
     height:800px;
     display:flex;
@@ -409,6 +409,124 @@ header .right_side .bottom_line {
 #profile .question_choices p:hover{
     background-color: #38478f;
 }
+
+.light_profile {
+    fill: lime;
+    animation-name: light_animation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.smoke1 {
+    fill: #b3b3b3;
+    animation-name: s1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.smoke2 {
+    fill: #b3b3b3;
+    animation-name: s2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.smoke3 {
+    fill: #b3b3b3;
+    animation-name: s3;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes light_animation {
+    0% {
+        fill: lime;
+    }
+
+    32% {
+        fill: lime;
+    }
+
+    33% {
+        fill: #006bff;
+    }
+
+    65% {
+        fill: #006bff;
+    }
+
+    66% {
+        fill: red;
+    }
+
+    99% {
+        fill: red;
+    }
+
+    100% {
+        fill: lime;
+    }
+}
+
+@keyframes s1 {
+    0% {
+        fill: #b3b3b3;
+    }
+
+    33% {
+        fill: transparent;
+    }
+
+    66% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: #b3b3b3;
+    }
+}
+
+@keyframes s2 {
+    0% {
+        fill: #b3b3b3;
+    }
+
+    15% {
+        fill: transparent;
+    }
+
+    70% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: #b3b3b3;
+    }
+}
+
+@keyframes s3 {
+    0% {
+        fill: #b3b3b3;
+    }
+
+    25% {
+        fill: #b3b3b3;
+    }
+
+    40% {
+        fill: transparent;
+    }
+
+    80% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: #b3b3b3;
+    }
+}
+
+
 /*End of profile*/
 
 

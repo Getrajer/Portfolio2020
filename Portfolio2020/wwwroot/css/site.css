@@ -1,13 +1,18 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
-*{
-    padding:0;
-    margin:0;
-    box-sizing:border-box;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
 }
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', serif;
 }
 
 a, .btn-link {
@@ -54,9 +59,10 @@ nav .l_box{
 }
 
 nav a{
-    font-size: 1.1rem;
+    font-size: 1rem;
     display:block;
-    font-weight: 900;
+    font-weight: 600;
+    letter-spacing: 8px;
     padding: 0 2em;
     color:white;
     transition: color 0.5s;
@@ -150,7 +156,7 @@ nav a:hover{
     }
 
     .toggle-button button:hover{
-        color: #008a9d;
+        color: #38478f;
         background-color:unset;
         border:none;
     }
