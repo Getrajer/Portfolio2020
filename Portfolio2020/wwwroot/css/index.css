@@ -5,9 +5,8 @@
 }
 
 body {
-    background-color: black;
+    background-color: #ebebeb;
     color: #f6f9fc;
-    overflow-x:hidden;
 }
 
 h1, h2, h3, h4, h5 {
@@ -20,9 +19,9 @@ p {
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-
 /*Header*/
 header{
+    background:#141414;
     height:750px;
     display:flex;
     justify-content:center;
@@ -34,7 +33,6 @@ header .header_container{
     display:grid;
     grid-template-columns: 10% 80% 10%;
 }
-
 
 header .left_side{
     display:flex;
@@ -52,7 +50,6 @@ header .left_side .top_line{
     animation-duration: 2s;
     animation-iteration-count:1;
 }
-
 
 header .left_side .bottom_line{
     position:relative;
@@ -80,7 +77,6 @@ header .center_container{
     align-content:center;
 }
 
-
 header .welcome_content h1 {
     
     text-transform: uppercase;
@@ -100,7 +96,6 @@ header .gold {
     animation-duration: 2s;
     animation-iteration-count: 1;
 }
-
 
 header .welcome_content h5 {
     margin-top: 2em;
@@ -159,7 +154,6 @@ header .right_side .top_line {
     animation-iteration-count:1;
 }
 
-
 header .right_side .bottom_line {
     position: relative;
     fill: #38478f;
@@ -168,8 +162,6 @@ header .right_side .bottom_line {
     animation-duration: 2s;
     animation-iteration-count:1;
 }
-
-
 /*End of header*/
 
 @keyframes line_animation_top_left{
@@ -247,7 +239,6 @@ header .right_side .bottom_line {
     }
 }
 
-
 @keyframes title_animation {
     0% {
         transform: translateY(300px);
@@ -288,7 +279,6 @@ header .right_side .bottom_line {
 /*End of header*/
 
 /*Profile view*/
-
 #profile{
     min-height: 700px;
     width: 100%;
@@ -302,7 +292,7 @@ header .right_side .bottom_line {
     width:100%;
     max-width: 1400px;
     display:grid;
-    grid-template-columns: 800px 600px;
+    grid-template-columns: 60% 40%;
 }
 
 #profile .profile_left{
@@ -342,7 +332,6 @@ header .right_side .bottom_line {
     justify-content:center;
 }
 
-
 #profile .panel_container{
     border-radius: 0.5em;
     width:100%;
@@ -352,7 +341,6 @@ header .right_side .bottom_line {
     border-bottom: 13px solid #141414;
 
 }
-
 
 #profile .title_container{
     text-align:center;
@@ -365,7 +353,6 @@ header .right_side .bottom_line {
     font-weight:600;
     letter-spacing: 6px;
 }
-
 
 #profile .console_output{
     height: 110px;
@@ -382,7 +369,6 @@ header .right_side .bottom_line {
 #profile .console_output::-webkit-scrollbar-thumb {
   background-color: #141414;
 }
-
 
 #profile .console_output p{
     text-align:center;
@@ -422,12 +408,10 @@ header .right_side .bottom_line {
 #profile .question_choices p:hover{
     background-color: #38478f;
 }
-
 /*End of profile*/
 
 
 /*About Section*/
-
 #about{
     min-height: 700px;
     display:flex;
@@ -445,7 +429,6 @@ header .right_side .bottom_line {
     grid-gap: 4em
 }
 
-
 #about .card_about{
     height:100%;
     width:100%;
@@ -454,8 +437,6 @@ header .right_side .bottom_line {
     justify-content:center;
     align-items:center;
     align-content:center;    
-    
-
 }
 
 #about .card_about_container{
@@ -468,7 +449,6 @@ header .right_side .bottom_line {
     padding: 0em 1.2em 1em 1.2em;
     transition: all 0.5s;
 }
-
 
 #about .card_about_container:hover{
     background-color: #ffffff;
@@ -504,7 +484,6 @@ header .right_side .bottom_line {
     height: 340px;
 }
 
-
 #about .title_container{
     display:grid;
     grid-template-columns: 35px auto 35px;
@@ -527,7 +506,6 @@ header .right_side .bottom_line {
 #about .middle_title{
     text-align:center;
 }
-
 
 #about .card_about_container h2{
     height: 70px;
@@ -579,7 +557,7 @@ header .right_side .bottom_line {
     align-content: center;
     align-items: center;
 
-    background-image: url(../site_images/projects_background.jpg);
+    background-image: url(../images/projects_background.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -725,14 +703,14 @@ header .right_side .bottom_line {
     width:100%;
 
     position:absolute;
-    bottom: 50px;
+    bottom: 20px;
 }
 
 #projects .button_container i{
     color:#f6f9fc;
 }
 
-#projects button{
+#projects a{
     width:100%;
     max-width:250px;
     padding: 0.5em 0.2em;
@@ -747,7 +725,7 @@ header .right_side .bottom_line {
     transition: 0.5s;
 }
 
-#projects button:hover{
+#projects a:hover{
     transform: translateY(-5px);
     background-color: #38478f;
 }
@@ -910,6 +888,20 @@ footer p{
 
 /*End of footer*/
 
+@media screen and (max-width:1100px){
+    #about .about_container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 1em
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #about .about_container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 5px;
+    }
+}
+
 @media screen and (max-width:800px){
     #profile .profile_cotainer {
         display: block;
@@ -958,12 +950,12 @@ footer p{
 
 @media screen and (max-width:700px) {
     #projects .main_projects_container {
-        min-height: 700px;
+        min-height: 750px;
     }
 
 
     #projects .components_cotnainer {
-        min-height: 700px;
+        min-height: 750px;
     }
 
     #projects .components {
