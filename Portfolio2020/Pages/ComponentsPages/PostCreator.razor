@@ -1,306 +1,211 @@
-﻿@page "/CreatePost"
-
+﻿
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Martel:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/components_style.css" />
     <link rel="stylesheet" href="../css/post_creator_style.css" />
 </head>
 
 
 
 
+<div class="program_container">
+    <div class="all_posts_container">
+        @for (int j = POSTS.Count - 1; j >= 0; j--)
+        {
+            var p = POSTS[j];
 
+            if (p.IsBeeingEdited == false)
+            {
+                <div class="post_container">
+                    <div class="title_post">
+                        <h2>@p.PostTitle</h2>
+                        <div class="post_title_underline_container">
+                            <div class="post_title_underline"></div>
+                        </div>
+                    </div>
 
-<section id="components">
-    <div class="components_container">
-
-        <div class="component_nav">
-            <div class="component_nav_container">
-
-                <div class="top_nav">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="70px" viewBox="0 0 235 132">
-                        <title>Home</title>
-                        <g id="Warstwa_2" data-name="Warstwa 2">
-                            <g id="Logo">
-                                <g>
-                                    <polygon points="26.07 50.14 58.2 6.54 79.61 6.54 45.35 50.14 26.07 50.14" />
-                                    <polygon points="83.89 11.21 73.19 25.22 92.46 92.18 101.03 75.05 83.89 11.21" />
-                                    <polygon points="98.88 92.18 107.45 78.17 124.58 78.17 133.15 92.18 98.88 92.18" />
-                                    <polygon points="208.1 50.14 175.98 6.54 154.56 6.54 188.83 50.14 208.1 50.14" />
-                                    <polygon points="150.28 11.21 160.99 25.22 141.71 92.18 133.15 75.05 150.28 11.21" />
-                                    <g>
-                                        <polygon points="26.07 60.48 30.11 104.46 47.49 116.54 47.49 60.48 26.07 60.48" />
-                                        <polygon points="28.56 107.46 42.53 117.46 11.48 117.46 28.56 107.46" />
-                                    </g>
-                                    <g>
-                                        <polygon points="209.89 60.48 205.85 104.46 188.48 116.54 188.48 60.48 209.89 60.48" />
-                                        <polygon points="207.4 107.46 193.43 117.46 224.48 117.46 207.4 107.46" />
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="underline"></div>
-
-                <div class="comp_nav_links">
-                    <ul>
-                        <li>
-                            <NavLink href="" Match="NavLinkMatch.All">
-                                <span class="oi oi-home" aria-hidden="true"></span> Home
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="CustomShoeOrder" Match="NavLinkMatch.All">
-                                <i class="fa fa-tshirt"></i> Custom clothing
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="LoginPage" Match="NavLinkMatch.All">
-                                <i class="fas fa-user"></i> Login Page
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="RegisterPage" Match="NavLinkMatch.All">
-                                <i class="fas fa-user-plus"></i> Register Page
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="CreatePost" Match="NavLinkMatch.All">
-                                <i class="fas fa-file-word"></i> Create Post
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="Comments" Match="NavLinkMatch.All">
-                                <i class="fas fa-comments"></i> Comments
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="Acordeon" Match="NavLinkMatch.All">
-                                <i class="fas fa-th-list"></i> Acordeon
-                            </NavLink>
-                        </li>
-
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="page">
-            <div class="page_container">
-
-                <div class="program_container">
-                    <div class="all_posts_container">
-                        @for (int j = POSTS.Count - 1; j >= 0; j--)
+                    @for (int i = 0; i < p.Paragraphs.Count; i++)
+                    {
+                        if (p.Images[i].Path != "" && p.Images[i].Path != null && p.Images[i].ImgBeforeAfter == true)
                         {
-                            var p = POSTS[j];
+                            <div class="post_img_container">
+                                <img src="@p.Images[i].Path" alt="@p.Images[i].Name" />
+                            </div>
+                        }
+                        <div class="post_paragraph_container">
+                            <p>@p.Paragraphs[i]</p>
+                        </div>
+                        if (p.Images[i].Path != "" && p.Images[i].Path != "" && p.Images[i].ImgBeforeAfter == false)
+                        {
+                            <div class="post_img_container">
+                                <img src="@p.Images[i].Path" alt="@p.Images[i].Name" />
+                            </div>
+                        }
+                    }
 
-                            if (p.IsBeeingEdited == false)
+
+                    <div class="author_container">
+                        <div class="author_image_container">
+                            <img src="@p.Author.ProfileImagePath" alt="@p.Author.Name" />
+                        </div>
+
+                        <div class="author_description_container">
+                            <p><span class="bold">Author:</span> @p.Author.Name</p>
+                            <br />
+                            <p><span class="bold">Role:</span> @p.Author.AboutPerson</p>
+                        </div>
+                    </div>
+
+                    <div class="delete_post_button_container">
+                        <button @onclick="@(e =>DeletePost(p))">Delete Post</button>
+                        <button @onclick="@(e =>ToggleEditPost(p))">Edit Post</button>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="edit_post_container">
+                    <label>Title</label>
+                    <input @bind="p.PostTitle" />
+
+                    @for (int i = 0; i < p.Paragraphs.Count; i++)
+                    {
+
+                        if (p.Images[i].Path != "" && p.Images[i].Path != null && p.Images[i].ImgBeforeAfter == true)
+                        {
+                            <div class="post_img_container">
+                                <img src="@p.Images[i].Path" alt="@p.Images[i].Name" />
+                            </div>
+                        }
+
+                        <label>Paragraph @(i + 1)</label>
+                        <textarea @bind="p.Paragraphs[i]"></textarea>
+                        <p>Img Id @p.Images[i].Id</p>
+
+                        if (p.Images[i].Path != "" && p.Images[i].Path != "" && p.Images[i].ImgBeforeAfter == false)
+                        {
+                            <div class="post_img_container">
+                                <img src="@p.Images[i].Path" alt="@p.Images[i].Name" />
+                            </div>
+                        }
+
+                        <div class="image_add_container">
+                            <p class="text-muted">This is just a demonstration. When implemented user will be able to add image form local or server storeage.</p>
+                            <label>Add or Edit Image</label>
+                            @foreach (var img in images)
                             {
-                                <div class="post_container">
-                                    <div class="title_post">
-                                        <h2>@p.PostTitle</h2>
-                                        <div class="post_title_underline_container">
-                                            <div class="post_title_underline"></div>
-                                        </div>
-                                    </div>
+                                <label class="image_label" @onclick="@(e => EditImage(img, p, 0))">
+                                    <input type="radio" name="test" value="small" checked>
+                                    <img src="@img.Path" alt="@img.Name">
+                                </label>
+                            }
 
-                                    @for (int i = 0; i < p.Paragraphs.Count; i++)
+                            <div class="image_position_buttons">
+                            </div>
+                        </div>
+                    }
+
+                    <button @onclick="@(e =>ToggleEditPost(p))">Finish</button>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
+<!--This is going to be displayed when adding the post-->
+@if (isPostEdited == false)
+{
+    <div class="program_container">
+        <div class="post_component">
+
+
+            <div class="add_post_button">
+                <button @onclick="ToggleAddPost">@ToggleButtonText</button>
+            </div>
+
+            @if (AddPostChecker == true)
+            {
+                <div class="add_post_container">
+                    <div class="add_title_container">
+                        <label>Title of post: </label>
+                        <input @bind="title" />
+                        <p class="error">@title_input_error</p>
+                    </div>
+
+                    <div class="add_paragraphs_images_container">
+                        @foreach (var o in paragraphs)
+                        {
+
+                            if (o.IfAddNext == true)
+                            {
+                                <div class="new_paragraph">
+
+                                    @if (o.ImgPath != null && o.ImgPath != "" && o.ImgBeforeAfter == true)
                                     {
-                                        if (p.Images[i].Path != "" && p.Images[i].Path != null && p.Images[i].ImgBeforeAfter == true)
-                                        {
-                                            <div class="post_img_container">
-                                                <img src="@p.Images[i].Path" alt="@p.Images[i].Name" />
-                                            </div>
-                                        }
-                                        <div class="post_paragraph_container">
-                                            <p>@p.Paragraphs[i]</p>
-                                        </div>
-                                        if (p.Images[i].Path != "" && p.Images[i].Path != "" && p.Images[i].ImgBeforeAfter == false)
-                                        {
-                                            <div class="post_img_container">
-                                                <img src="@p.Images[i].Path" alt="@p.Images[i].Name" />
-                                            </div>
-                                        }
+                                        <img class="img_preview" src="@o.ImgPath" alt="@o.ImageName" />
                                     }
 
+                                    <label>Paragraph content:</label>
 
-                                    <div class="author_container">
-                                        <div class="author_image_container">
-                                            <img src="@p.Author.ProfileImagePath" alt="@p.Author.Name" />
-                                        </div>
+                                    <textarea @bind="o.ParagraphText"></textarea>
 
-                                        <div class="author_description_container">
-                                            <p><span class="bold">Author:</span> @p.Author.Name</p>
-                                            <br />
-                                            <p><span class="bold">Role:</span> @p.Author.AboutPerson</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="delete_post_button_container">
-                                        <button @onclick="@(e =>DeletePost(p))">Delete Post</button>
-                                        <button @onclick="@(e =>ToggleEditPost(p))">Edit Post</button>
-                                    </div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="edit_post_container">
-                                    <label>Title</label>
-                                    <input @bind="p.PostTitle" />
-
-                                    @for (int i = 0; i < p.Paragraphs.Count; i++)
+                                    @if (o.ImgPath != null && o.ImgPath != "" && o.ImgBeforeAfter == false)
                                     {
+                                        <img class="img_preview" src="@o.ImgPath" alt="@o.ImageName" />
+                                    }
 
-                                        if (p.Images[i].Path != "" && p.Images[i].Path != null && p.Images[i].ImgBeforeAfter == true)
-                                        {
-                                            <div class="post_img_container">
-                                                <img src="@p.Images[i].Path" alt="@p.Images[i].Name" />
-                                            </div>
-                                        }
-
-                                        <label>Paragraph @(i + 1)</label>
-                                        <textarea @bind="p.Paragraphs[i]"></textarea>
-                                        <p>Img Id @p.Images[i].Id</p>
-
-                                        if (p.Images[i].Path != "" && p.Images[i].Path != "" && p.Images[i].ImgBeforeAfter == false)
-                                        {
-                                            <div class="post_img_container">
-                                                <img src="@p.Images[i].Path" alt="@p.Images[i].Name" />
-                                            </div>
-                                        }
-
+                                    <div class="add_image_btn_container">
+                                        <button @onclick="@(e => ToggleAddImage(paragraphs[o.Id]))">@o.ImgBtnTxt</button>
+                                    </div>
+                                    @if (o.IfAddImage == true)
+                                    {
                                         <div class="image_add_container">
-                                            <p class="text-muted">This is just a demonstration. When implemented user will be able to add image form local or server storeage.</p>
-                                            <label>Add or Edit Image</label>
-                                            @foreach (var img in images)
+                                            <p class="text-muted">This is just a demonstration. When implemented user will be able to add image from local or server storeage.</p>
+
+
+                                            @foreach (var i in images)
                                             {
-                                                <label class="image_label" @onclick="@(e => EditImage(img, p, 0))">
+                                                <label class="image_label" @onclick="@(e => ChangeImage(i, o))">
                                                     <input type="radio" name="test" value="small" checked>
-                                                    <img src="@img.Path" alt="@img.Name">
+                                                    <img src="@i.Path" alt="@i.Name">
                                                 </label>
                                             }
 
                                             <div class="image_position_buttons">
+                                                <button @onclick="@(e => AddImageAfter(paragraphs[o.Id]))">Set image before paragraph</button>
+                                                <button @onclick="@(e => AddImageBefore(paragraphs[o.Id]))">Set image after paragraph</button>
                                             </div>
+
                                         </div>
                                     }
+                                    <div class="paragraphs_add_delete_buttons_container">
+                                        @if (paragraphs[o.Id + 1].IfAddNext != true)
+                                        {
+                                            if (o.Id != 0)
+                                            {
+                                                <button @onclick="@(e => CancelNewParagraph(paragraphs[o.Id]))">Delete Paragraph</button>
+                                            }
 
-                                    <button @onclick="@(e =>ToggleEditPost(p))">Finish</button>
+                                            if (o.Id != NumberOfParagraphs - 1)
+                                            {
+                                                <button @onclick="@(e => AddAnotherParagraph(paragraphs[o.Id]))">Add New Paragraph</button>
+                                            }
+                                        }
+                                    </div>
                                 </div>
                             }
                         }
                     </div>
-                </div>
 
-
-                <!--This is going to be displayed when adding the post-->
-                @if (isPostEdited == false)
-                {
-                    <div class="program_container">
-                        <div class="post_component">
-
-
-                            <div class="add_post_button">
-                                <button @onclick="ToggleAddPost">@ToggleButtonText</button>
-                            </div>
-
-                            @if (AddPostChecker == true)
-                            {
-                                <div class="add_post_container">
-                                    <div class="add_title_container">
-                                        <label>Title of post: </label>
-                                        <input @bind="title" />
-                                        <p class="error">@title_input_error</p>
-                                    </div>
-
-                                    <div class="add_paragraphs_images_container">
-                                        @foreach (var o in paragraphs)
-                                        {
-
-                                            if (o.IfAddNext == true)
-                                            {
-                                                <div class="new_paragraph">
-
-                                                    @if (o.ImgPath != null && o.ImgPath != "" && o.ImgBeforeAfter == true)
-                                                    {
-                                                        <img class="img_preview" src="@o.ImgPath" alt="@o.ImageName" />
-                                                    }
-
-                                                    <label>Paragraph content:</label>
-
-                                                    <textarea @bind="o.ParagraphText"></textarea>
-
-                                                    @if (o.ImgPath != null && o.ImgPath != "" && o.ImgBeforeAfter == false)
-                                                    {
-                                                        <img class="img_preview" src="@o.ImgPath" alt="@o.ImageName" />
-                                                    }
-
-                                                    <div class="add_image_btn_container">
-                                                        <button @onclick="@(e => ToggleAddImage(paragraphs[o.Id]))">@o.ImgBtnTxt</button>
-                                                    </div>
-                                                    @if (o.IfAddImage == true)
-                                                    {
-                                                        <div class="image_add_container">
-                                                            <p class="text-muted">This is just a demonstration. When implemented user will be able to add image from local or server storeage.</p>
-
-
-                                                            @foreach (var i in images)
-                                                            {
-                                                                <label class="image_label" @onclick="@(e => ChangeImage(i, o))">
-                                                                    <input type="radio" name="test" value="small" checked>
-                                                                    <img src="@i.Path" alt="@i.Name">
-                                                                </label>
-                                                            }
-
-                                                            <div class="image_position_buttons">
-                                                                <button @onclick="@(e => AddImageAfter(paragraphs[o.Id]))">Set image before paragraph</button>
-                                                                <button @onclick="@(e => AddImageBefore(paragraphs[o.Id]))">Set image after paragraph</button>
-                                                            </div>
-
-                                                        </div>
-                                                    }
-                                                    <div class="paragraphs_add_delete_buttons_container">
-                                                        @if (paragraphs[o.Id + 1].IfAddNext != true)
-                                                        {
-                                                            if (o.Id != 0)
-                                                            {
-                                                                <button @onclick="@(e => CancelNewParagraph(paragraphs[o.Id]))">Delete Paragraph</button>
-                                                            }
-
-                                                            if (o.Id != NumberOfParagraphs - 1)
-                                                            {
-                                                                <button @onclick="@(e => AddAnotherParagraph(paragraphs[o.Id]))">Add New Paragraph</button>
-                                                            }
-                                                        }
-                                                    </div>
-                                                </div>
-                                            }
-                                        }
-                                    </div>
-
-                                    <div class="create_post_btn_container">
-                                        <button @onclick="CreateNewPost">Create Post</button>
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div class="create_post_btn_container">
+                        <button @onclick="CreateNewPost">Create Post</button>
                     </div>
-                }
-            </div>
+                </div>
+            }
         </div>
-
     </div>
-</section>
+}
 
 @code {
 

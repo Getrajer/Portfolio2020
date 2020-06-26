@@ -41,45 +41,37 @@
                 <div class="comp_nav_links">
                     <ul>
                         <li>
-                            <NavLink href="" Match="NavLinkMatch.All">
-                                <span class="oi oi-home" aria-hidden="true"></span> Home
+                            <NavLink  href="/">
+                                Home
                             </NavLink>
                         </li>
 
                         <li>
-                            <NavLink href="CustomShoeOrder" Match="NavLinkMatch.All">
-                                <i class="fa fa-tshirt"></i> Custom clothing
-                            </NavLink>
+                            <button @onclick="OpenClothing"><i class="fa fa-tshirt"></i> Custom clothing</button>
                         </li>
 
                         <li>
-                            <NavLink href="LoginPage" Match="NavLinkMatch.All">
-                                <i class="fas fa-user"></i> Login Page
-                            </NavLink>
+                            <button @onclick="OpenLogin"><i class="fas fa-user"></i> Login Page</button>
                         </li>
 
                         <li>
-                            <NavLink href="RegisterPage" Match="NavLinkMatch.All">
-                                <i class="fas fa-user-plus"></i> Register Page
-                            </NavLink>
+                            <button @onclick="OpenRegister"><i class="fas fa-user-plus"></i> Register Page</button>
                         </li>
 
                         <li>
-                            <NavLink href="CreatePost" Match="NavLinkMatch.All">
-                                <i class="fas fa-file-word"></i> Create Post
-                            </NavLink>
+                            <button @onclick="OpenPost"><i class="fas fa-file-word"></i> Create Post</button>
                         </li>
 
                         <li>
-                            <NavLink href="Comments" Match="NavLinkMatch.All">
-                                <i class="fas fa-comments"></i> Comments
-                            </NavLink>
+                            <button @onclick="OpenComments"><i class="fas fa-comments"></i> Comments</button>
+                        </li>
+                        
+                        <li>
+                            <button @onclick="OpenAccordeon"><i class="fas fa-th-list"></i> Acordeon</button>
                         </li>
 
                         <li>
-                            <NavLink href="Acordeon" Match="NavLinkMatch.All">
-                                <i class="fas fa-th-list"></i> Acordeon
-                            </NavLink>
+                            <button @onclick="OpenSorting"><i class="fas fa-table"></i> Sorting Algorithms</button>
                         </li>
 
                     </ul>
@@ -90,9 +82,77 @@
 
         <div class="page">
             <div class="page_container">
+                @if (acordeon) { 
+                    <Acordeon></Acordeon>
+                }
 
+                @if (comments)
+                {
+                    <CommentsComponent></CommentsComponent>
+                }
+
+                @if (clothing)
+                {
+                    <CustomClothingObject></CustomClothingObject>
+                }
+
+                @if (login)
+                {
+                    <LoginPage></LoginPage>
+                }
+
+                @if (post)
+                {
+                    <PostCreator></PostCreator>
+                }
+
+                @if (register)
+                {
+                    <RegisterPage></RegisterPage>
+                }
+
+                @if (sorting)
+                {
+                    
+                }
             </div>
         </div>
 
     </div>
 </section>
+
+@code{
+    protected bool acordeon = false;
+    protected bool comments = false;
+    protected bool clothing = false;
+    protected bool login = false;
+    protected bool post = false;
+    protected bool register = false;
+    protected bool sorting = false;
+
+
+    public void CloseAll()
+    {
+        acordeon = false;
+        comments = false;
+        clothing = false;
+        login = false;
+        post = false;
+        register = false;
+        sorting = false;
+    }
+
+    public void OpenAccordeon() { if(acordeon == false) { CloseAll(); acordeon = true;  } }
+    public void OpenComments() { if (comments == false) { CloseAll(); comments = true; } }
+    public void OpenClothing() { if (clothing == false) { CloseAll(); clothing = true; } }
+    public void OpenLogin() { if (login == false) { CloseAll(); login = true; } }
+    public void OpenPost() { if (post == false) { CloseAll(); post = true; } }
+    public void OpenRegister() { if (register == false) { CloseAll(); register = true; } }
+    public void OpenSorting() { if (sorting == false) { CloseAll(); sorting = true; } }
+
+
+
+
+
+
+}

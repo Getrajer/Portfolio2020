@@ -65,5 +65,22 @@
     color:#ffffff;
 }
 
+.component_nav button{
+    color: #8c93a1!important;
+    font-size: 1.1rem!important;
+    font-weight:800!important;
+    letter-spacing: 3px!important;
+    font-family: sans-serif!important;
+    background-color:unset!important;
+    border:unset!important;
+    transition: 0.5s color!important;
+}
+
+.component_nav button:hover{
+    color:#ffffff!important;
+    background-color:unset!important;
+    border:unset!important;
+}
+
 
 /*End of navigation style*/

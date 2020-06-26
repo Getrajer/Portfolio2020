@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5 {
         outline: 2px solid #651b92;
     }
 
-img{
+.program_container img {
     width: 100px;
     height: 100px;
 }
@@ -51,11 +51,11 @@ img{
     text-align:left;
 }
 
-button{
+.program_container button {
     border: none;
     text-transform: uppercase;
     color: black;
-    background-color:unset;
+    background-color: unset;
     border: 1px solid black;
     letter-spacing: 3px;
     font-size: 1.5rem;
@@ -64,9 +64,9 @@ button{
     transition: 0.5s;
 }
 
-button:hover{
+.program_container button:hover {
     transform: translateY(-3px);
-    outline:unset;
+    outline: unset;
 }
 
 .add_post_container {
@@ -79,7 +79,7 @@ button:hover{
     padding: 1em;
 }
 
-label {
+.program_container label {
     display: block;
     color: black;
     letter-spacing: 5px;
@@ -89,7 +89,7 @@ label {
     margin-bottom: 0.5em;
 }
 
-input {
+.program_container input {
     display: block;
     border: none;
     padding: 0.5em;

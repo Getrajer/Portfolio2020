@@ -1,319 +1,227 @@
-﻿@page "/LoginPage"
-
+﻿
 <head>
-    <link rel="stylesheet" href="../css/components_style.css" />
     <link rel="stylesheet" href="../css/login_page_style.css" />
 </head>
 
+<div class="component">
+    <div class="component_container">
+
+        <div id="@ActualScheme" class="functional">
+
+            <div class="login">
+                <div class="login_container">
+                    <div class="title_container">
+                        <h5>Login</h5>
+                    </div>
 
 
-<section id="components">
-    <div class="components_container">
+                    <div class="input_container">
+                        <label>Username</label>
+                        <input @bind="user_name" />
+                        <p class="error_info">@user_name_error</p>
+                    </div>
 
-        <div class="component_nav">
-            <div class="component_nav_container">
+                    <div class="input_container">
+                        <label>Password</label>
+                        <input @bind="password" />
+                        <p class="error_info">@password_error</p>
+                    </div>
 
-                <div class="top_nav">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="70px" viewBox="0 0 235 132">
-                        <title>Home</title>
-                        <g id="Warstwa_2" data-name="Warstwa 2">
-                            <g id="Logo">
-                                <g>
-                                    <polygon points="26.07 50.14 58.2 6.54 79.61 6.54 45.35 50.14 26.07 50.14" />
-                                    <polygon points="83.89 11.21 73.19 25.22 92.46 92.18 101.03 75.05 83.89 11.21" />
-                                    <polygon points="98.88 92.18 107.45 78.17 124.58 78.17 133.15 92.18 98.88 92.18" />
-                                    <polygon points="208.1 50.14 175.98 6.54 154.56 6.54 188.83 50.14 208.1 50.14" />
-                                    <polygon points="150.28 11.21 160.99 25.22 141.71 92.18 133.15 75.05 150.28 11.21" />
-                                    <g>
-                                        <polygon points="26.07 60.48 30.11 104.46 47.49 116.54 47.49 60.48 26.07 60.48" />
-                                        <polygon points="28.56 107.46 42.53 117.46 11.48 117.46 28.56 107.46" />
-                                    </g>
-                                    <g>
-                                        <polygon points="209.89 60.48 205.85 104.46 188.48 116.54 188.48 60.48 209.89 60.48" />
-                                        <polygon points="207.4 107.46 193.43 117.46 224.48 117.46 207.4 107.46" />
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
+                    @if (has_sms_code == true)
+                    {
+                        <div class="input_container">
+                            <label>SMS Code</label>
+                            <input @bind="sms_code" />
+                            <p class="error_info">@sms_code_error</p>
+                        </div>
+                    }
+
+                    @if (has_pin == true)
+                    {
+                        <div class="input_container">
+                            <label>Pin</label>
+                            <div class="pin_choice">
+                                <input @bind="code_1" maxlength="1" /> <input @bind="code_2" maxlength="1" /> <input @bind="code_3" maxlength="1" />
+                            </div>
+                            <p class="error_info">@code_error</p>
+                        </div>
+                    }
+
+                    <div class="button_container">
+                        <button @onclick="Login">Login</button>
+                    </div>
+
                 </div>
-
-                <div class="underline"></div>
-
-                <div class="comp_nav_links">
-                    <ul>
-                        <li>
-                            <NavLink href="" Match="NavLinkMatch.All">
-                                <span class="oi oi-home" aria-hidden="true"></span> Home
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="CustomShoeOrder" Match="NavLinkMatch.All">
-                                <i class="fa fa-tshirt"></i> Custom clothing
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="LoginPage" Match="NavLinkMatch.All">
-                                <i class="fas fa-user"></i> Login Page
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="RegisterPage" Match="NavLinkMatch.All">
-                                <i class="fas fa-user-plus"></i> Register Page
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="CreatePost" Match="NavLinkMatch.All">
-                                <i class="fas fa-file-word"></i> Create Post
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="Comments" Match="NavLinkMatch.All">
-                                <i class="fas fa-comments"></i> Comments
-                            </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink href="Acordeon" Match="NavLinkMatch.All">
-                                <i class="fas fa-th-list"></i> Acordeon
-                            </NavLink>
-                        </li>
-
-                    </ul>
-                </div>
-
             </div>
+
         </div>
 
-        <div class="page">
-            <div class="page_container">
-                <div class="component">
-                    <div class="component_container">
 
-                        <div id="@ActualScheme" class="functional">
+        <div class="component_panel">
+            <div class="component_panel_container">
+                <div class="title">
+                    <h1>Custom login page</h1>
+                </div>
 
-                            <div class="login">
-                                <div class="login_container">
-                                    <div class="title_container">
-                                        <h5>Login</h5>
-                                    </div>
+                <div class="description">
+                    <p>This is custom login page. </p>
 
+                    <p>Person who manages website is able to change login methods to the website as well design of the login page.</p>
 
-                                    <div class="input_container">
-                                        <label>Username</label>
-                                        <input @bind="user_name" />
-                                        <p class="error_info">@user_name_error</p>
-                                    </div>
+                    <p>User when logging in with Sms method would recieve numeric one time code. User when logging in with Pin would have to remember pin number. Both methods can be implemented.</p>
+                </div>
 
-                                    <div class="input_container">
-                                        <label>Password</label>
-                                        <input @bind="password" />
-                                        <p class="error_info">@password_error</p>
-                                    </div>
+                <div class="options">
+                    <div class="option">
+                        <h4>Change color scheme</h4>
 
-                                    @if (has_sms_code == true)
-                                    {
-                                        <div class="input_container">
-                                            <label>SMS Code</label>
-                                            <input @bind="sms_code" />
-                                            <p class="error_info">@sms_code_error</p>
-                                        </div>
-                                    }
+                        <div class="choice_check_boxes">
 
-                                    @if (has_pin == true)
-                                    {
-                                        <div class="input_container">
-                                            <label>Pin</label>
-                                            <div class="pin_choice">
-                                                <input @bind="code_1" maxlength="1" /> <input @bind="code_2" maxlength="1" /> <input @bind="code_3" maxlength="1" />
-                                            </div>
-                                            <p class="error_info">@code_error</p>
-                                        </div>
-                                    }
-
-                                    <div class="button_container">
-                                        <button @onclick="Login">Login</button>
-                                    </div>
-
-                                </div>
+                            <div @onclick="@(e => ChangeColorScheme(1))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>Color_sheme1</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #27437b;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="39.34" y="15.83" width="20.83" height="20.83" style="fill: #6182c1;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="40.35" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
                             </div>
 
-                        </div>
-
-
-                        <div class="component_panel">
-                            <div class="component_panel_container">
-                                <div class="title">
-                                    <h1>Custom login page</h1>
-                                </div>
-
-                                <div class="description">
-                                    <p>This is custom login page. </p>
-
-                                    <p>Person who manages website is able to change login methods to the website as well design of the login page.</p>
-
-                                    <p>User when logging in with Sms method would recieve numeric one time code. User when logging in with Pin would have to remember pin number. Both methods can be implemented.</p>
-                                </div>
-
-                                <div class="options">
-                                    <div class="option">
-                                        <h4>Change color scheme</h4>
-
-                                        <div class="choice_check_boxes">
-
-                                            <div @onclick="@(e => ChangeColorScheme(1))" class="color_scheme_option">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
-                                                    <title>Color_sheme1</title>
-                                                    <g id="Warstwa_2" data-name="Warstwa 2">
-                                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
-                                                            <g>
-                                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #27437b;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="39.34" y="15.83" width="20.83" height="20.83" style="fill: #6182c1;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="25.02" y="40.35" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </svg>
-                                            </div>
-
-                                            <div @onclick="@(e => ChangeColorScheme(2))" class="color_scheme_option">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
-                                                    <title>color_scheme_2</title>
-                                                    <g id="Warstwa_2" data-name="Warstwa 2">
-                                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
-                                                            <g>
-                                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #8a2d91;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #a43a95;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </svg>
-                                            </div>
-
-                                            <div @onclick="@(e => ChangeColorScheme(3))" class="color_scheme_option">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
-                                                    <title>color_scheme_3</title>
-                                                    <g id="Warstwa_2" data-name="Warstwa 2">
-                                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
-                                                            <g>
-                                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #454952;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #868d9d;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </svg>
-                                            </div>
-
-                                            <div @onclick="@(e => ChangeColorScheme(4))" class="color_scheme_option">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
-                                                    <title>color_scheme_4</title>
-                                                    <g id="Warstwa_2" data-name="Warstwa 2">
-                                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
-                                                            <g>
-                                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ebebeb;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #1a1a1a;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </svg>
-                                            </div>
-
-                                            <div @onclick="@(e => ChangeColorScheme(5))" class="color_scheme_option">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
-                                                    <title>color_scheme_5</title>
-                                                    <g id="Warstwa_2" data-name="Warstwa 2">
-                                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
-                                                            <g>
-                                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #73bf44;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #0c8441;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </svg>
-                                            </div>
-
-                                            <div @onclick="@(e => ChangeColorScheme(6))" class="color_scheme_option">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
-                                                    <title>color_scheme_6</title>
-                                                    <g id="Warstwa_2" data-name="Warstwa 2">
-                                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
-                                                            <g>
-                                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ed184a;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #af1f23;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </svg>
-                                            </div>
-
-
-                                            <div @onclick="@(e => ChangeColorScheme(7))" class="color_scheme_option">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
-                                                    <title>color_scheme_7</title>
-                                                    <g id="Warstwa_2" data-name="Warstwa 2">
-                                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
-                                                            <g>
-                                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #f8ec24;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #cab72e;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
-                                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </svg>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="option">
-                                        <h4>If has SMS login method</h4>
-                                        <div class="button_container">
-                                            <button @onclick="ChangeIfHasSMS">@sms_string_btn</button>
-                                        </div>
-                                    </div>
-
-                                    <div class="option">
-                                        <h4>If has SMS login method</h4>
-                                        <div class="button_container">
-                                            <button @onclick="ChangeIfHasPinCode">@pin_string_btn</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <h4>Console</h4>
-
-                                <div class="console">
-                                    <div class="console_container">
-                                        <p>@logged_in_status</p>
-                                    </div>
-                                </div>
-
+                            <div @onclick="@(e => ChangeColorScheme(2))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_2</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #8a2d91;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #a43a95;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
                             </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(3))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_3</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #454952;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #868d9d;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(4))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_4</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ebebeb;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #1a1a1a;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(5))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_5</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #73bf44;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #0c8441;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(6))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_6</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ed184a;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #af1f23;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+
+                            <div @onclick="@(e => ChangeColorScheme(7))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_7</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #f8ec24;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #cab72e;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
                         </div>
                     </div>
+                    <div class="option">
+                        <h4>If has SMS login method</h4>
+                        <div class="button_container">
+                            <button @onclick="ChangeIfHasSMS">@sms_string_btn</button>
+                        </div>
+                    </div>
+
+                    <div class="option">
+                        <h4>If has SMS login method</h4>
+                        <div class="button_container">
+                            <button @onclick="ChangeIfHasPinCode">@pin_string_btn</button>
+                        </div>
+                    </div>
+
                 </div>
+
+                <h4>Console</h4>
+
+                <div class="console">
+                    <div class="console_container">
+                        <p>@logged_in_status</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-
     </div>
-</section>
+</div>
+
+
 
 @code{
 
