@@ -1,0 +1,347 @@
+﻿
+
+<head>
+    <link href="../css/sorting_algorithms_style.css" rel="stylesheet" />
+</head>
+
+<div class="component">
+    <div class="component_container">
+
+        <div class="functional">
+            <div class="page_container">
+                <div class="component_container">
+
+                    <div class="sorting_buttons">
+                        <button  @onclick="PopulateChart">Populate Chart</button>
+                        <button  @onclick="BubbleSort">Do buble sort</button>
+                        <button  @onclick="QuickSortChart">Do Quick Sort</button>
+                        <button  @onclick="SelectionSort">Do Selection Sort</button>
+                        <button  @onclick="InsertionSort">Do Insertion Sort</button>
+                    </div>
+
+
+                    <section id="chart-container">
+
+                        <div class="box">
+                            <div class="scale top-scale">@top_scale</div>
+                            <div class="scale middle-scale">@middle_scale</div>
+                            <div class="scale bottom-scale">@bottom_scale</div>
+
+                            @foreach (var obj in graphData)
+                            {
+                                <div class="variable">
+                                    <div class="graph" style="height: @obj.returnPercentage()">
+                                        <div class="percent">
+                                            @obj.number
+                                        </div>
+                                    </div>
+                                    <div class="name">
+                                        @obj.name
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+   </div>
+</div>
+
+
+@code{
+    //Graph object class
+    public class graphObject
+    {
+        public int number { get; set; }
+        public int percentage { get; set; }
+        public string name { get; set; }
+
+        public graphObject()
+        {
+        }
+
+        public graphObject(int _number)
+        {
+            this.number = _number;
+        }
+
+        public graphObject(int _number, string _name)
+        {
+            this.number = _number;
+            this.name = _name;
+        }
+
+        public string returnPercentage()
+        {
+            string p = percentage.ToString() + "%";
+            return p;
+        }
+    }
+    //..............................................................................//
+
+
+    //Declaring variables connected to razor page
+    protected string success_populate;
+    protected string error_populate;
+
+    protected string success_sort;
+    protected string error_sort;
+
+    protected List<graphObject> graphData = new List<graphObject>();
+
+    protected string top_scale;
+    protected string middle_scale;
+    protected static string bottom_scale = "0";
+    //..............................................................................//
+
+
+    //This Function will populate chart with 100 random numbers from range 1 - 100
+    public async void PopulateChart()
+    {
+        //Restet Chart
+        graphData.Clear();
+
+        for (int i = 0; i < 200; i++)
+        {
+            Random random = new Random();
+            graphObject g = new graphObject();
+            g.number = random.Next(1, 100);
+            graphData.Add(g);
+        }
+
+        if (graphData.Count == 0)
+        {
+            error_populate = "Ups something went wrong try again";
+            StateHasChanged();
+        }
+        else
+        {
+            int largest = 0;
+
+            //Find LargestNumber
+            for (int i = 0; i < graphData.Count; i++)
+            {
+                if (largest <= graphData[i].number)
+                {
+                    largest = graphData[i].number;
+                }
+            }
+
+            //Calculate Percentage
+            for (int i = 0; i < graphData.Count; i++)
+            {
+                graphData[i].percentage = (int)Math.Round((double)(100 * graphData[i].number) / largest);
+                top_scale = largest.ToString();
+                middle_scale = ((int)Math.Round((double)largest / 2)).ToString();
+            }
+            success_populate = "Success!";
+            await Task.Delay(100);
+            StateHasChanged();
+        }
+    }
+    //..............................................................................//
+
+
+    //Bubble Sort Algorithm
+    public async void BubbleSort()
+    {
+        //Reset communicates
+        success_populate = "";
+        success_sort = "";
+        error_sort = "";
+        error_populate = "";
+
+        if (graphData == null || graphData.Count == 0)
+        {
+            error_sort = "Chart is empty cannot sort it!";
+        }
+        else
+        {
+            graphObject holder;
+            int counter = graphData.Count();
+
+            for (int i = 0; i < counter - 1; i++)
+            {
+                for (int j = 0; j < counter - i - 1; j++)
+                {
+                    if (graphData[j].number > graphData[j + 1].number)
+                    {
+                        holder = graphData[j];
+                        graphData[j] = graphData[j + 1];
+                        graphData[j + 1] = holder;
+
+                        await Task.Delay(1);
+                        StateHasChanged();
+                    }
+                }
+            }
+            success_sort = "Success!";
+            StateHasChanged();
+        }
+    }
+    //..............................................................................//
+
+
+    //Quick Sort Algorithm
+    public async void quickSort(List<graphObject> graphObjects, int start, int end)
+    {
+        int i;
+        if (start < end)
+        {
+            i = Partition(graphObjects, start, end);
+
+            quickSort(graphObjects, start, i - 1);
+            await Task.Delay(1000);
+            StateHasChanged();
+            quickSort(graphObjects, i + 1, end);
+            await Task.Delay(1000);
+            StateHasChanged();
+
+        }
+    }
+
+    private int Partition(List<graphObject> graphObjects, int start, int end)
+    {
+        graphObject temp;
+        graphObject p = graphObjects[end];
+        int i = start - 1;
+
+        for (int j = start; j <= end - 1; j++)
+        {
+            if (graphObjects[j].number <= p.number)
+            {
+                i++;
+                temp = graphObjects[i];
+                graphObjects[i] = graphObjects[j];
+                graphObjects[j] = temp;
+            }
+        }
+
+        temp = graphObjects[i + 1];
+        graphObjects[i + 1] = graphObjects[end];
+        graphObjects[end] = temp;
+        return i + 1;
+    }
+
+    public async void QuickSortChart()
+    {
+        //Reset communicates
+        success_populate = "";
+        success_sort = "";
+        error_sort = "";
+        error_populate = "";
+
+        if (graphData == null || graphData.Count == 0)
+        {
+            error_sort = "Chart is empty cannot sort it!";
+        }
+        else
+        {
+            quickSort(graphData, 0, graphData.Count - 1);
+
+            success_sort = "Success!";
+            StateHasChanged();
+        }
+    }
+    //..............................................................................//
+
+
+    //Selection sort algorithm
+    public async void SelectionSort()
+    {
+        //Reset communicates
+        success_populate = "";
+        success_sort = "";
+        error_sort = "";
+        error_populate = "";
+
+        if (graphData == null || graphData.Count == 0)
+        {
+            error_sort = "Chart is empty cannot sort it!";
+        }
+        else
+        {
+            bool isSorted = false;
+            do
+            {
+
+                for (int i = 0; i < graphData.Count - 1; i++)
+                {
+                    graphObject o = new graphObject();
+                    graphObject smallest = new graphObject();
+                    int minIndex = i;
+                    for (int j = i + 1; j < graphData.Count; j++)
+                    {
+                        if (graphData[j].number < graphData[i].number)
+                        {
+                            minIndex = j;
+                        }
+                    }
+                    o = graphData[minIndex];
+                    graphData[minIndex] = graphData[i];
+                    graphData[i] = o;
+                    await Task.Delay(5);
+                    StateHasChanged();
+                }
+
+                for (int i = 0; i < graphData.Count - 1; i++)
+                {
+                    graphObject t = graphData[i];
+
+                    if (graphData[i + 1].number < t.number)
+                    {
+                        isSorted = true;
+                    }
+                    else
+                    {
+                        isSorted = false;
+                    }
+                }
+
+            } while (isSorted != true);
+
+            success_sort = "Success!";
+            StateHasChanged();
+        }
+    }
+    //..............................................................................//
+
+
+
+    //Insertion sort algorithm
+    public async void InsertionSort()
+    {
+        //Reset communicates
+        success_populate = "";
+        success_sort = "";
+        error_sort = "";
+        error_populate = "";
+
+        if (graphData == null || graphData.Count == 0)
+        {
+            error_sort = "Chart is empty cannot sort it!";
+        }
+        else
+        {
+            int n = graphData.Count;
+            for (int i = 1; i < n; ++i)
+            {
+                graphObject key = graphData[i];
+                int j = i - 1;
+
+                while (j >= 0 && graphData[j].number > key.number)
+                {
+                    graphData[j + 1] = graphData[j];
+                    j = j - 1;
+                }
+                graphData[j + 1] = key;
+                await Task.Delay(10);
+                StateHasChanged();
+            }
+            success_sort = "Success!";
+            StateHasChanged();
+        }
+    }
+    //..............................................................................//
+}

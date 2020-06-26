@@ -12,13 +12,14 @@
     grid-template-columns: 300px auto;
 }
 
-.page{
-    display:flex;
-    justify-content:center;
+.page {
+    display: flex;
+    justify-content: center;
+    background-color: #ebebeb;
 }
 
-.page_container{
-    width:100%;
+.page_container {
+    width: 100%;
     max-width: 1600px;
 }
 
