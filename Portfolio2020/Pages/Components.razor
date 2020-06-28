@@ -41,7 +41,7 @@
                 <div class="comp_nav_links">
                     <ul>
                         <li>
-                            <NavLink  href="/">
+                            <NavLink href="/">
                                 <i class="fas fa-home"></i> Home
                             </NavLink>
                         </li>
@@ -65,13 +65,18 @@
                         <li>
                             <button @onclick="OpenComments"><i class="fas fa-comments"></i> Comments</button>
                         </li>
-                        
+
                         <li>
                             <button @onclick="OpenAccordeon"><i class="fas fa-th-list"></i> Acordeon</button>
                         </li>
 
                         <li>
                             <button @onclick="OpenSorting"><i class="fas fa-table"></i> Sorting Algorithms</button>
+                        </li>
+
+
+                        <li>
+                            <button @onclick="OpenFoodOrder"><i class="fas fa-pizza-slice"></i> Custom Food Order</button>
                         </li>
 
                     </ul>
@@ -115,6 +120,10 @@
                 {
                     <SortingAlgorithms></SortingAlgorithms>
                 }
+                @if (food_order)
+                {
+                    <CustomFoodOrder></CustomFoodOrder>
+                }
             </div>
         </div>
 
@@ -129,6 +138,7 @@
     protected bool post = false;
     protected bool register = false;
     protected bool sorting = false;
+    protected bool food_order = false;
 
 
     public void CloseAll()
@@ -140,6 +150,7 @@
         post = false;
         register = false;
         sorting = false;
+        food_order = false;
     }
 
     public void OpenAccordeon() { if(acordeon == false) { CloseAll(); acordeon = true;  } }
@@ -149,7 +160,7 @@
     public void OpenPost() { if (post == false) { CloseAll(); post = true; } }
     public void OpenRegister() { if (register == false) { CloseAll(); register = true; } }
     public void OpenSorting() { if (sorting == false) { CloseAll(); sorting = true; } }
-
+    public void OpenFoodOrder() { if (food_order == false) { CloseAll(); food_order = true; } }
 
 
 
