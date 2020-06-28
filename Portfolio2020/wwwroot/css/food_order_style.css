@@ -319,7 +319,7 @@ button:focus{
 
 .food_order .ordered_foods{
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .food_order .ordered_foods .order{
@@ -328,11 +328,12 @@ button:focus{
 }
 
 .food_order .ordered_foods .button_container{
-    padding: 0.2em 0.5em;
+    padding: 0.2em 0.2em;
 }
 
 .food_order .ordered_foods button{
     font-size: 1rem;
+    padding:0.3em;
 }
 
 .food_order .title{

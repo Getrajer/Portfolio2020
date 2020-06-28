@@ -46,6 +46,12 @@
                             </NavLink>
                         </li>
 
+                        <h3>Blazor</h3>
+
+                        <li>
+                            <button @onclick="OpenAbout"><i class="fas fa-question"></i> About</button>
+                        </li>
+
                         <li>
                             <button @onclick="OpenClothing"><i class="fa fa-tshirt"></i> Custom clothing</button>
                         </li>
@@ -87,6 +93,12 @@
 
         <div class="page">
             <div class="page_container">
+
+                @if (about)
+                {
+                    <AboutComponent></AboutComponent>
+                }
+
                 @if (acordeon) { 
                     <Acordeon></Acordeon>
                 }
@@ -139,6 +151,7 @@
     protected bool register = false;
     protected bool sorting = false;
     protected bool food_order = false;
+    protected bool about = true;
 
 
     public void CloseAll()
@@ -151,6 +164,7 @@
         register = false;
         sorting = false;
         food_order = false;
+        about = false;
     }
 
     public void OpenAccordeon() { if(acordeon == false) { CloseAll(); acordeon = true;  } }
@@ -161,6 +175,7 @@
     public void OpenRegister() { if (register == false) { CloseAll(); register = true; } }
     public void OpenSorting() { if (sorting == false) { CloseAll(); sorting = true; } }
     public void OpenFoodOrder() { if (food_order == false) { CloseAll(); food_order = true; } }
+    public void OpenAbout() { if (about == false) { CloseAll(); about = true; } }
 
 
 
