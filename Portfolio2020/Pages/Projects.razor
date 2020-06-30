@@ -170,6 +170,7 @@
 @if (display_clothe == true)
 {
     <button class="close_button" @onclick="DisplayClothe">Close</button>
+    <ClotheOnlineDescription></ClotheOnlineDescription>
 }
 
 @if (display_math == true)
@@ -186,31 +187,37 @@
 @if (display_restaurant == true)
 {
     <button class="close_button" @onclick="DisplayRestaurant">Close</button>
+    <RestaurantDescription></RestaurantDescription>
 }
 
 @if (display_coffe == true)
 {
     <button class="close_button" @onclick="DisplayCoffe">Close</button>
+    <CoffeShopDescription></CoffeShopDescription>
 }
 
 @if (display_bank == true)
 {
     <button class="close_button" @onclick="DisplayBank">Close</button>
+    <BankAppDescription></BankAppDescription>
 }
 
 @if (display_JS_games == true)
 {
     <button class="close_button" @onclick="DisplayJSGames">Close</button>
+    <JavaScriptGamesDescription></JavaScriptGamesDescription>
 }
 
 @if (display_data_sharp == true)
 {
     <button class="close_button" @onclick="DisplayDataSharp">Close</button>
+    <DataSharpDescription></DataSharpDescription>
 }
 
 @if (display_data_structures == true)
 {
     <button class="close_button" @onclick="DisplayDataStructures">Close</button>
+    <DataStructuresDescription></DataStructuresDescription>
 }
 
 @code {
@@ -326,7 +333,7 @@
         }
     }
 
-    protected bool display_data_structures = false;
+    protected bool display_data_structures = true;
 
     public void DisplayDataStructures()
     {

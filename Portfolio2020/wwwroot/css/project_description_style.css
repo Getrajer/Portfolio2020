@@ -1,0 +1,94 @@
+﻿.project_description {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #1d233e;
+}
+
+nav{
+    display:none;
+}
+
+.project_description_container{
+    width:100%;
+    max-width:600px;
+    background-color:#ebebeb;
+}
+
+.project_description h1{
+    letter-spacing:4px;
+    font-size:4rem;
+    font-weight:800;
+}
+
+.project_description h2{
+    text-align:center;
+    letter-spacing:3px;
+    font-weight:800;
+    margin:1em 0;
+}
+
+.project_description h3 {
+    text-align: center;
+    letter-spacing: 2px;
+    font-size:1.7rem;
+    font-weight:700;
+    margin: 0.5em 0;
+}
+
+.project_description img{
+    width:100%;
+}
+
+.project_description .type_container p{
+    color:#050012;
+    font-weight:900;
+    line-height: 30px;
+    padding: 0 1em;
+    font-size:1.3rem;
+}
+
+.project_description .tech_icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5em 0;
+}
+
+.project_description .icon_c{
+    width:30px;
+    height:30px;
+}
+
+.project_description .links{
+    text-align:center;
+}
+
+.project_description .links a{
+    font-size:2rem;
+    font-weight:900;
+    color:#050012;
+    cursor:pointer;
+    padding:0 1em;
+    transition:0.5s color;
+}
+
+.project_description .links a:hover{
+    color:#2e4396;
+}
+
+.project_description .description_footer{
+    width: 100%;
+    max-width:600px;
+    background-color: #050012;
+    text-align:center;
+    padding:0.5em 0;
+    margin-top:1em;
+}
+
+.project_description .description_footer p {
+    color: #ebebeb;
+    padding:0;
+    margin:0;
+    font-weight:900;
+}
