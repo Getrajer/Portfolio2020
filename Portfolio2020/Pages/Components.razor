@@ -80,9 +80,12 @@
                             <button @onclick="OpenSorting"><i class="fas fa-table"></i> Sorting Algorithms</button>
                         </li>
 
-
                         <li>
                             <button @onclick="OpenFoodOrder"><i class="fas fa-pizza-slice"></i> Custom Food Order</button>
+                        </li>
+
+                        <li>
+                            <button @onclick="OpenGallery"><i class="fas fa-image"></i> Gallery</button>
                         </li>
 
                     </ul>
@@ -137,6 +140,10 @@
                 {
                     <CustomFoodOrder></CustomFoodOrder>
                 }
+                @if (gallery)
+                {
+                    <GalleryComponent></GalleryComponent>
+                }
             </div>
         </div>
 
@@ -152,8 +159,9 @@
     protected bool register = false;
     protected bool sorting = false;
     protected bool food_order = false;
-    protected bool about = true;
+    protected bool gallery = false;
 
+    protected bool about = true;
 
     public void CloseAll()
     {
@@ -165,6 +173,8 @@
         register = false;
         sorting = false;
         food_order = false;
+        gallery = false;
+
         about = false;
     }
 
@@ -177,6 +187,7 @@
     public void OpenSorting() { if (sorting == false) { CloseAll(); sorting = true; } }
     public void OpenFoodOrder() { if (food_order == false) { CloseAll(); food_order = true; } }
     public void OpenAbout() { if (about == false) { CloseAll(); about = true; } }
+    public void OpenGallery() { if (gallery == false) { CloseAll(); gallery = true; } }
 
 
 

@@ -1,0 +1,379 @@
+﻿
+<head>
+    <link rel="stylesheet" href="../css/gallery_style.css" />
+</head>
+
+<div class="component">
+    <div class="component_container">
+
+        <div id="@ActualScheme" class="functional">
+
+            @if (display_img == false)
+            {
+                <div class="gallery">
+                    <div class="gallery_container">
+
+
+                        @foreach (var i in images)
+                        {
+                            <div class="img_box">
+                                <div class="cover_img">
+                                    <button @onclick="@(e => OpenImage(i.Id))">@i.Title</button>
+                                </div>
+                                <div class="img_box_container">
+                                    <img src="@i.Path" alt="@i.Alt" />
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="focused_gallery">
+                    <div class="focused_gallery_container">
+
+                        <div class="close_button">
+                            <button @onclick="CloseGallery">X</button>
+                        </div>
+
+                        <div class="center_img">
+                            <div @onclick="PreviousImage" class="button_left">
+                                <button>&lt;</button>
+                            </div>
+
+                            <div @onclick="NextImage" class="button_right">
+                                <button>&gt;</button>
+                            </div>
+
+                            <div class="img_box">
+                                <img src="@current_img.Path" alt="@current_img.Alt" />
+                            </div>
+
+
+
+                            <div class="img_description">
+                                <div class="img_description_container">
+                                    <h3>@current_img.Title</h3>
+                                    <p>@current_img.Description</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+
+
+        </div>
+
+
+        <div class="component_panel">
+            <div class="component_panel_container">
+                <div class="title">
+                    <h1>Custom clothing item</h1>
+                </div>
+
+                <div class="description">
+                    <p>This is custom acordeon componet. Administrator is able to change style.</p>
+                </div>
+
+                <div class="options">
+                    <div class="option">
+                        <h4>Change color scheme</h4>
+
+                        <div class="choice_check_boxes">
+
+                            <div @onclick="@(e => ChangeColorScheme(1))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>Color_sheme1</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #27437b;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="39.34" y="15.83" width="20.83" height="20.83" style="fill: #6182c1;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="40.35" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(2))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_2</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #8a2d91;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #a43a95;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(3))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_3</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #454952;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #868d9d;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(4))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_4</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ebebeb;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #1a1a1a;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(5))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_5</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #73bf44;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #0c8441;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(6))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_6</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ed184a;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #af1f23;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+
+                            <div @onclick="@(e => ChangeColorScheme(7))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_7</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #f8ec24;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #cab72e;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <h4>Console</h4>
+
+                <div class="console">
+                    <div class="console_container">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    public class Img
+    {
+        public int Id { get; set; }
+        public string Path { get; set; }
+        public string Alt { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+
+        public Img() { }
+    }
+
+    protected List<Img> images = new List<Img>();
+
+    protected bool display_img = false;
+
+    protected Img current_img = new Img();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Img i1 = new Img();
+
+        i1.Id = 0;
+        i1.Path = "https://images.pexels.com/photos/70912/pexels-photo-70912.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+        i1.Alt = "BMW";
+        i1.Title = "BMW";
+        i1.Alt = "BMW Car";
+        i1.Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur et nibh ac pellentesque. Suspendisse odio leo, semper sit amet leo sit amet, ultrices molestie erat. ";
+
+        images.Add(i1);
+
+        Img i2 = new Img();
+
+        i2.Id = 1;
+        i2.Path = "https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+        i2.Alt = "Audi";
+        i2.Title = "Audi";
+        i2.Alt = "Audi Car";
+        i2.Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur et nibh ac pellentesque. Suspendisse odio leo, semper sit amet leo sit amet, ultrices molestie erat. ";
+
+        images.Add(i2);
+
+        Img i3 = new Img();
+
+        i3.Id = 2;
+        i3.Path = "https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+        i3.Alt = "Mercedes";
+        i3.Title = "Mercedes";
+        i3.Alt = "Mercedes Car";
+        i3.Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur et nibh ac pellentesque. Suspendisse odio leo, semper sit amet leo sit amet, ultrices molestie erat. ";
+
+        images.Add(i3);
+
+        Img i4 = new Img();
+
+        i4.Id = 3;
+        i4.Path = "https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+        i4.Alt = "Mustang";
+        i4.Title = "Mustang";
+        i4.Alt = "Mustang Car";
+        i4.Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur et nibh ac pellentesque. Suspendisse odio leo, semper sit amet leo sit amet, ultrices molestie erat. ";
+
+        images.Add(i4);
+
+        Img i5 = new Img();
+
+        i5.Id = 4;
+        i5.Path = "https://images.pexels.com/photos/2920064/pexels-photo-2920064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+        i5.Alt = "Hundai";
+        i5.Title = "Hundai";
+        i5.Alt = "Hundai Car";
+        i5.Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur et nibh ac pellentesque. Suspendisse odio leo, semper sit amet leo sit amet, ultrices molestie erat. ";
+
+        images.Add(i5);
+
+        Img i6 = new Img();
+
+        i6.Id = 5;
+        i6.Path = "https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+        i6.Alt = "Lamborghini";
+        i6.Title = "Lamborghini";
+        i6.Alt = "Lamborghini Car";
+        i6.Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur et nibh ac pellentesque. Suspendisse odio leo, semper sit amet leo sit amet, ultrices molestie erat. ";
+
+        images.Add(i6);
+
+    }
+
+
+    public void OpenImage(int id)
+    {
+        if(images.Count > 0)
+        {
+            current_img = images[id];
+            display_img = true;
+        }
+
+    }
+
+    public void NextImage()
+    {
+        if(images.Count > 0)
+        {
+            if(current_img.Id < images.Count - 1)
+            {
+                current_img = images[current_img.Id + 1];
+            }
+            else
+            {
+                current_img = images[0];
+            }
+        }
+    }
+
+    public void PreviousImage()
+    {
+        if(images.Count > 0)
+        {
+            if(current_img.Id != 0)
+            {
+                current_img = images[current_img.Id - 1];
+            }
+            else
+            {
+                current_img = images[images.Count - 1];
+            }
+        }
+    }
+
+
+    public void CloseGallery()
+    {
+        current_img = new Img();
+        display_img = false;
+    }
+
+    //Color shemes declarations
+    protected string ActualScheme = "Scheme_1";
+
+    public void ChangeColorScheme(int choice)
+    {
+        switch (choice)
+        {
+            case 1: { ActualScheme = "Scheme_1"; break; }
+            case 2: { ActualScheme = "Scheme_2"; break; }
+            case 3: { ActualScheme = "Scheme_3"; break; }
+            case 4: { ActualScheme = "Scheme_4"; break; }
+            case 5: { ActualScheme = "Scheme_5"; break; }
+            case 6: { ActualScheme = "Scheme_6"; break; }
+            case 7: { ActualScheme = "Scheme_7"; break; }
+        }
+    }
+
+
+
+}
