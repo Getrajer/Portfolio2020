@@ -176,12 +176,14 @@
 @if (display_math == true)
 {
     <button class="close_button" @onclick="DisplayMath">Close</button>
+    <BuisnessMathDescription></BuisnessMathDescription>
 }
 
 
 @if (display_ezsat == true)
 {
     <button class="close_button" @onclick="DisplayEzsat">Close</button>
+    <EzsatDescription></EzsatDescription>
 }
 
 @if (display_restaurant == true)
@@ -333,7 +335,7 @@
         }
     }
 
-    protected bool display_data_structures = true;
+    protected bool display_data_structures = false;
 
     public void DisplayDataStructures()
     {

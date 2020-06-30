@@ -66,10 +66,6 @@
                             <a target="_blank" href="#"> <i class="fab fa-github" aria-hidden="true"></i></a>
                         </div>
 
-                        <div class="medium">
-                            <a target="_blank" href="#"> <i class="fab fa-youtube"></i></a>
-                        </div>
-
                     </div>
                 </div>
 
@@ -301,6 +297,42 @@
 <section id="about">
     <div class="about_container">
 
+
+
+        <div class="card_about">
+            <div class="card_about_container">
+                <div class="icon">
+                    <div class="icon_container">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+
+                <div class="title_container">
+
+                    <div class="left_title">
+                    </div>
+
+                    <div class="middle_title">
+                        <h2>Hi, I am Mateusz...</h2>
+                    </div>
+
+                    <div class="right_title">
+                        
+                    </div>
+
+                </div>
+
+
+                <div class="about_description">
+                    <p>
+                        ...it is nice to meet you.  I am creative, confident, naturally curious.
+                        I am not afraid to take any challenge difficult or simple.
+                        I would create most efficient solution to the problems while giving them some creative touch.
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <div class="card_about">
             <div class="card_about_container">
                 <div class="icon">
@@ -326,51 +358,10 @@
 
                 <div class="about_description">
                     <p>
-                        #4 Open is better than closed with regards to all tech
-                        #5 Market forces are always greater than tech/nerd advantages
-                        #6 Don't jump on 1st generation technology for production project
-                        #7 Simple code is superior code
-                        #8 Code should be self-describing
-                        #9 Code should be fine-grained
-                        #10 Don't marry a language or framework
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="card_about">
-            <div class="card_about_container">
-                <div class="icon">
-                    <div class="icon_container">
-                        <i class="fab fa-youtube"></i>
-                    </div>
-                </div>
-
-                <div class="title_container">
-
-                    <div class="left_title">
-                    </div>
-
-                    <div class="middle_title">
-                        <h2>I do youtube videos</h2>
-                    </div>
-
-                    <div class="right_title">
-                    </div>
-
-                </div>
-
-
-                <div class="about_description">
-                    <p>
-                        #4 Open is better than closed with regards to all tech
-                        #5 Market forces are always greater than tech/nerd advantages
-                        #6 Don't jump on 1st generation technology for production project
-                        #7 Simple code is superior code
-                        #8 Code should be self-describing
-                        #9 Code should be fine-grained
-                        #10 Don't marry a language or framework
+                        I do create fully responsive MVC web aps.
+                        They are created in .Net-Core framework.
+                        I am able to create as well "static" simple websites.
+                        As well I can create web apps with use of React framework.
                     </p>
                 </div>
             </div>
@@ -401,13 +392,10 @@
 
                 <div class="about_description">
                     <p>
-                        #4 Open is better than closed with regards to all tech
-                        #5 Market forces are always greater than tech/nerd advantages
-                        #6 Don't jump on 1st generation technology for production project
-                        #7 Simple code is superior code
-                        #8 Code should be self-describing
-                        #9 Code should be fine-grained
-                        #10 Don't marry a language or framework
+                        I do create blazor components.
+                        They can be used after some adjustments.
+                        You can get the code for them from my Github account.
+                        I create them to show that C# with Blazor is able to create amazing and fast front-end tools.
                     </p>
                 </div>
             </div>
@@ -438,13 +426,8 @@
 
                 <div class="about_description">
                     <p>
-                        #4 Open is better than closed with regards to all tech
-                        #5 Market forces are always greater than tech/nerd advantages
-                        #6 Don't jump on 1st generation technology for production project
-                        #7 Simple code is superior code
-                        #8 Code should be self-describing
-                        #9 Code should be fine-grained
-                        #10 Don't marry a language or framework
+                        If you want to hire me, contract me or ask more questions contact me with use of any of my social media.
+                        They are shown at the bottom of the website.
                     </p>
                 </div>
             </div>
@@ -508,18 +491,18 @@
                 <div class="components">
                     <div class="components_cotnainer">
                         <div class="card_title">
-                            <h3>Components / Functionals</h3>
+                            <h3>Components</h3>
                         </div>
 
 
                         <div class="description">
-                            <p>All of the projects I made are showing combination of my design, front-end and back skills. </p>
+                            
+                            <p>I do create components which are like small programs by themselves. </p>
 
-                            <p>I do make every project with great care and attention to detail. They are fully functional and more importantly accesible and secure.</p>
+                            <p>They are having some admin managment ststems which can be used with restriction to administrators.</p>
 
-                            <p>For every project I do make a lot of information for other developers who are going to be able easly understand what code does.</p>
-
-                            <p>Some of these are shown on my Youtube channel, so you can see the creation process. </p>
+                            <p>They definetly are needed to be modified when used for your needs.</p>
+                            
 
                         </div>
 
@@ -559,8 +542,6 @@
                 <p><i class="fab fa-instagram" aria-hidden="true"></i> - linkedin.com/in/mateusz-owczarek-21a301188 </p>
                 <p><i class="fab fa-linkedin" aria-hidden="true"></i> - linkedin.com/in/mateusz-owczarek-21a301188 </p>
                 <p><i class="fab fa-github" aria-hidden="true"></i> - https://github.com/Getrajer </p>
-                <p><i class="fab fa-youtube"></i> - https://www.youtube.com/watch?v=1cHXjnli2fI </p>
-
             </div>
         </div>
 
@@ -611,12 +592,65 @@
 
     protected override async Task OnInitializedAsync()
     {
-        MessageBoardOutput q = new MessageBoardOutput();
-        q.Id = 0;
-        q.Question = "Which book is your favourite?";
-        q.Answer = "The Witcher Saga";
 
-        new_questions.Add(q);
+
+
+        MessageBoardOutput q1 = new MessageBoardOutput();
+        q1.Id = 0;
+        q1.Question = "What programing language is your favourite?";
+        q1.Answer = "C#";
+
+        new_questions.Add(q1);
+
+        MessageBoardOutput q2 = new MessageBoardOutput();
+        q2.Id = 1;
+        q2.Question = "Any hoobies?";
+        q2.Answer = "Yes, I do like reading about history, going to the gym, playing video games and study about anything interesting no matter in which field.";
+
+        new_questions.Add(q2);
+
+        MessageBoardOutput q3 = new MessageBoardOutput();
+        q3.Id = 2;
+        q3.Question = "Which book is your favorite?";
+        q3.Answer = "The Witcher Saga";
+
+        new_questions.Add(q3);
+
+        MessageBoardOutput q4 = new MessageBoardOutput();
+        q4.Id = 3;
+        q4.Question = "Favorite qote?";
+        q4.Answer = "When something is important enough, you do it even if the odds are not in your favor - Elon Musk";
+
+        new_questions.Add(q4);
+
+        MessageBoardOutput q5 = new MessageBoardOutput();
+        q5.Id = 4;
+        q5.Question = "What are your ambitions?";
+        q5.Answer = "To be good at no matter what I am going to do.";
+
+        new_questions.Add(q5);
+
+        MessageBoardOutput q6 = new MessageBoardOutput();
+        q6.Id = 5;
+        q6.Question = "Your best treat?";
+        q6.Answer = "I think is that I am good at problem solving, but I am definetly hardworking if I can say so myself.";
+
+        new_questions.Add(q6);
+
+        MessageBoardOutput q7 = new MessageBoardOutput();
+        q7.Id = 6;
+        q7.Question = "Your worst treat?";
+        q7.Answer = "I would say lack of confidence, but I am definetly working on it.";
+
+        new_questions.Add(q7);
+
+        MessageBoardOutput q8 = new MessageBoardOutput();
+        q8.Id = 7;
+        q8.Question = "What is your favorite game?";
+        q8.Answer = "So far it is old game called Gothic 2 Night of the Raven.";
+
+        new_questions.Add(q8);
+
 
     }
 

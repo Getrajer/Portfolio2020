@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #ebebeb;
+    background-color: #081a33;
     color: #f6f9fc;
 }
 
@@ -312,9 +312,15 @@ header .right_side .bottom_line {
     height: auto;
 }
 
-#profile .profile_right_container{
+#profile .profile_right{
+    display:flex;
     width:100%;
-    max-width:350px;
+    justify-content:center;
+}
+
+#profile .profile_right_container {
+    width: 100%;
+    max-width: 350px;
 }
 
 #profile .title{
@@ -598,7 +604,7 @@ header .right_side .bottom_line {
 #about .about_container{
     width: 100%;
     max-width:1500px;
-    padding: 8em 0 15em 0;
+    padding: 8em 0 8em 0;
 
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -657,7 +663,7 @@ header .right_side .bottom_line {
 }
 
 #about .about_description {
-    height: 340px;
+    height: 300px;
 }
 
 #about .title_container{
@@ -1119,7 +1125,24 @@ footer p{
 @media screen and (max-width:800px) {
     #about .about_container {
         grid-template-columns: 1fr;
-        grid-gap: 4em
+        grid-gap: 4em;
+        padding: 0em 0 8em 0;
+    }
+        
+
+    #about .card_about_container {
+        background-color: #ffffff;
+    }
+
+    #about .card_about_container .icon_container {
+        background-color: black;
+        color: #38478f;
+        transform: translateY(-30px);
+    }
+
+    #about .card_about_container .left_title {
+        border-top: 3px solid #38478f;
+        border-left: 3px solid #38478f;
     }
 
     #profile .profile_right{
