@@ -1,6 +1,6 @@
 ﻿.page_container {
     min-height: 100vh;
-    background-color:#38478f;
+    background-color: #13253d;
 }
 
 .title{
@@ -8,6 +8,16 @@
     display:flex;
     justify-content:center;
     margin-bottom:2em;
+}
+
+a{
+    color: #d9d9d9;
+    transition: 0.5s;
+    font-weight:800;
+}
+
+a:hover{
+    color:#4d64d5;
 }
 
 .title_container {
@@ -21,7 +31,7 @@
 }
 
 .title_container h1{
-    color: #38478f;
+    color: #13253d;
     font-weight: 800;
     font-size: 5rem;
     letter-spacing: 5px;

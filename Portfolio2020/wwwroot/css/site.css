@@ -139,7 +139,7 @@ nav a:hover{
     .toggle-button {
         display: block;
         position: absolute;
-        top: 25px;
+        top: 15px;
         right: 40px;
     }
 
@@ -152,6 +152,7 @@ nav a:hover{
         font-size: 2rem;
         background-color: unset;
         border:none;
+        margin-bottom: 0.5em;
         transition: 0.5s color;
         color:white;
     }

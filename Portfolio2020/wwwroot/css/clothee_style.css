@@ -2,6 +2,14 @@
     width: 100%;
 }
 
+h1, h2, h3, h4, h5 {
+    font-family: sans-serif !important;
+}
+
+p{
+    font-family: sans-serif!important;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -684,6 +692,8 @@ footer p{
 .single_product_page .single_p_container{
     width:100%;
     max-width: 1500px;
+    padding-top: 5em;
+
 }
 
 

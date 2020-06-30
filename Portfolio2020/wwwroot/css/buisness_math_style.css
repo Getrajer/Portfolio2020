@@ -13,6 +13,13 @@ nav {
     display:none;
 }
 
+
+a {
+    color: white;
+}
+
+
+
 .math_menu_container {
     min-height: 100vh;
     display: flex;
@@ -35,6 +42,7 @@ nav {
 h1{
     text-align:center;
     font-size: 3rem;
+    color:white;
 }
 
 .underline_container{
