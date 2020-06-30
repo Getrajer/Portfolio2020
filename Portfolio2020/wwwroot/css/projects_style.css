@@ -127,7 +127,7 @@ button {
 
 .p_content {
     position: relative;
-    padding: 20px 60px;
+    padding: 20px 30px;
     color: white;
     opacity: 0;
     display:flex;
@@ -160,7 +160,7 @@ button {
 }
 
 .p_title h3{
-    font-size: 5.5rem;
+    font-size: 4.7rem;
     color: white;
     text-align: center;
     letter-spacing: 10px;

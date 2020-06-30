@@ -285,7 +285,7 @@ header .right_side .bottom_line {
 
 /*Profile view*/
 #profile{
-    min-height: 700px;
+    min-height: 680px;
     width: 100%;
     display:flex;
     justify-content:center;
@@ -297,7 +297,7 @@ header .right_side .bottom_line {
     width:100%;
     max-width: 1400px;
     display:grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 65% 35%;
 }
 
 #profile .profile_left{
@@ -313,8 +313,8 @@ header .right_side .bottom_line {
 }
 
 #profile .profile_right_container{
-    position:relative;
-    padding: 0 5em;
+    width:100%;
+    max-width:350px;
 }
 
 #profile .title{
@@ -330,7 +330,7 @@ header .right_side .bottom_line {
 }
 
 #profile .chat_output{
-    height:347px;
+    height:398px;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
     background-color:#1d233e;
@@ -356,7 +356,7 @@ header .right_side .bottom_line {
 }
 
 #profile .out_txt:nth-child(even){
-    justify-content:flex-end;
+    justify-content:flex-start;
 }
 
 #profile .out_txt:nth-child(even) p{
@@ -365,11 +365,11 @@ header .right_side .bottom_line {
    background-color:#38478f;
    color:#f6f9fc;
    border-radius: 0.5em;
-   margin-right: 0.3em;
+   margin-left: 0.3em;
 }
 
 #profile .out_txt:nth-child(odd){
-    justify-content:flex-start;
+    justify-content:flex-end;
 }
 
 #profile .out_txt:nth-child(odd) p{
@@ -378,10 +378,8 @@ header .right_side .bottom_line {
    background-color:#613878;
    color:#f6f9fc;
    border-radius: 0.5em;
-   margin-left: 0.3em;
+   margin-right: 0.3em;
 }
-
-
 
 #profile .chat_output_container::-webkit-scrollbar {
   width: 0px;
@@ -462,7 +460,7 @@ header .right_side .bottom_line {
 }
 
 #profile .question_choices::-webkit-scrollbar-thumb {
-  background-color: #141414;
+    background-color: #141414;
 }
 
 #profile .question_choices p:hover{
@@ -1122,6 +1120,23 @@ footer p{
     #about .about_container {
         grid-template-columns: 1fr;
         grid-gap: 4em
+    }
+
+    #profile .profile_right{
+        display:flex;
+        justify-content:center;
+    }
+
+    #profile .profile_right_container{
+        height:90vh;
+    }
+
+    #profile .chat_output {
+        height: 300px;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        background-color: #1d233e;
+        padding: 1em 0.8em 0 0.8em;
     }
 
 }

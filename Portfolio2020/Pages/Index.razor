@@ -259,64 +259,31 @@
 
                 <div class="chat_output">
                     <div class="chat_output_container">
+                        @foreach (var o in asked_questions)
+                        {
+                            <div class="out_txt">
+                                <p>@o.Question </p>
+                            </div>
 
-                        <div class="out_txt">
-                            <p>What is your name? </p>
-                        </div>
 
-
-                        <div class="out_txt">
-                            <p>What is your name? </p>
-                        </div>
-
-                        <div class="out_txt">
-                            <p>What is your name? </p>
-                        </div>
-
-                        <div class="out_txt">
-                            <p>What is your name? </p>
-                        </div>
-
-                        <div class="out_txt">
-                            <p>What is your name? </p>
-                        </div>
-
-                        <div class="out_txt">
-                            <p>What is your name? </p>
-                        </div>
-
-                        <div class="out_txt">
-                            <p>What is your name? </p>
-                        </div>
-
-                        <div class="out_txt">
-                            <p>What is your name? </p>
-                        </div>
-
+                            <div class="out_txt">
+                                <p>@o.Answer </p>
+                            </div>
+                        }
                     </div>
                 </div>
 
                 <div class="panel">
                     <div class="panel_container">
                         <div class="title_container">
-                            <h4>Send a message</h4>
+                            <h4>Send me a message</h4>
                         </div>
 
                         <div class="question_choices">
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
-                            <p>What is your name? </p>
+                            @foreach(var o in new_questions)
+                            {
+                                <p @onclick="@(e => AskQuestion(o.Id))">@o.Question</p>
+                            }
                         </div>
 
                         <div class="button_display">
@@ -624,3 +591,60 @@
         <p>&copy; Mateusz Owczarek 2020</p>
     </div>
 </footer>
+
+
+@code{
+    public class MessageBoardOutput
+    {
+        public int Id { get; set; }
+        public string Answer { get; set; }
+        public string Question { get; set; }
+
+        public MessageBoardOutput() { }
+    }
+
+
+    //Question lists
+    protected List<MessageBoardOutput> new_questions = new List<MessageBoardOutput>();
+    protected List<MessageBoardOutput> asked_questions = new List<MessageBoardOutput>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        MessageBoardOutput q = new MessageBoardOutput();
+        q.Id = 0;
+        q.Question = "Which book is your favourite?";
+        q.Answer = "The Witcher Saga";
+
+        new_questions.Add(q1);
+
+    }
+
+
+    /// <summary>
+    /// User can ask questinon
+    /// </summary>
+    /// <param name="id"></param>
+    public void AskQuestion(int id)
+    {
+        asked_questions.Add(new_questions[id]);
+
+        DeleteFromNew(id);
+    }
+
+
+    public void DeleteFromNew(int id)
+    {
+        new_questions.RemoveAt(id);
+
+        //Reset ids
+        if(new_questions.Count > 0)
+        {
+            for(int i = 0; i < new_questions.Count; i++)
+            {
+                new_questions[i].Id = i;
+            }
+        }
+    }
+
+}
