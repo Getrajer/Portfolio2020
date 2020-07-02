@@ -321,6 +321,13 @@ header .right_side .bottom_line {
 #profile .profile_right_container {
     width: 100%;
     max-width: 350px;
+    background-image: url(../images/phone_background.jpg);
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    height:600px;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
 }
 
 #profile .title{
@@ -336,18 +343,16 @@ header .right_side .bottom_line {
 }
 
 #profile .chat_output{
-    height:398px;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
-    background-color:#1d233e;
-    padding: 1em 0.8em 0 0.8em;
+    background-color:rgba(28, 12, 39, 0.40);
 }
 
 #profile .chat_output_container{
-    background-color:#ffffff;
-    height:100%;
     width:100%;
     overflow-y:scroll;
+    height:400px;
+
 }
 
 #profile .out_txt{
@@ -368,7 +373,7 @@ header .right_side .bottom_line {
 #profile .out_txt:nth-child(even) p{
    text-align:center;
    padding:0.8em 0.4em;
-   background-color:#38478f;
+   background-color:rgba(56, 71, 143, 0.60);
    color:#f6f9fc;
    border-radius: 0.5em;
    margin-left: 0.3em;
@@ -381,7 +386,7 @@ header .right_side .bottom_line {
 #profile .out_txt:nth-child(odd) p{
    text-align:center;
    padding:0.8em 0.4em;
-   background-color:#613878;
+   background-color:rgba(97, 56, 120, 0.60);
    color:#f6f9fc;
    border-radius: 0.5em;
    margin-right: 0.3em;
@@ -398,7 +403,7 @@ header .right_side .bottom_line {
 #profile .button_display{
     display:flex;
     justify-content:center;
-    background-color:#1d233e;
+    background-color:rgba(29, 35, 62, 0.60);
     padding: 0.5em 0;
     border-bottom-left-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
@@ -407,7 +412,7 @@ header .right_side .bottom_line {
 #profile .button_display button{
     width:20px;
     height:20px;
-    background-color:#ffffff;
+    background-color:rgba(255, 255, 255, 0.60);
     border:unset;
     border-radius:3em;
 }
@@ -423,38 +428,36 @@ header .right_side .bottom_line {
     border-bottom-right-radius: 1em;
     width:100%;
     max-width:700px;
-    background-color:#1d233e;
+    background-color:rgba(29, 35, 62, 1);
     padding: 0 0.8em;
 }
 
 #profile .title_container{
-    border-top: 2px solid #1d233e;
     text-align:center;
-    background-color:#ffffff;
+    background-color:rgba(29, 35, 62, 1);
     padding: 0.5em 0;
 }
 
 #profile h4{
-    color: black;
+    color: white;
     font-weight:600;
     letter-spacing: 6px;
 }
 
-
 #profile .question_choices{
     height: 180px;
     overflow-y:scroll;
-    background-color: #dcdcdc;
+    background-color: rgba(27, 13, 38, 0.60);
     border-bottom: 3px solid #1d233e;
 }
 
 #profile .question_choices p{
-    background-color: #33407a;
+    background-color: rgba(43, 52, 95, 0.60);
     cursor: pointer;
     margin: 0;
     font-size: 1.2rem;
     color: #f6f9fc;
-    font-weight: 600;
+    font-weight: 200;
     text-align:center;
     border-bottom: 1px solid #f6f9fc;
     padding: 0.4em 0;
