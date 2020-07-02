@@ -23,6 +23,9 @@
     max-width: 1600px;
 }
 
+button:focus{
+    outline:unset;
+}
 
 /*Navigation Style*/
 .component_nav {

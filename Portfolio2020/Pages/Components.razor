@@ -88,6 +88,10 @@
                             <button @onclick="OpenGallery"><i class="fas fa-image"></i> Gallery</button>
                         </li>
 
+                        <li>
+                            <button @onclick="OpenCalculator"><i class="fas fa-calculator"></i> Calculator</button>
+                        </li>
+
                     </ul>
                 </div>
 
@@ -144,6 +148,10 @@
                 {
                     <GalleryComponent></GalleryComponent>
                 }
+                @if (calculator)
+                {
+                    <Calculator></Calculator>
+                }
             </div>
         </div>
 
@@ -160,6 +168,7 @@
     protected bool sorting = false;
     protected bool food_order = false;
     protected bool gallery = false;
+    protected bool calculator = false;
 
     protected bool about = true;
 
@@ -174,6 +183,7 @@
         sorting = false;
         food_order = false;
         gallery = false;
+        calculator = false;
 
         about = false;
     }
@@ -188,7 +198,7 @@
     public void OpenFoodOrder() { if (food_order == false) { CloseAll(); food_order = true; } }
     public void OpenAbout() { if (about == false) { CloseAll(); about = true; } }
     public void OpenGallery() { if (gallery == false) { CloseAll(); gallery = true; } }
-
+    public void OpenCalculator() { if (calculator == false) { CloseAll(); calculator = true; } }
 
 
 

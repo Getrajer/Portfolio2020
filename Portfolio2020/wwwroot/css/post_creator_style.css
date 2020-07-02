@@ -1,8 +1,8 @@
-﻿* {
+﻿.program_container {
     font-family: 'Martel', serif;
 }
 
-h1, h2, h3, h4, h5 {
+.program_container h1, .program_container h2, .program_container h3, .program_container h4, .program_container h5 {
     font-family: 'Domine', serif;
 }
 

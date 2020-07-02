@@ -1,0 +1,579 @@
+﻿
+@using System.Text
+
+<head>
+    <link rel="stylesheet" href="../css/calculator_style.css" />
+</head>
+
+<div class="component">
+    <div class="component_container">
+
+        <div id="@ActualScheme" class="functional">
+            <div class="cal_box">
+                <div class="calculator_container">
+
+                    <form name="form">
+                        <input @bind-value="result" @bind-value:event="oninput" class="text_view" />
+                        <div class="input-overlay"></div>
+                    </form>
+                    <table class="buttons_container">
+                        <tr>
+                            <td><input class="button funct_btn" type="button" value="C" @onclick="clean" /></td>
+                            <td><input class="button funct_btn" type="button" value="<" @onclick="del" /></td>
+                            <td><input class="button funct_btn" type="button" value="/" @onclick="addD" /></td>
+                            <td><input class="button funct_btn" type="button" value="X" @onclick="addX" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><input class="button" type="button" value="7" @onclick="add7" /></td>
+                            <td><input class="button" type="button" value="8" @onclick="add8" /></td>
+                            <td><input class="button" type="button" value="9" @onclick="add9" /></td>
+                            <td><input class="button funct_btn" type="button" value="-" @onclick="addM" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><input class="button" type="button" value="4" @onclick="add4" /></td>
+                            <td><input class="button" type="button" value="5" @onclick="add5" /></td>
+                            <td><input class="button" type="button" value="6" @onclick="add6" /></td>
+                            <td><input class="button funct_btn" type="button" value="+" @onclick="addP" /></td>
+                        </tr>
+
+                        <tr>
+                            <td><input class="button" type="button" value="1" @onclick="add1" /></td>
+                            <td><input class="button" type="button" value="2" @onclick="add2" /></td>
+                            <td><input class="button" type="button" value="3" @onclick=" add3" /></td>
+                            <td><input class="button funct_btn" type="button" value="=" @onclick="Sum" /></td>
+                        </tr>
+                        <tr>
+                            <td><input class="button" type="button" value="0" @onclick="add0" /></td>
+                            <td><input class="button funct_btn" type="button" value="," @onclick="addc" /></td>
+                            <td><input class="button funct_btn" type="button" value="^" @onclick="addpow" /></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="component_panel">
+            <div class="component_panel_container">
+                <div class="title">
+                    <h1>Custom calculator</h1>
+                </div>
+
+                <div class="description">
+                    <p>This is just a simple calculator. User can do calculations on it. Administartor can change color schemes.</p>
+                </div>
+
+                <div class="options">
+                    <div class="option">
+                        <h4>Change color scheme</h4>
+
+                        <div class="choice_check_boxes">
+
+                            <div @onclick="@(e => ChangeColorScheme(1))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>Color_sheme1</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #27437b;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="39.34" y="15.83" width="20.83" height="20.83" style="fill: #6182c1;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="40.35" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(2))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_2</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #8a2d91;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #a43a95;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(3))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_3</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #454952;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #868d9d;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(4))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_4</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ebebeb;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #1a1a1a;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(5))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_5</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #73bf44;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #0c8441;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div @onclick="@(e => ChangeColorScheme(6))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_6</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ed184a;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #af1f23;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+
+                            <div @onclick="@(e => ChangeColorScheme(7))" class="color_scheme_option">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 70.87 70.87">
+                                    <title>color_scheme_7</title>
+                                    <g id="Warstwa_2" data-name="Warstwa 2">
+                                        <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                            <g>
+                                                <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #f8ec24;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #cab72e;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <h4>Console</h4>
+
+                <div class="console">
+                    <div class="console_container">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@code {
+    public class StringToFormula
+    {
+        private string[] _operators = { "-", "+", "/", "*", "^" };
+        private Func<double, double, double>[] _operations = {
+            (a1, a2) => a1 - a2,
+            (a1, a2) => a1 + a2,
+            (a1, a2) => a1 / a2,
+            (a1, a2) => a1 * a2,
+            (a1, a2) => Math.Pow(a1, a2)
+        };
+
+        public double Eval(string expression)
+        {
+            List<string> tokens = getTokens(expression);
+            Stack<double> operandStack = new Stack<double>();
+            Stack<string> operatorStack = new Stack<string>();
+            int tokenIndex = 0;
+
+            while (tokenIndex < tokens.Count)
+            {
+                string token = tokens[tokenIndex];
+                if (token == "(")
+                {
+                    string subExpr = getSubExpression(tokens, ref tokenIndex);
+                    operandStack.Push(Eval(subExpr));
+                    continue;
+                }
+                if (token == ")")
+                {
+                    throw new ArgumentException("Mis-matched parentheses in expression");
+                }
+                //If this is an operator
+                if (Array.IndexOf(_operators, token) >= 0)
+                {
+                    while (operatorStack.Count > 0 && Array.IndexOf(_operators, token) < Array.IndexOf(_operators, operatorStack.Peek()))
+                    {
+                        string op = operatorStack.Pop();
+                        double arg2 = operandStack.Pop();
+                        double arg1 = operandStack.Pop();
+                        operandStack.Push(_operations[Array.IndexOf(_operators, op)](arg1, arg2));
+                    }
+                    operatorStack.Push(token);
+                }
+                else
+                {
+                    operandStack.Push(double.Parse(token));
+                }
+                tokenIndex += 1;
+            }
+
+            while (operatorStack.Count > 0)
+            {
+                string op = operatorStack.Pop();
+                double arg2 = operandStack.Pop();
+                double arg1 = operandStack.Pop();
+                operandStack.Push(_operations[Array.IndexOf(_operators, op)](arg1, arg2));
+            }
+            return operandStack.Pop();
+        }
+
+        private string getSubExpression(List<string> tokens, ref int index)
+        {
+            StringBuilder subExpr = new StringBuilder();
+            int parenlevels = 1;
+            index += 1;
+            while (index < tokens.Count && parenlevels > 0)
+            {
+                string token = tokens[index];
+                if (tokens[index] == "(")
+                {
+                    parenlevels += 1;
+                }
+
+                if (tokens[index] == ")")
+                {
+                    parenlevels -= 1;
+                }
+
+                if (parenlevels > 0)
+                {
+                    subExpr.Append(token);
+                }
+
+                index += 1;
+            }
+
+            if ((parenlevels > 0))
+            {
+                throw new ArgumentException("Mis-matched parentheses in expression");
+            }
+            return subExpr.ToString();
+        }
+
+        private List<string> getTokens(string expression)
+        {
+            string operators = "()^*/+-";
+            List<string> tokens = new List<string>();
+            StringBuilder sb = new StringBuilder();
+
+            foreach (char c in expression.Replace(" ", string.Empty))
+            {
+                if (operators.IndexOf(c) >= 0)
+                {
+                    if ((sb.Length > 0))
+                    {
+                        tokens.Add(sb.ToString());
+                        sb.Length = 0;
+                    }
+                    tokens.Add(c.ToString());
+                }
+                else
+                {
+                    sb.Append(c);
+                }
+            }
+
+            if ((sb.Length > 0))
+            {
+                tokens.Add(sb.ToString());
+            }
+            return tokens;
+        }
+    }
+
+
+
+
+    protected string error;
+    protected string success;
+    protected string result;
+
+    public async void add1() { result += "1"; success = ""; error = ""; StateHasChanged(); }
+    public async void add2() { result += "2"; success = ""; error = ""; StateHasChanged(); }
+    public async void add3() { result += "3"; success = ""; error = ""; StateHasChanged(); }
+    public async void add4() { result += "4"; success = ""; error = ""; StateHasChanged(); }
+    public async void add5() { result += "5"; success = ""; error = ""; StateHasChanged(); }
+    public async void add6() { result += "6"; success = ""; error = ""; StateHasChanged(); }
+    public async void add7() { result += "7"; success = ""; error = ""; StateHasChanged(); }
+    public async void add8() { result += "8"; success = ""; error = ""; StateHasChanged(); }
+    public async void add9() { result += "9"; success = ""; error = ""; StateHasChanged(); }
+    public async void add0() { result += "0"; success = ""; error = ""; StateHasChanged(); }
+
+
+    public async void clean()
+    {
+        result = "";
+        StateHasChanged();
+    }
+
+    public async void addc()
+    {
+
+        success = "";
+        error = "";
+
+        string r = result;
+        if (result != null)
+            if (result.Length > 1)
+            {
+                r = result[result.Length - 1].ToString();
+            }
+
+        if (result != null)
+            if (r != "*")
+                if (r != "/")
+                    if (r != "+")
+                        if (r != "-")
+                            if (r != " ")
+                                if (r != "")
+                                    if (r != ",")
+                                        if (r != "^")
+                                        {
+                                            result += ",";
+                                            StateHasChanged();
+                                        }
+    }
+
+
+    public async void addpow()
+    {
+        success = "";
+        error = "";
+
+        string r = result;
+        if (result != null)
+            if (result.Length > 1)
+            {
+                r = result[result.Length - 1].ToString();
+            }
+
+        if (result != null)
+            if (r != "*")
+                if (r != "/")
+                    if (r != "+")
+                        if (r != "-")
+                            if (r != " ")
+                                if (r != "")
+                                    if (r != ",")
+                                        if (r != "^")
+                                        {
+                                            result += "^";
+                                            StateHasChanged();
+                                        }
+    }
+
+    public async void addX()
+    {
+
+        success = "";
+        error = "";
+
+        string r = result;
+        if (result != null)
+            if (result.Length > 1)
+            {
+                r = result[result.Length - 1].ToString();
+            }
+
+        if (result != null)
+            if (r != "*")
+                if (r != "/")
+                    if (r != "+")
+                        if (r != "-")
+                            if (r != " ")
+                                if (r != "")
+                                    if (r != ",")
+                                        if (r != "^")
+                                        {
+                                            result += "*";
+                                            StateHasChanged();
+                                        }
+    }
+
+    public async void addP()
+    {
+
+        success = "";
+        error = "";
+
+        string r = result;
+        if (result != null)
+            if (result.Length > 1)
+            {
+                r = result[result.Length - 1].ToString();
+            }
+
+        if (result != null)
+            if (r != "*")
+                if (r != "/")
+                    if (r != "+")
+                        if (r != "-")
+                            if (r != " ")
+                                if (r != "")
+                                    if (r != ",")
+                                        if (r != "^")
+                                        {
+                                            result += "+";
+                                            StateHasChanged();
+                                        }
+    }
+
+    public async void addM()
+    {
+
+        success = "";
+        error = "";
+
+        string r = result;
+        if (result != null)
+            if (result.Length > 1)
+            {
+                r = result[result.Length - 1].ToString();
+            }
+
+        if (result != null)
+            if (r != "*")
+                if (r != "/")
+                    if (r != "+")
+                        if (r != "-")
+                            if (r != " ")
+                                if (r != "")
+                                    if (r != ",")
+                                        if (r != "^")
+                                        {
+                                            result += "-";
+                                            StateHasChanged();
+                                        }
+    }
+
+    public async void addD()
+    {
+
+        success = "";
+        error = "";
+
+        string r = result;
+        if (result != null)
+            if (result.Length > 1)
+            {
+                r = result[result.Length - 1].ToString();
+            }
+
+        if (result != null)
+            if (r != "*")
+                if (r != "/")
+                    if (r != "+")
+                        if (r != "-")
+                            if (r != " ")
+                                if (r != "")
+                                    if (r != ",")
+                                        if (r != "^")
+                                        {
+                                            result += "/";
+                                            StateHasChanged();
+                                        }
+    }
+
+    public async void del()
+    {
+        if (result.Length > 0)
+        {
+            result = result.Remove(result.Length - 1);
+        }
+        StateHasChanged();
+    }
+
+    public async void Sum()
+    {
+        success = "";
+        error = "";
+        char last = result[result.Length - 1];
+
+        if (result == null)
+        {
+            error = "Input needed for calculation";
+        }
+        else if (result.Length < 1)
+        {
+            error = "Input needed for calculation";
+        }
+        else if (last != '-' && last != '+' && last != '*' && last != '/' && last != '^')
+        {
+            StringToFormula stf = new StringToFormula();
+            double r = stf.Eval(result);
+
+            success = "Success!";
+            result = r.ToString();
+            StateHasChanged();
+        }
+    }
+
+
+
+    //Color shemes declarations
+    protected string ActualScheme = "Scheme_1";
+
+    public void ChangeColorScheme(int choice)
+    {
+        switch (choice)
+        {
+            case 1: { ActualScheme = "Scheme_1"; break; }
+            case 2: { ActualScheme = "Scheme_2"; break; }
+            case 3: { ActualScheme = "Scheme_3"; break; }
+            case 4: { ActualScheme = "Scheme_4"; break; }
+            case 5: { ActualScheme = "Scheme_5"; break; }
+            case 6: { ActualScheme = "Scheme_6"; break; }
+            case 7: { ActualScheme = "Scheme_7"; break; }
+        }
+    }
+}
