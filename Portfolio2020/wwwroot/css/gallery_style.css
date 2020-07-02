@@ -194,6 +194,7 @@ button:focus{
     width:100%;
     display:flex;
     justify-content:center;
+    margin-top:3em;
 }
 
 .gallery .gallery_container{
@@ -256,9 +257,10 @@ button:focus{
 }
 
 .focused_gallery {
-    display:flex;
-    justify-content:center;
-    position:relative;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 3em;
 }
 
 .focused_gallery .focused_gallery_container{
@@ -352,6 +354,7 @@ button:focus{
 
 .focused_gallery .close_button button{
     transition: 0.5s;
+    color: black;
 }
 
 .focused_gallery .close_button button:hover{
