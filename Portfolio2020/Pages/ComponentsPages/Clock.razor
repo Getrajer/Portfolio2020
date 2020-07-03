@@ -1,0 +1,132 @@
+﻿
+<head>
+    <link rel="stylesheet" href="../css/clock_style.css" />
+</head>
+
+<div class="component">
+    <div class="component_container">
+
+        <div id="@ActualScheme" class="functional">
+            <section id="BarsClock">
+
+                <div class="bar_container">
+
+                    <div class="card b1">
+                        <div class="box">
+                            <div class="percent">
+                                <svg>
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                    <circle cx="70" cy="70" r="70" style="stroke-dashoffset: @hour_percentage"></circle>
+                                </svg>
+                                <div class="number">
+                                    <h2>@hour</h2>
+                                </div>
+                            </div>
+                            <h2 class="text">Hour</h2>
+                        </div>
+                    </div>
+
+                    <div class="card b2">
+                        <div class="box">
+                            <div class="percent">
+                                <svg>
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                    <circle cx="70" cy="70" r="70" style="stroke-dashoffset: @minute_percentage"></circle>
+                                </svg>
+                                <div class="number">
+                                    <h2>@minute</h2>
+                                </div>
+                            </div>
+                            <h2 class="text">Minute</h2>
+                        </div>
+                    </div>
+
+                    <div class="card b3">
+                        <div class="box">
+                            <div class="percent">
+                                <svg>
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                    <circle cx="70" cy="70" r="70" style="stroke-dashoffset: @second_percentage"></circle>
+                                </svg>
+                                <div class="number">
+                                    <h2>@second</h2>
+                                </div>
+                            </div>
+                            <h2 class="text">Second</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+
+
+        <div class="component_panel">
+            <div class="component_panel_container">
+                <div class="title">
+                    <h1>Custom clothing item</h1>
+                </div>
+
+                <div class="description">
+                    <p>This is clock component. Administrator is able to change clocks. </p>
+                    <br />
+                    <p>Number of aviable clocks: 1</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    //Color shemes declarations
+    protected string ActualScheme = "Scheme_1";
+
+    public void ChangeColorScheme(int choice)
+    {
+        switch (choice)
+        {
+            case 1: { ActualScheme = "Scheme_1"; break; }
+            case 2: { ActualScheme = "Scheme_2"; break; }
+            case 3: { ActualScheme = "Scheme_3"; break; }
+            case 4: { ActualScheme = "Scheme_4"; break; }
+            case 5: { ActualScheme = "Scheme_5"; break; }
+            case 6: { ActualScheme = "Scheme_6"; break; }
+            case 7: { ActualScheme = "Scheme_7"; break; }
+        }
+    }
+
+
+    protected double hour_percentage = 440;
+    protected double hour;
+    protected double minute_percentage = 440;
+    protected double minute;
+    protected double second_percentage = 440;
+    protected double second;
+
+    protected override async Task OnInitializedAsync()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            var date = DateTime.Now;
+            double temp = 440 - (440 * date.Hour) / 24;
+            hour_percentage = Math.Round(temp);
+            hour = date.Hour;
+
+            double temp2 = 440 - (440 * date.Minute) / 60;
+            minute_percentage = Math.Round(temp2);
+            minute = date.Minute;
+
+            double temp3 = 440 - (440 * date.Second) / 60;
+            second_percentage = Math.Round(temp3);
+            second = date.Second;
+
+            i--;
+            StateHasChanged();
+            await Task.Delay(1000);
+        }
+    }
+
+}

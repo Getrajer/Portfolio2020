@@ -63,7 +63,7 @@
 
 .mean_deviation_formula_cf_container {
     display: grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: 100px auto;
     padding: 1em 0;
 }
 

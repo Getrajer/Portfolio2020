@@ -92,6 +92,11 @@
                             <button @onclick="OpenCalculator"><i class="fas fa-calculator"></i> Calculator</button>
                         </li>
 
+
+                        <li>
+                            <button @onclick="OpenClock"><i class="fas fa-clock"></i> Clocks</button>
+                        </li>
+
                     </ul>
                 </div>
 
@@ -152,6 +157,10 @@
                 {
                     <Calculator></Calculator>
                 }
+                @if (clock)
+                {
+                    <Clock></Clock>
+                }
             </div>
         </div>
 
@@ -169,6 +178,7 @@
     protected bool food_order = false;
     protected bool gallery = false;
     protected bool calculator = false;
+    protected bool clock = false;
 
     protected bool about = true;
 
@@ -184,6 +194,7 @@
         food_order = false;
         gallery = false;
         calculator = false;
+        clock = false;
 
         about = false;
     }
@@ -199,6 +210,7 @@
     public void OpenAbout() { if (about == false) { CloseAll(); about = true; } }
     public void OpenGallery() { if (gallery == false) { CloseAll(); gallery = true; } }
     public void OpenCalculator() { if (calculator == false) { CloseAll(); calculator = true; } }
+    public void OpenClock() { if (clock == false) { CloseAll(); clock = true; } }
 
 
 
