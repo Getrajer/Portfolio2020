@@ -1,0 +1,424 @@
+﻿h4 {
+    padding: 0;
+    margin: 0;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+.component{
+    display:flex;
+    justify-content:center;
+    width:100%;
+    padding:3em 0;
+}
+
+.bold{
+    font-weight:800;
+}
+
+.component .component_container{
+    width: 100%;
+    max-width: 1100px;
+    display:grid;
+    grid-template-columns: 650px 450px;
+}
+
+.component_panel{
+    display:flex;
+    justify-content:center;
+    width:100%;
+    height:490px;
+}
+
+.component_panel .component_panel_container{
+    border: 4px solid #28437a;
+    border-radius: 0.5em;
+    width:100%;
+    max-width: 600px;
+    height: 100%;
+}
+
+.component_panel .title{
+    text-align:center;
+    padding: 1em 0;
+    background-color: #28437a;
+    color: #f0f4fc;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.component_panel h1{
+    font-size: 1.8rem;
+}
+
+.component_panel .description{
+    padding: 1em 1.5em;
+}
+
+.component_panel .choice_check_boxes{
+    padding: 0.5em 0;
+    width:100%;
+    display: flex;
+    justify-content:space-around;
+}
+
+.component_panel h4{
+    text-align:center;
+    padding: 0.5em 0;
+    background-color: #28437a;
+    color: #f0f4fc;
+}
+
+.component_panel .input_container{
+    padding: 0.5em 1.5em;
+}
+
+.component_panel label{
+    display:block;
+    text-align:center;
+    font-weight: 600;
+    text-transform:uppercase;
+    letter-spacing: 5px;
+}
+
+.component_panel input{
+    border: 2px solid #28437a;
+    width: 100%;
+    text-align:center;
+}
+
+.component_panel .button_container{
+    padding: 0.5em 1.5em;
+    text-align: center;
+}
+
+.component_panel .button_container button{
+    border: 2px solid #28437a;
+    color: #28437a;
+    background-color: unset;
+    padding:0.3em;
+    font-weight:900;
+    transition: 0.5s;
+}
+
+.component_panel .button_container button:hover{
+    background-color: #28437a;
+    color:#f0f4fc;
+}
+
+.component_panel .console{
+    background-color: rgba(40, 67, 122, 0.40);
+    overflow-y: scroll;
+    height: 147px;
+}
+
+.component_panel .console::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.component_panel .console::-webkit-scrollbar-track {
+    background-color: #28437a;
+}
+
+.component_panel .console::-webkit-scrollbar-thumb {
+    background-color: black;
+}
+
+.component_panel .console_container{
+    padding: 0.5em 1.5em;
+}
+
+.component_panel .color_scheme_option{
+    cursor: pointer;
+    border-radius: 1.5em;
+    transition: 0.5s;
+}
+
+.component_panel .color_scheme_option:hover{
+    background-color: rgba(40, 67, 122, 0.50);
+}
+
+button:focus{
+    outline:unset;
+}
+
+
+[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    -webkit-appearance: none;
+}
+
+[type="radio"] + div {
+    cursor: pointer;
+}
+
+[type="radio"]:checked + div {
+    outline: 1px solid white;
+    border-radius: 1.5em;
+    padding: 0.3em;
+    color: white;
+}
+
+
+.cal_box {
+    display: flex;
+    text-align: center;
+    margin-bottom:5em;
+}
+
+.cal_box .calculator_container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em 1.3em 0 1.3em;
+}
+
+.cal_box .text_view {
+    font-weight: 600;
+    border:none;
+    padding:1em;
+    width: 300px;
+    height: 100px;
+}
+
+.cal_box .input-overlay {
+    width: 300px;
+    height: 100px;
+    position: relative;
+    top: -100px;
+    left: 5px;
+}
+
+.cal_box .buttons_container {
+    position: relative;
+    top: -100px;
+}
+
+.cal_box .button {
+    width: 75px;
+    height: 75px;
+    margin-top: 0.5em;
+    margin-right:2px;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.5s;
+}
+
+.cal_box .button:hover {
+    padding: 1em;
+}
+
+
+/*Scheme 1*/
+#Scheme_1 .cal_box .calculator_container {
+    background-color: rgba(40,67,122,1);
+}
+
+#Scheme_1 .cal_box .text_view {
+    background-color: rgba(65, 81, 86, 0.81);
+    color: white;
+}
+
+#Scheme_1 .cal_box .cal_box .input-overlay {
+    background-color: rgba(41, 19, 73, 0.00);
+}
+
+#Scheme_1 .cal_box .button {
+    background-color: #1c2f3e;
+    color: white;
+}
+
+#Scheme_1  .cal_box .funct_btn {
+    background-color: #153549;
+}
+
+#Scheme_1  .cal_box .button:hover {
+    background-color: #36577e;
+}
+
+/*End of scheme 1*/
+
+/*Scheme 2 style*/
+#Scheme_2 .cal_box .calculator_container {
+    background-color: rgba(138,43,148,1);
+}
+
+#Scheme_2 .cal_box .text_view {
+    background-color: rgba(79, 65, 86, 0.81);
+    color: white;
+}
+
+#Scheme_2 .cal_box .cal_box .input-overlay {
+    background-color: rgba(98, 40, 121, 0.00);
+}
+
+#Scheme_2 .cal_box .button {
+    background-color: #371938;
+    color: white;
+}
+
+#Scheme_2 .cal_box .funct_btn {
+    background-color: #491543;
+}
+
+#Scheme_2  .cal_box .button:hover {
+    background-color: #6c367e;
+}
+
+/*End of scheme 2*/
+
+/*Scheme 3 style*/
+#Scheme_3 .cal_box .calculator_container {
+    background-color: rgba(42,43,46,1);
+}
+
+#Scheme_3 .cal_box .text_view {
+    background-color: rgba(84, 77, 87, 0.81);
+    color: white;
+}
+
+#Scheme_3 .cal_box .cal_box .input-overlay {
+    background-color: rgba(98, 40, 121, 0.00);
+}
+
+#Scheme_3 .cal_box .button {
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+
+#Scheme_3 .cal_box .funct_btn {
+    background-color: #222222;
+}
+
+#Scheme_3 .cal_box .button:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+/*End of scheme 3*/
+
+/*Scheme 4 style*/
+#Scheme_4 .cal_box .calculator_container {
+    background-color: unset;
+    color: black;
+    border: 1px solid rgba(42,43,46,1);
+}
+
+#Scheme_4 .cal_box .text_view {
+    background-color: #f5f5f5;
+    color: black;
+}
+
+#Scheme_4 .cal_box .cal_box .input-overlay {
+    background-color: rgba(98, 40, 121, 0.00);
+}
+
+#Scheme_4 .cal_box .button {
+    background-color: unset;
+    color: black;
+    border: 1px solid rgba(42,43,46,1);
+    transition: 0.5s;
+}
+
+#Scheme_4 .cal_box .funct_btn {
+    border: 1px solid rgba(42,43,46,1);
+}
+
+#Scheme_4 .cal_box .button:hover {
+    transform: translateY(-4px);
+}
+/*End of scheme 2*/
+
+/*Scheme 5 style*/
+#Scheme_5 .cal_box .calculator_container {
+    background-color: rgb(35, 131, 96);
+}
+
+#Scheme_5 .cal_box .text_view {
+    background-color: rgba(77, 87, 79, 0.81);
+    color: white;
+}
+
+#Scheme_5 .cal_box .cal_box .input-overlay {
+    background-color: rgba(98, 40, 121, 0.00);
+}
+
+#Scheme_5 .cal_box .button {
+    background-color: #1e462d;
+    color: white;
+    transition: 0.5s;
+}
+
+#Scheme_5 .cal_box .funct_btn {
+    background-color: #21523a;
+}
+
+#Scheme_5 .cal_box .button:hover {
+    background-color: #2d6b4a;
+}
+/*End of scheme 5*/
+
+/*Scheme 6 style*/
+#Scheme_6 .cal_box .calculator_container {
+    background-color: rgb(163, 56, 71);
+}
+
+#Scheme_6 .cal_box .text_view {
+    background-color: rgba(87, 77, 77, 0.81);
+    color: white;
+}
+
+#Scheme_6 .cal_box .cal_box .input-overlay {
+    background-color: rgba(98, 40, 121, 0.00);
+}
+
+#Scheme_6 .cal_box .button {
+    background-color: #40221d;
+    color: white;
+    transition: 0.5s;
+}
+
+#Scheme_6 .cal_box .funct_btn {
+    background-color: #522121;
+}
+
+#Scheme_6 .cal_box .button:hover {
+    background-color: #6b332d;
+}
+/*End of scheme 6*/
+
+/*Scheme 7 style*/
+#Scheme_7 .cal_box .calculator_container {
+    background-color: rgb(112,108,55);
+}
+
+#Scheme_7 .cal_box .text_view {
+    background-color: rgba(87, 87, 77, 0.81);
+    color: white;
+}
+
+#Scheme_7 .cal_box .cal_box .input-overlay {
+    background-color: rgba(98, 40, 121, 0.00);
+}
+
+#Scheme_7 .cal_box .button {
+    background-color: #403d1d;
+    color: white;
+    transition: 0.5s;
+}
+
+#Scheme_7 .cal_box .funct_btn {
+    background-color: #524a21;
+}
+
+#Scheme_7 .cal_box .button:hover {
+    background-color: #6b622d;
+}
+/*End of scheme 7*/

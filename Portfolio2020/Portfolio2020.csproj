@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\BuisnessMath\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
 </Project>
