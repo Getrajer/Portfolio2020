@@ -1,0 +1,182 @@
+﻿@page "/EzsatGallery"
+
+<head>
+    <link rel="stylesheet" href="../css/gallery_style.css" />
+</head>
+
+
+<div id="Ezsat">
+    @if (display_img == false)
+    {
+        <div class="gallery">
+            <div class="gallery_container">
+
+
+                @foreach (var i in images)
+                {
+                    <div  class="img_box">
+                        <div @onclick="@(e => OpenImage(i.Id))" class="cover_img">
+                        </div>
+                        <div class="img_box_container">
+                            <img src="@i.Path" alt="@i.Alt" />
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="focused_gallery">
+            <div class="focused_gallery_container">
+
+                <div class="close_button">
+                    <button @onclick="CloseGallery">X</button>
+                </div>
+
+                <div class="center_img">
+                    <div @onclick="PreviousImage" class="button_left">
+                        <button>&lt;</button>
+                    </div>
+
+                    <div @onclick="NextImage" class="button_right">
+                        <button>&gt;</button>
+                    </div>
+
+                    <div class="img_box">
+                        <img src="@current_img.Path" alt="@current_img.Alt" />
+                    </div>
+
+                    <div class="img_description">
+                        <div class="img_description_container">
+                            <h3>@current_img.Title</h3>
+                            <p>@current_img.Description</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+
+@code{
+
+    public class Img
+    {
+        public int Id { get; set; }
+        public string Path { get; set; }
+        public string Alt { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+
+        public Img()
+        {
+            Alt = "No image";
+        }
+    }
+
+    protected List<Img> images = new List<Img>();
+
+    protected bool display_img = false;
+
+    protected Img current_img = new Img();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Img i1 = new Img();
+
+        i1.Id = 0;
+        i1.Path = @"../ezsat_images/1.png";
+
+        images.Add(i1);
+
+        Img i2 = new Img();
+
+        i2.Id = 1;
+        i2.Path = @"../ezsat_images/2.png";
+
+        images.Add(i2);
+
+        Img i3 = new Img();
+
+        i3.Id = 2;
+        i3.Path = @"../ezsat_images/3.png";
+
+        images.Add(i3);
+
+        Img i4 = new Img();
+
+        i4.Id = 3;
+        i4.Path = @"../ezsat_images/4.png";
+
+        images.Add(i4);
+
+        Img i5 = new Img();
+
+        i5.Id = 4;
+        i5.Path = @"../ezsat_images/5.png";
+
+        images.Add(i5);
+
+        Img i6 = new Img();
+
+        i6.Id = 5;
+        i6.Path = @"../ezsat_images/6.png";
+
+        images.Add(i6);
+
+    }
+
+
+    public void OpenImage(int id)
+    {
+        if (images.Count > 0)
+        {
+            current_img = images[id];
+            display_img = true;
+        }
+
+    }
+
+    public void NextImage()
+    {
+        if (images.Count > 0)
+        {
+            if (current_img.Id < images.Count - 1)
+            {
+                current_img = images[current_img.Id + 1];
+            }
+            else
+            {
+                current_img = images[0];
+            }
+        }
+    }
+
+    public void PreviousImage()
+    {
+        if (images.Count > 0)
+        {
+            if (current_img.Id != 0)
+            {
+                current_img = images[current_img.Id - 1];
+            }
+            else
+            {
+                current_img = images[images.Count - 1];
+            }
+        }
+    }
+
+
+    public void CloseGallery()
+    {
+        current_img = new Img();
+        display_img = false;
+    }
+
+}
