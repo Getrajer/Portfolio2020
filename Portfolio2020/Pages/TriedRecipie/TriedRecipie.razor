@@ -1,0 +1,1013 @@
+﻿@page "/TriedRecipie"
+
+@inherits ICreatedRecepieBase
+
+<head>
+    <link href="../css/tried_recipie_style.css" rel="stylesheet" />
+</head>
+
+
+<div class="bank_app_nav">
+    <div class="nav_links">
+        <div class="toggle_button">
+
+            @if (show_btn_nav)
+            {
+                <button @onclick="ToggleNav">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+            }
+            else
+            {
+                <button @onclick="ToggleNav">
+                    X
+                </button>
+            }
+
+
+
+
+        </div>
+
+        <div class="nav_container @nav_toggle">
+
+            <div class="link">
+                <button @onclick="OpenMainPage">Main Page</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@if (main_page == true)
+{
+    <section class="tried_recepie">
+        <div class="tried_recepie_container">
+
+            <header class="header">
+                <div class="header_container">
+                    <div class="title">
+                        <h1>I tried recepie</h1>
+                    </div>
+
+                    <div class="description">
+                        <p>If you want to master recipie this app is for you. Create recipie, rate yourself and uptade your progress with editing. If you are satisfied and you want no longer change recipie mark it as finished. If you no longer want to try with recipie mark it as abandon.</p>
+                    </div>
+                </div>
+            </header>
+
+            <section class="new_recepie_button_container">
+
+                <div @onclick="OpenCreateRecipePage" class="new_recepie_button">
+                    <p>Create Recepie</p>
+
+
+                    <div class="img_m img1">
+                        <img src="../Images/1.png" />
+                    </div>
+
+                    <div class="img_m img2">
+                        <img src="../Images/2.png" />
+                    </div>
+
+                    <div class="img_m img3">
+                        <img src="../Images/3.png" />
+                    </div>
+
+                    <div class="img_m img4">
+                        <img src="../Images/4.png" />
+                    </div>
+
+                    <div class="img_m img5">
+                        <img src="../Images/5.png" />
+                    </div>
+
+                    <div class="img_m img6">
+                        <img src="../Images/6.png" />
+                    </div>
+
+                    <div class="img_m img7">
+                        <img src="../Images/7.png" />
+                    </div>
+
+                    <div class="img_m img8">
+                        <img src="../Images/8.png" />
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="best_recepies">
+                <div class="best_recepies_container">
+
+                    <div class="title">
+                        <h2>Finished Recepies</h2>
+                    </div>
+
+                    <div class="recepies_list">
+
+
+                        @foreach (var r in latest_3_finished_recepies)
+                        {
+                            <div @onclick="@(e => OpenRecipePage(r.Id))" class="recepie">
+                                <div class="name">
+                                    <div>
+                                        <p>@r.Name</p>
+                                        @if (r.Type == 1)
+                                        {
+                                            <p><i class="fas fa-bacon"></i></p>
+                                        }
+
+                                        @if (r.Type == 2)
+                                        {
+                                            <p><i class="fas fa-utensils"></i></p>
+                                        }
+
+                                        @if (r.Type == 3)
+                                        {
+                                            <p><i class="fas fa-pizza-slice"></i> </p>
+                                        }
+
+                                        @if (r.Type == 4)
+                                        {
+                                            <p> <i class="fas fa-ice-cream"></i> </p>
+                                        }
+
+                                        @if (r.Type == 5)
+                                        {
+                                            <p>  <i class="fas fa-apple-alt"></i> </p>
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="img_container">
+                                    <img src="@r.RecepieImages[0].Path" alt="@r.RecepieImages[0].Name" />
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+
+                    <div class="open_all">
+                        <button @onclick="OpenFinishedRecipies">See all</button>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section class="ongoing_recepies">
+                <div class="ongoing_recepies_container">
+
+                    <div class="title">
+                        <h2>Ongoing Recepies</h2>
+                    </div>
+
+                    <div class="recepies_list">
+
+                        @if (latest_6_ongoing_recepies.Count > 0)
+                        {
+                            @foreach (var r in latest_6_ongoing_recepies)
+                            {
+                                <div @onclick="@(e => OpenRecipePage(r.Id))" class="recepie">
+                                    <div class="name">
+                                        <div>
+                                            <p>@r.Name @r.Id</p>
+                                            @if (r.Type == 1)
+                                            {
+                                                <p><i class="fas fa-bacon"></i></p>
+                                            }
+
+                                            @if (r.Type == 2)
+                                            {
+                                                <p><i class="fas fa-utensils"></i></p>
+                                            }
+
+                                            @if (r.Type == 3)
+                                            {
+                                                <p><i class="fas fa-pizza-slice"></i> </p>
+                                            }
+
+                                            @if (r.Type == 4)
+                                            {
+                                                <p> <i class="fas fa-ice-cream"></i> </p>
+                                            }
+
+                                            @if (r.Type == 5)
+                                            {
+                                                <p>  <i class="fas fa-apple-alt"></i> </p>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div class="img_container">
+                                        <img src="@r.RecepieImages[0].Path" alt="@r.RecepieImages[0].Name" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+
+                    <div class="open_all">
+                        <button @onclick="OpenOngoingRecipies">See all</button>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+            <section class="abandoned_recepies">
+                <div class="abandoned_recepies_container">
+
+                    <div class="title">
+                        <h2>Abandoned Recepies</h2>
+                    </div>
+
+                    <div class="recepies_list">
+
+                        @foreach (var r in latest_6_abandoned_recepies)
+                        {
+                            <div @onclick="@(e => OpenRecipePage(r.Id))" class="recepie">
+                                <div class="name">
+                                    <div>
+                                        <p>@r.Name @r.Id</p>
+                                        @if (r.Type == 1)
+                                        {
+                                            <p><i class="fas fa-bacon"></i></p>
+                                        }
+
+                                        @if (r.Type == 2)
+                                        {
+                                            <p><i class="fas fa-utensils"></i></p>
+                                        }
+
+                                        @if (r.Type == 3)
+                                        {
+                                            <p><i class="fas fa-pizza-slice"></i> </p>
+                                        }
+
+                                        @if (r.Type == 4)
+                                        {
+                                            <p> <i class="fas fa-ice-cream"></i> </p>
+                                        }
+
+                                        @if (r.Type == 5)
+                                        {
+                                            <p>  <i class="fas fa-apple-alt"></i> </p>
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="img_container">
+                                    <img src="@r.RecepieImages[0].Path" alt="@r.RecepieImages[0].Name" />
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+
+                    <div class="open_all">
+                        <button @onclick="OpenAbandonRecipies">See all</button>
+                    </div>
+
+                </div>
+            </section>
+
+
+        </div>
+    </section>
+}
+
+
+@if (create_recipe_page == true)
+{
+    <section class="create_recepie">
+        <div class="create_recepie_container">
+
+            <div class="reciepie_form">
+                <div class="reciepie_form_container">
+
+                    <div class="title">
+                        <h2>Create recipe</h2>
+                    </div>
+
+                    <div class="input_container">
+                        <label>Reciepe name</label>
+                        <input @bind="new_recepie_name" placeholder="Name" />
+                    </div>
+
+                    <div class="input_container">
+                        <label>Description</label>
+                        <textarea @bind="new_recepie_description" placeholder="Short overall description"></textarea>
+                    </div>
+
+                    <div class="input_container">
+                        <label>Your Rating<span class="small">(How you liked this dish)</span></label>
+                    </div>
+
+                    <div class="rating_container">
+                        @foreach (var r in ratings)
+                        {
+                            <div class="rating">
+                                <button @onclick="@(e => ChangeRating(r.RatePoint))" class="@r.Class">@r.RatePoint</button>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="input_container">
+                        <label>Type of food<span class="small">(Breakfast | Lunch | Dinner | Dessert | Snack)</span></label>
+                    </div>
+
+                    <div class="rating_container">
+                        @foreach (var t in types)
+                        {
+                            <div class="rating">
+                                <button @onclick="@(e => ChangeType(t.TypeNumber))" class="@t.Class">
+                                    @if (t.TypeNumber == 0)
+                                    {
+                                        <i class="fas fa-bacon"></i>
+                                    }
+                                    else if (t.TypeNumber == 1)
+                                    {
+                                        <i class="fas fa-utensils"></i>
+                                    }
+                                    else if (t.TypeNumber == 2)
+                                    {
+                                        <i class="fas fa-pizza-slice"></i>
+                                    }
+                                    else if (t.TypeNumber == 3)
+                                    {
+                                        <i class="fas fa-ice-cream"></i>
+                                    }
+                                    else if (t.TypeNumber == 4)
+                                    {
+                                        <i class="fas fa-apple-alt"></i>
+                                    }
+                                </button>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="ingredients">
+                        <div class="title">
+                            <h3>Ingredients</h3>
+                        </div>
+
+                        @foreach (var i in ingredients)
+                        {
+                            <div class="ingredient">
+                                <div class="input_container">
+                                    <label>Name</label>
+                                    <input @bind="i.Name" placeholder="Ex beef/salt" />
+                                </div>
+
+                                <div class="input_container">
+                                    <label>Ammount</label>
+                                    <input min="0" @bind="i.Ammount" placeholder="Ex 250/1" />
+                                </div>
+
+                                <div class="input_container">
+                                    <label>Ammount Name</label>
+                                    <input @bind="i.AmmountName" placeholder="Ex grams/spoons" />
+                                </div>
+                            </div>
+                        }
+
+
+                        <div class="button_container">
+                            <button @onclick="AddNewIngredient">Add next</button>
+                        </div>
+                    </div>
+
+                    <div class="creation_process">
+                        <div class="title">
+                            <h3>Explain creation process</h3>
+                        </div>
+
+                        <div class="creation_process_container">
+
+                            @foreach (var s in steps)
+                            {
+                                <div class="step">
+                                    <h4>Step @(s.Id + 1)</h4>
+
+                                    <div class="input_time">
+                                        <div class="input_container">
+                                            <label>Time</label>
+                                            <input @bind="s.Time" />
+                                        </div>
+
+                                        <div class="input_container">
+                                            <label>Time name(Ex min/hrs)</label>
+                                            <input @bind="s.Name" />
+                                        </div>
+                                    </div>
+
+                                    <div class="input_container">
+                                        <label>Description</label>
+                                        <textarea @bind="s.Text" placeholder="Step 1 description"></textarea>
+                                    </div>
+                                </div>
+                            }
+
+                            <div class="button_container">
+                                <button @onclick="AddNewStep">Add next step</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="add_images">
+
+                        @foreach (var i in images)
+                        {
+                            <div class="image_input">
+                                <div class="input_container">
+                                    <label>Path</label>
+                                    <input @bind="i.Path" />
+                                    <label class="small">Put link to image/In normal implementation you can put img from drive</label>
+                                </div>
+
+                                <div class="input_container">
+                                    <label>Name</label>
+                                    <input @bind="i.Name" />
+                                </div>
+
+                                <div class="preview">
+                                    <img src="@i.Path" alt="@i.Name" />
+                                </div>
+
+
+                            </div>
+
+                        }
+
+                        <div class="button_container">
+                            <button @onclick="AddNewImage">Add Next</button>
+                        </div>
+
+                    </div>
+
+                    <div class="button_container add_new_button">
+                        <button>Add new recepie</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+}
+
+@if (display_recipe_page == true)
+{
+    <section class="single_recepie">
+        <div class="single_recepie_background_cover">
+            <div class="single_recepie_container">
+
+                <div class="gallery">
+                    <div class="gallery_container">
+                        <div class="main_img_container">
+
+                            @if (current_recepie.RecepieImages.Count > 1)
+                            {
+                                <div @onclick="PreviousImage" class="left_img_btn">
+                                    <p>&lt;</p>
+                                </div>
+
+                                <div @onclick="NextImage" class="right_img_btn">
+                                    <p>&gt;</p>
+                                </div>
+                            }
+
+                            <img src="@current_recepie_image.Path" alt="@current_recepie_image.Name" />
+                        </div>
+
+
+                        <div class="small_info">
+                            <div class="small_info_container">
+
+                                <div class="type">
+                                    <p>Perfect for: </p>
+
+                                    @if (current_recepie.Type == 1)
+                                    {
+                                        <p>Breakfast</p>
+                                        <p><i class="fas fa-bacon"></i></p>
+                                    }
+
+                                    @if (current_recepie.Type == 2)
+                                    {
+                                        <p>Lunch</p>
+                                        <p><i class="fas fa-utensils"></i></p>
+                                    }
+
+                                    @if (current_recepie.Type == 3)
+                                    {
+                                        <p>Dinner</p>
+                                        <p><i class="fas fa-pizza-slice"></i> </p>
+                                    }
+
+                                    @if (current_recepie.Type == 4)
+                                    {
+                                        <p>Dessert</p>
+                                        <p> <i class="fas fa-ice-cream"></i> </p>
+                                    }
+
+                                    @if (current_recepie.Type == 5)
+                                    {
+                                        <p>Snack</p>
+                                        <p>  <i class="fas fa-apple-alt"></i> </p>
+                                    }
+                                </div>
+
+                                <div class="score">
+                                    <p>Creator score:</p>
+                                    <p>@current_recepie.Rating / 10</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="description">
+                    <div class="title">
+                        <h1>@current_recepie.Name</h1>
+                    </div>
+
+                    <div class="description_container">
+                        <p>@current_recepie.Description</p>
+                    </div>
+                </div>
+
+                <div class="steps_ingredients">
+                    <div class="ingredients">
+                        <div class="ingredients_container">
+                            <div class="title">
+                                <h2>Ingredients</h2>
+                            </div>
+
+                            @foreach (var i in current_recepie.IngredientsList)
+                            {
+                                <p><span>@i.Ammount</span> <span>@i.AmmountName</span> <span>@i.Name</span></p>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="methods">
+                        <div class="title">
+                            <h2>Creation process</h2>
+                        </div>
+
+                        @foreach (var m in current_recepie.DescriptionsList)
+                        {
+                            <div class="method">
+                                <h3>Step @(m.Id + 1)</h3>
+
+                                <p>@m.Text</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div @onclick="OpenEditRecipe" class="edit_button">
+                <p>Edit</p>
+            </div>
+        </div>
+    </section>
+}
+
+@if (display_recipe_edit_page == true)
+{
+    <section class="edit_recipe_page">
+        <div class="edit_recipe_page_container">
+            <section class="create_recepie">
+                <div class="create_recepie_container">
+
+                    <div class="reciepie_form">
+                        <div class="reciepie_form_container">
+
+                            <div class="title">
+                                <h2>Edit recipe</h2>
+                            </div>
+
+                            <div class="input_container">
+                                <label>Reciepe name</label>
+                                <input @bind="edit_recipe_object.Name" placeholder="Name" />
+                            </div>
+
+                            <div class="input_container">
+                                <label>Description</label>
+                                <textarea @bind="edit_recipe_object.Description" placeholder="Short overall description"></textarea>
+                            </div>
+
+                            <div class="input_container">
+                                <label>Your Rating<span class="small">(How you liked this dish (1 - 10))</span></label>
+                            </div>
+
+                            <div class="rating_container">
+                                @foreach (var r in ratings)
+                                {
+                                    @if (edit_recipe_object.Rating == r.RatePoint)
+                                    {
+                                        <div class="rating">
+                                            <button @onclick="@(e => EditChangeRating(r.RatePoint))" class="@edit_rate_base">@r.RatePoint</button>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="rating">
+                                            <button @onclick="@(e => EditChangeRating(r.RatePoint))" class="@r.Class">@r.RatePoint</button>
+                                        </div>
+                                    }
+                                }
+                            </div>
+
+                            <div class="input_container">
+                                <label>Type of food<span class="small">(Breakfast | Lunch | Dinner | Dessert | Snack)</span></label>
+                            </div>
+
+                            <div class="rating_container">
+                                @foreach (var t in types)
+                                {
+                                    <div class="rating">
+                                        @if (edit_recipe_object.Type == t.TypeNumber)
+                                        {
+                                            <button @onclick="@(e => EditChangeType(t.TypeNumber))" class="@edit_type_base">
+                                                @if (t.TypeNumber == 0)
+                                                {
+                                                    <i class="fas fa-bacon"></i>
+                                                }
+                                                else if (t.TypeNumber == 1)
+                                                {
+                                                    <i class="fas fa-utensils"></i>
+                                                }
+                                                else if (t.TypeNumber == 2)
+                                                {
+                                                    <i class="fas fa-pizza-slice"></i>
+                                                }
+                                                else if (t.TypeNumber == 3)
+                                                {
+                                                    <i class="fas fa-ice-cream"></i>
+                                                }
+                                                else if (t.TypeNumber == 4)
+                                                {
+                                                    <i class="fas fa-apple-alt"></i>
+                                                }
+                                            </button>
+                                        }
+                                        else
+                                        {
+                                            <button @onclick="@(e => EditChangeType(t.TypeNumber))" class="@t.Class">
+                                                @if (t.TypeNumber == 0)
+                                                {
+                                                    <i class="fas fa-bacon"></i>
+                                                }
+                                                else if (t.TypeNumber == 1)
+                                                {
+                                                    <i class="fas fa-utensils"></i>
+                                                }
+                                                else if (t.TypeNumber == 2)
+                                                {
+                                                    <i class="fas fa-pizza-slice"></i>
+                                                }
+                                                else if (t.TypeNumber == 3)
+                                                {
+                                                    <i class="fas fa-ice-cream"></i>
+                                                }
+                                                else if (t.TypeNumber == 4)
+                                                {
+                                                    <i class="fas fa-apple-alt"></i>
+                                                }
+                                            </button>
+                                        }
+
+                                    </div>
+                                }
+                            </div>
+                            <div class="ingredients">
+                                <div class="title">
+                                    <h3>Ingredients</h3>
+                                </div>
+
+                                @foreach (var i in edit_recipe_object.IngredientsList)
+                                {
+                                    <div class="ingredient">
+                                        <div class="input_container">
+                                            <label>Name</label>
+                                            <input @bind="i.Name" placeholder="Ex beef/salt" />
+                                        </div>
+
+                                        <div class="input_container">
+                                            <label>Ammount</label>
+                                            <input min="0" @bind="i.Ammount" placeholder="Ex 250/1" />
+                                        </div>
+
+                                        <div class="input_container">
+                                            <label>Ammount Name</label>
+                                            <input @bind="i.AmmountName" placeholder="Ex grams/spoons" />
+                                        </div>
+                                    </div>
+                                }
+
+
+                                <div class="button_container">
+                                    <button @onclick="AddNewIngredient">Add next</button>
+                                </div>
+                            </div>
+
+                            <div class="creation_process">
+                                <div class="title">
+                                    <h3>Explain creation process</h3>
+                                </div>
+
+                                <div class="creation_process_container">
+
+                                    @foreach (var s in edit_recipe_object.DescriptionsList)
+                                    {
+                                        <div class="step">
+                                            <h4>Step @(s.Id + 1)</h4>
+
+                                            <div class="input_time">
+                                                <div class="input_container">
+                                                    <label>Time</label>
+                                                    <input @bind="s.Time" />
+                                                </div>
+
+                                                <div class="input_container">
+                                                    <label>Time name(Ex min/hrs)</label>
+                                                    <input @bind="s.Name" />
+                                                </div>
+                                            </div>
+
+                                            <div class="input_container">
+                                                <label>Description</label>
+                                                <textarea @bind="s.Text" placeholder="Step 1 description"></textarea>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    <div class="button_container">
+                                        <button @onclick="AddNewStep">Add next step</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="add_images">
+
+                                @foreach (var i in edit_recipe_object.RecepieImages)
+                                {
+                                    <div class="image_input">
+                                        <div class="input_container">
+                                            <label>Path</label>
+                                            <input @bind="i.Path" />
+                                            <label class="small">Put link to image/In normal implementation you can put img from drive</label>
+                                        </div>
+
+                                        <div class="input_container">
+                                            <label>Name</label>
+                                            <input @bind="i.Name" />
+                                        </div>
+
+                                        <div class="preview">
+                                            <img src="@i.Path" alt="@i.Name" />
+                                        </div>
+
+
+                                    </div>
+
+                                }
+
+                                <div class="button_container">
+                                    <button @onclick="AddNewImage">Add Next</button>
+                                </div>
+
+                            </div>
+
+                            <div class="button_container add_new_button">
+                                <button>Add new recepie</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </section>
+}
+
+@if (display_all_recipies == true)
+{
+    <section class="all_recipies">
+        <div class="all_recipies_container">
+
+            <div class="recepies_toggler">
+                <div @onclick="OpenAllRecepies" class="display_btn">
+                    <p>Display All recipes</p>
+                </div>
+
+                <div @onclick="OpenOngoingRecipies" class="display_btn">
+                    <p>Display Ongoing recipes</p>
+                </div>
+
+                <div @onclick="OpenFinishedRecipies" class="display_btn">
+                    <p>Display Finished recipes</p>
+                </div>
+
+                <div @onclick="OpenAbandonRecipies" class="display_btn">
+                    <p>Display Abandoned recipes</p>
+                </div>
+            </div>
+
+            <div class="display_recepies">
+                <div class="display_recepies_container">
+                    @foreach (var r in Recepies)
+                    {
+                        @if (finished_recipies == true)
+                        {
+                            @if (r.Finished == true)
+                            {
+                                <div @onclick="@(e => OpenRecipePage(r.Id))" class="recepie">
+                                    <div class="name">
+                                        <div>
+                                            <p>@r.Name</p>
+                                            @if (r.Type == 1)
+                                            {
+                                                <p><i class="fas fa-bacon"></i></p>
+                                            }
+
+                                            @if (r.Type == 2)
+                                            {
+                                                <p><i class="fas fa-utensils"></i></p>
+                                            }
+
+                                            @if (r.Type == 3)
+                                            {
+                                                <p><i class="fas fa-pizza-slice"></i> </p>
+                                            }
+
+                                            @if (r.Type == 4)
+                                            {
+                                                <p> <i class="fas fa-ice-cream"></i> </p>
+                                            }
+
+                                            @if (r.Type == 5)
+                                            {
+                                                <p>  <i class="fas fa-apple-alt"></i> </p>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div class="img_container">
+                                        <img src="@r.RecepieImages[0].Path" alt="@r.RecepieImages[0].Name" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        @if (abandoned_recipies == true)
+                        {
+                            @if (r.Abandon == true)
+                            {
+                                <div @onclick="@(e => OpenRecipePage(r.Id))" class="recepie">
+                                    <div class="name">
+                                        <div>
+                                            <p>@r.Name</p>
+                                            @if (r.Type == 1)
+                                            {
+                                                <p><i class="fas fa-bacon"></i></p>
+                                            }
+
+                                            @if (r.Type == 2)
+                                            {
+                                                <p><i class="fas fa-utensils"></i></p>
+                                            }
+
+                                            @if (r.Type == 3)
+                                            {
+                                                <p><i class="fas fa-pizza-slice"></i> </p>
+                                            }
+
+                                            @if (r.Type == 4)
+                                            {
+                                                <p> <i class="fas fa-ice-cream"></i> </p>
+                                            }
+
+                                            @if (r.Type == 5)
+                                            {
+                                                <p>  <i class="fas fa-apple-alt"></i> </p>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div class="img_container">
+                                        <img src="@r.RecepieImages[0].Path" alt="@r.RecepieImages[0].Name" />
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                        @if (ongoing_recipies == true)
+                        {
+                            @if (r.Ongoing == true)
+                            {
+                                <div @onclick="@(e => OpenRecipePage(r.Id))" class="recepie">
+                                    <div class="name">
+                                        <div>
+                                            <p>@r.Name</p>
+                                            @if (r.Type == 1)
+                                            {
+                                                <p><i class="fas fa-bacon"></i></p>
+                                            }
+
+                                            @if (r.Type == 2)
+                                            {
+                                                <p><i class="fas fa-utensils"></i></p>
+                                            }
+
+                                            @if (r.Type == 3)
+                                            {
+                                                <p><i class="fas fa-pizza-slice"></i> </p>
+                                            }
+
+                                            @if (r.Type == 4)
+                                            {
+                                                <p> <i class="fas fa-ice-cream"></i> </p>
+                                            }
+
+                                            @if (r.Type == 5)
+                                            {
+                                                <p>  <i class="fas fa-apple-alt"></i> </p>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div class="img_container">
+                                        <img src="@r.RecepieImages[0].Path" alt="@r.RecepieImages[0].Name" />
+                                    </div>
+                                </div>
+
+                            }
+                        }
+
+
+                        @if (ongoing_recipies == false && abandoned_recipies == false && finished_recipies == false)
+                        {
+                            <div @onclick="@(e => OpenRecipePage(r.Id))" class="recepie">
+                                <div class="name">
+                                    <div>
+                                        <p>@r.Name</p>
+                                        @if (r.Type == 1)
+                                        {
+                                            <p><i class="fas fa-bacon"></i></p>
+                                        }
+
+                                        @if (r.Type == 2)
+                                        {
+                                            <p><i class="fas fa-utensils"></i></p>
+                                        }
+
+                                        @if (r.Type == 3)
+                                        {
+                                            <p><i class="fas fa-pizza-slice"></i> </p>
+                                        }
+
+                                        @if (r.Type == 4)
+                                        {
+                                            <p> <i class="fas fa-ice-cream"></i> </p>
+                                        }
+
+                                        @if (r.Type == 5)
+                                        {
+                                            <p>  <i class="fas fa-apple-alt"></i> </p>
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="img_container">
+                                    <img src="@r.RecepieImages[0].Path" alt="@r.RecepieImages[0].Name" />
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+
+        </div>
+    </section>
+}
+
+
+
