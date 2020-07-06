@@ -1,4 +1,11 @@
-﻿#about{
+﻿.page {
+    background-image: url(../images/BackgroundAbout.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#about{
     position:relative;
     top: 0;
     width:100%;
@@ -8,11 +15,6 @@
     justify-content:center;
     align-content:center;
     align-items:center;
-
-    background-image:url(../images/BackgroundAbout.svg);
-    background-position:center;
-    background-repeat:no-repeat;
-    background-size:cover;
 }
 
 #about .about_container{

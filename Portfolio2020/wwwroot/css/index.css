@@ -296,8 +296,12 @@ header .right_side .bottom_line {
 #profile .profile_cotainer{
     width:100%;
     max-width: 1400px;
-    display:grid;
-    grid-template-columns: 65% 35%;
+}
+
+#profile .tablet_box{
+    width:100%;
+    display:flex;
+    justify-content:center;
 }
 
 #profile .profile_left{
@@ -330,13 +334,13 @@ header .right_side .bottom_line {
     border-top-right-radius: 1em;
 }
 
-#profile .title{
+#profile .title_profile{
     text-align:center;
     padding: 1em 0 3em 0;
     grid-column: span 2;
 }
 
-#profile .title h1{
+#profile .title_profile h1{
     font-size: 6rem;
     letter-spacing: 10px;
     font-family: 'Indie Flower', cursive;
@@ -1260,26 +1264,4 @@ footer p{
 }
 
 
-@media screen and (max-width:400px) {
-    #projects .components {
-        padding: 0 5px;
-    }
 
-    #projects .main_projects {
-        padding: 0 5px;
-    }
-
-    header .welcome_content h1 {
-        letter-spacing: 8px;
-    }
-
-    header .welcome_content h5 {
-        letter-spacing: 4px;
-    }
-
-    #contact_section .contact_container {
-        border-radius: 0.5em;
-        padding: 1em 10px;
-        background-color: #f6f9fc;
-    }
-}

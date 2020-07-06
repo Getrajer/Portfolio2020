@@ -1,0 +1,1293 @@
+﻿
+<head>
+    <link rel="stylesheet" href="../css/tablet_style.css" />
+</head>
+
+
+<div id="@ActualScheme" class="page_container">
+
+    <section class="tablet">
+        <div class="tablet_container @current_wallpeper.Style">
+
+            @if (show_main_screen == true)
+            {
+                <div class="screen">
+                    <div class="screen_container">
+                        <div class="apps">
+                            <div class="apps_container">
+
+                                <div @onclick="OpenChatApp" class="app">
+                                    <img src="../images/messenger.png" alt="messenger" />
+                                    <p>Chat with me</p>
+                                </div>
+
+                                <div @onclick="OpenGalleryApp" class="app">
+                                    <img src="../images/gallery.png" alt="gallery" />
+                                    <p>Projects gallery</p>
+                                </div>
+
+                                <div @onclick="OpenOptions" class="app">
+                                    <img src="../images/options.png" alt="options" />
+                                    <p>Options</p>
+                                </div>
+
+                                <div @onclick="OpenInternetApp" class="app">
+                                    <img src="../images/internet.png" alt="internet" />
+                                    <p>Internet</p>
+                                </div>
+
+                                <div @onclick="OpenLiveApp" class="app">
+                                    <img src="../images/live.png" alt="internet" />
+                                    <p>See me live</p>
+                                </div>
+
+
+                                <div @onclick="OpenSkillsApp" class="app">
+                                    <img src="../images/skills.png" alt="skills" />
+                                    <p>Skills</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+            @if (show_chat_app == true)
+            {
+                <div class="chat_app">
+                    <div class="chat_app_container">
+
+                        <div class="chat_logs">
+                            <div class="chat_logs_container">
+                                @foreach (var o in asked_questions)
+                                {
+                                    <div class="out_txt">
+                                        <p>@o.Question </p>
+                                    </div>
+
+
+                                    <div class="out_txt">
+                                        <p>@o.Answer </p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="questions">
+                            <div class="questions_container">
+                                @foreach (var o in new_questions)
+                                {
+                                    <p @onclick="@(e => AskQuestion(o.Id))">@o.Question</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            @if (show_live_app == true)
+            {
+
+                <div class="live_app">
+                    <div class="svg_container">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 637 446">
+                            <defs>
+                                <image id="image-2" width="133" height="84" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAABVCAYAAACM05wQAAAACXBIWXMAAAsSAAALEgHS3X78AAACS0lEQVR4Xu3cMXLiMBiG4d87aV251h1ccwd8O47ABeAObjmEalUcQFvsyCtrPgIGQ0R4n4o4wlHQi+VJZmhijAaU/lwbgM9EGJAIAxJhQCIMSIQBiTAgEQYkwoBEGJAIAxJhQCIMSIQBiTAgEQYkwoBEGJAIAxJhQCIMSIQBiTAgEQYkwoBEGJAIAxJhQCIMSIQBiTAgEQYkwoBEGJAIA9LXtQHvrmmaRR8yFmNsro35BM1v/HC2Mobtdntp6MzxeJx9/cmR/Jow7o3hkldFcj6fY9u2Tzn3I6oMo2mauGQh8igeDSLnvTfvvYUQpmNL5vWdfM5rnXNN1d1jpBdM3RuoFzCNWzMIMzPn3PQ4hGBd11kIYfp5Sxdz6b3OT6vuipEvtHrHltYOInHOTXGkeSTlNnOrcq6HwyE9XBTZK1QXxjAM0ez/wjjnbBzH2cK8Sj6HFMe988ifm85JGAukMEre+9nl/dnUQqpjtyivfH3f2+l0St+uLgqzCsMws2hmNgyDmc0XaLPZXH7WE4zjKLexruvumotzzna7XX6oyijMKg7D7F8c6Z36avk2lgfS9/0Uxa3zyraMpNogkhrDSBZNLF1h1nTp/uLaFrLf761t2/Jw9THkag5jiRp/ibcKoVTd3zHu9NaLUCP+uwqJMCARBiTCgEQYkAgDEmFAIgxIhAGJMCARBiTCgEQYkAgDEmFAIgxIhAGJMCARBiTCgEQYkAgDEmFAIgxIhAGJMCARBiTCgEQYkAgDEmFAIgxIhAGJMCARBiTCgPQX4Brakfpv2ZsAAAAASUVORK5CYII=" />
+                            </defs>
+                            <title>Its Me</title>
+                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                <g id="Warstwa_2-2" data-name="Warstwa 2">
+                                    <rect width="637" height="373" style="fill: #8c6239" />
+                                </g>
+                                <g id="Warstwa_4" data-name="Warstwa 4">
+                                    <g>
+                                        <g>
+                                            <polygon points="211.43 93 3 93 3 85.63 211.43 83.79 211.43 93" style="fill: #7a431f" />
+                                            <polygon points="211.43 99 3 99 3 91.8 211.43 90 211.43 99" style="fill: #63300f" />
+                                        </g>
+                                        <g>
+                                            <rect x="13.65" y="15.32" width="15.21" height="69.98" style="fill: #312f70" />
+                                            <rect x="13.65" y="27.49" width="15.21" height="3.04" />
+                                            <text transform="translate(25.57 60.42) rotate(-90)" style="font-size: 13.69257926940918px;font-family: MyriadPro-Regular, Myriad Pro">C#</text>
+                                        </g>
+                                        <g>
+                                            <rect x="44.08" y="15.32" width="15.21" height="69.98" transform="translate(29.87 -18.44) rotate(28.16)" style="fill: #2b2b56" />
+                                            <rect x="54.13" y="30.02" width="15.21" height="3.04" transform="translate(22.19 -25.4) rotate(28.16)" />
+                                            <text transform="translate(47.59 65.78) rotate(-61.84)" style="font-size: 13.69257640838623px;fill: #fff;font-family: MyriadPro-Regular, Myriad Pro">.N<tspan x="11.84" y="0" style="letter-spacing: 0.015993640210097616em">E</tspan><tspan x="18.8" y="0">T</tspan></text>
+                                        </g>
+                                        <g>
+                                            <rect x="77.55" y="42.71" width="15.21" height="69.98" transform="translate(163.59 -6.78) rotate(90.5)" style="fill: #2b5354" />
+                                            <rect x="98.85" y="76.36" width="15.21" height="3.04" transform="translate(185.26 -27.89) rotate(90.5)" />
+                                            <text transform="matrix(1, 0.01, -0.01, 1, 65.4, 81.7)" style="font-size: 12.171180725097656px;fill: #fff;font-family: MyriadPro-Regular, Myriad Pro">HTML</text>
+                                        </g>
+                                        <g>
+                                            <rect x="85.16" y="27.49" width="15.21" height="69.98" transform="translate(156.05 -29.73) rotate(90.5)" style="fill: #2a512b" />
+                                            <rect x="106.45" y="61.15" width="15.21" height="3.04" transform="translate(177.72 -50.84) rotate(90.5)" />
+                                            <text transform="matrix(1, 0.01, -0.01, 1, 74.53, 66.64)" style="font-size: 12.171180725097656px;fill: #fff;font-family: MyriadPro-Regular, Myriad Pro">CSS</text>
+                                        </g>
+                                        <g>
+                                            <rect x="127.75" y="16.84" width="18.26" height="69.98" style="fill: #6d482f" />
+                                            <rect x="127.75" y="29.02" width="18.26" height="3.04" />
+                                            <text transform="matrix(0, -0.83, 1, 0, 142.15, 58.9)" style="font-size: 16.431095123291016px;font-family: MyriadPro-Regular, Myriad Pro">JS</text>
+                                        </g>
+                                        <g>
+                                            <rect x="173.4" y="42.71" width="15.21" height="69.98" transform="translate(258.4 -103.43) rotate(89.9)" style="fill: #6d2f50" />
+                                            <rect x="194.7" y="76.14" width="15.21" height="3.04" transform="translate(279.63 -124.77) rotate(89.9)" />
+                                            <text transform="translate(167.4 82.05) rotate(-0.1)" style="font-size: 13.692635536193848px;font-family: MyriadPro-Regular, Myriad Pro">SQL</text>
+                                        </g>
+                                    </g>
+                                </g>
+                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                    <g>
+                                        <g id="Warstwa_1-2-2" data-name="Warstwa 1-2">
+                                            <rect y="371.17" width="637" height="74.83" style="fill: #603813" />
+                                            <rect x="0.5" y="414.02" width="636.5" height="1.63" />
+                                            <rect x="0.5" y="395.03" width="636.5" height="1.63" />
+                                            <rect x="0.5" y="376.05" width="636.5" height="1.63" />
+                                            <rect x="0.5" y="432.99" width="636.5" height="1.63" />
+                                        </g>
+                                        <g id="Warstwa_24" data-name="Warstwa 24">
+                                            <path d="M248.67,156.16l17.37,56,4,6,6,7c2.25,10.05,2.93,19.51,1,28l-13,10-9,2-20-127,8-10Z" />
+                                            <path d="M231.54,92.63c11.58,3.57,18.49,14.22,22,30,1.61,9.26.92,17.89-3,26-.19,3.8-2.4,8.88-1.5,14.5-3.72-9.53-7.63-13.83-15.5-14.5Z" />
+                                            <polygon points="264.04 261.17 264.04 266.17 283.04 256.17 346.04 260.17 355.04 273.17 355.04 290.17 350.04 290.17 349.04 274.17 299.04 268.17 272.04 271.17 259.04 279.17 254.04 267.17 264.04 261.17" />
+                                            <path d="M263,219.17c1.34,22-.77,40.52-8,54l-12,1c-4.78-32.58-15.44-70.19-21-83l-4-45,2-52c4.08-3.5,8.8-4.26,14-3C232.82,137.17,241,180.28,263,219.17Z" style="fill: #38478f;stroke: #333;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                            <path d="M287,297.17l-2,13c-5.39,1.14-10.17,3.16-13,8-.79,2.3.15,4.63,3,7,1.81,7.59.34,24.34-1,41l14,1c-2.73-19.36-4.17-36.37-1-45l6,2,2,9c5,5.86,8.57,6.29,10-1,0,0-.29-10.29-1-11-1.57-1.57,11.08-12.7,13-12,2.6-1.25,1.88-7,1-13Z" />
+                                            <path d="M276,360.17l-35-6c-4.62.09-7.56,4.82-9,8l10,1h21Z" />
+                                            <polygon points="269.04 360.17 212.04 367.17 207.04 375.17 216.04 376.17 272.04 374.17 275.03 359.97 269.04 360.17" />
+                                            <polygon points="219.04 373.17 219.04 379.17 222.04 380.17 221.04 397.17 218.04 397.17 218.04 393.17 214.04 393.17 214.04 397.17 211.04 397.17 211.04 380.17 213.04 380.17 214.04 373.17 219.04 373.17" />
+                                            <polygon points="272.04 367.17 272.04 392.17 284.04 392.17 285.04 366.17 272.04 363.17 272.04 367.17" />
+                                            <path d="M276,391.17c-2,4.37-3.07,8.72-2,13,1.24,3.45,3.85,5.82,8,7,3.52.39,6.29-.75,8-4,1.83-2.91,1-6.33-1-10-2.88-.86-5.45-3.86-8-7Z" />
+                                            <path d="M283,375.17c1,0,67,4,67,4l-11-11-49-3-6-1Z" />
+                                            <path d="M341,377.17l1,9c-2.27,1.76-2.78,6-1,10,1.83,2.53,7.12,3.9,12,1,3.17-3.59,2.81-8.3,2-13-2.9-2.85-5.9-3.55-9-2v-5Z" />
+                                            <path d="M288.35,367.45l35.56-3c.94-3.63-1.34-5.95-5.17-7.63a304.05,304.05,0,0,0-34.7,4.1l.33,6.08Z" />
+                                            <path d="M234,225.17c3.47-1.65,6.17-1.73,8,0,4.49,9.69,7.43,19.6,7,30l2,19c3.08,6.49,5.61,13.57,12,17l7-1c2.93,3.4,4.67,6.76,2,10H241c-3.56-1.63-5.3-5.47-4-13,2.34-4.75,3.11-10.19,3-16C237,253.53,234.58,237.36,234,225.17Z" />
+                                            <path d="M235,358.17c-3.07,3.84-5.37,7.8-6,12l7,1,2-11Z" />
+                                            <path d="M320,362.17l1,9h7c-1.72-6.68-3.84-11.36-7-11Z" />
+                                            <polygon points="511.04 402.17 519.04 402.17 520.04 216.17 511.04 216.17 511.04 402.17" />
+                                            <polygon points="523.04 217.17 333.04 217.17 333.04 207.17 523.04 209.17 523.04 217.17" />
+                                            <polygon points="316.04 199.17 316.04 208.17 540.04 209.17 540.04 199.17 316.04 199.17" style="fill: #ccc" />
+                                            <path d="M259,97.17l.07.18A50.4,50.4,0,0,1,264,110.17c1.32,8.68,1.74,16.43,0,22l19,6c3.45-.6,3.19-2.07,1-4a27,27,0,0,1-2-14c1.64-1.33,6.58.59,11,2l-20-18-1-17Z" style="fill: #d68d6a" />
+                                            <polygon points="370.04 292.17 383.04 382.17 391.04 382.17 389.04 370.17 384.04 291.17 370.04 292.17" style="fill: #f2b890" />
+                                            <path d="M408,378.17s9-1,9-2-18-89-18-89l-14,1Z" style="fill: #f2b890" />
+                                            <path d="M301,254.17l87,17c5.44,2,9.12,5.13,10,9,1.57,4.59,1.87,9.65,3,15H382l1-13-82-24Z" style="fill: #303d42" />
+                                            <path d="M265,248.17c-.73,9,.2,17.56,5,25,3.38,5.29,7.71,9.39,14,11a488.52,488.52,0,0,0,77,5l3,7,21-1-1-13c-1.85-5.47-5.38-8.65-11-9l-71-16,1-7Z" style="fill: #39464b" />
+                                            <path d="M254,141.17c-3.22,11.22-3.67,25.09-2,41a585.79,585.79,0,0,0,11,67c14.74,3.23,29.13,6.19,38,5,3.34.27,5.5-.59,5-4-2.74-17.34-4.86-34.4-7-51l-2-17Z" />
+                                            <path d="M292,121.17c-2.81-1.13-7.34-11.3-12-8-1.41,1-5,4.57-6.5,5.5-3.1,1.89-2.22,8.73-1,16l11,3c1.92-.13,2.43-1.15,0-4C280.36,123,286.21,118.87,292,121.17Z" style="fill: #e09872" />
+                                            <polygon points="271.04 135.17 289.04 143.17 291.41 142.13 288.04 138.17 283.04 133.17 271.04 135.17" style="fill: #e09872" />
+                                            <path d="M294,160.17l23,18,21,3,29,4,16-5,7,12h-3l-5-7-11,7s-10-1-9-1-50-10-50-10l-22-19Z" style="fill: #d68d6a" />
+                                            <path d="M264,131.17v1l19,6,7,3-5-6a18.69,18.69,0,0,1,6,6,47.06,47.06,0,0,1,6,15c1.58,5.61,1.95,10.63,1,15l-34-32-6,1-3,5-1-2c-.52-2.53.35-4.83,2-7a8.7,8.7,0,0,1,5-4Z" />
+                                            <path d="M293.67,166.17l17,13c10.32,1.8,20.14,4.3,27,4l23,1,15.37-3,8,11-3-1-6-6-13.37,8h-.92a3.55,3.55,0,0,1-2-.59l-2.1-1.41h-46a125.62,125.62,0,0,1-21-14Z" style="fill: #f3b890" />
+                                            <path d="M264,139.17c-8.47-1.77-10.64,3.54-10,12,.84,8.15,5.13,13.27,11,17l32,17,4-14Z" />
+                                            <polygon points="349.04 191.68 349.04 198.17 448.98 198.17 448.98 191.68 451.04 92.17 448.98 92.17 444.86 190.6 349.04 191.68" />
+                                            <path d="M271,89.17l1,16a112.84,112.84,0,0,0,19.63,16.46,9.4,9.4,0,0,0,5.2,1.54H301c1.82.1,3.1-.3,3.5-1.5l3-9-1-2,2-1,1-7,1,1c2.23,0,3.76-.74,4.5-2.46a2.73,2.73,0,0,0-.92-3.2c-1.41-1.07-2.51-3.17-3.58-5.34.53-7.74,1-15.46-1-20l-12-7c-5.05-1-9.31-1.22-10,2,.91,4.1-1.81,7.66-6,11l-2,12-2-2c-.93-7.11-1.78-14.55-4-17-3.71-.23-5.8,3.34-7,9C268.2,84.09,269.74,87.06,271,89.17Z" style="fill: #f3b890" />
+                                            <ellipse cx="303.04" cy="89.17" rx="1.5" ry="3.5" style="stroke: #000;stroke-miterlimit: 10" />
+                                            <path d="M299.54,87.63c.75-3.38,2.89-4.1,6-3" style="fill: none;stroke: #000;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 0.5px" />
+                                            <path d="M297.54,80.63c3.58-.93,6.68-1.11,9,0" style="fill: none;stroke: #000;stroke-linecap: round;stroke-miterlimit: 10" />
+                                            <polyline points="307.54 110.67 299.54 106.67 299.54 105.67" style="fill: none;stroke: #df936f;stroke-miterlimit: 10" />
+                                            <path d="M271,89.17l-11.5,8.46c-4-4.34-6.71-10.37-9-17a28,28,0,0,1,3-19,25.22,25.22,0,0,1,14-15c4.39-2.87,12.39-2.23,21-1l26,1c7,9.31,3.63,17.85-5,26l-16-7-4.5,3.5c-.1,4-3.73,6.75-7.5,9.5L280,91.17a3.66,3.66,0,0,1-3-4l-3-14c-4.1-.47-6,.08-7,7Z" style="fill: #42210b" />
+                                            <path d="M250,267.17c0,10.14,2.82,18.89,13,24l21,6,67,2,8-2,5-9-1-7c.51-6.57-2.13-11.91-8-16-9.33-4.22-21.82-5.44-35-6l-48,11-13-7Z" style="fill: #38478f;stroke: #333;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                            <g>
+                                                <path d="M402,368.17c-2.24,6-3.37,11.76-3,17,29.14,8.06,53,9,59.72-1.33L430,375.17l-3-4c-2.31-.88-3.81-4.12-6-2-2.57,2.5-7.51,8.18-11,7C406.14,374.85,404.89,368.52,402,368.17Z" style="fill: #231f20" />
+                                                <path d="M416.3,372.63a9.78,9.78,0,0,1-1.33-4.37,9.5,9.5,0,0,1,1.2-3.38.12.12,0,0,1,.17,0,.12.12,0,0,1,.05.1,16.63,16.63,0,0,0,.15,4.88,8.57,8.57,0,0,0,.54,2A2.07,2.07,0,0,1,416.3,372.63Z" style="fill: #fff;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                                <path d="M416.94,371.72l2.74-2.75a2.54,2.54,0,0,1,3.15.1l4,2.7.4-.59-2-1-4.32-3.63a12,12,0,0,1-2.45-1.87c-.71-.87-1.68-1.24-2.26.1l.2,3.53A21.81,21.81,0,0,0,416.94,371.72Z" />
+                                                <path d="M401.62,368.28a1.59,1.59,0,0,1,2.06-.09,4.25,4.25,0,0,1,2.46,2.74,14.52,14.52,0,0,0,1.76,3.15,4.65,4.65,0,0,0,3.24,1.47,8.68,8.68,0,0,0,3.93-1.77l3.53-3.73c1.71-2,3.38-2,5-.39,1.17.8,2.78,1.08,3.43,1.51l2,3c-1-.71-5-3.36-5.53-3.73-1.35-1.24-2.7-.95-4.37.54a9.06,9.06,0,0,1-3.19,3.29,9.77,9.77,0,0,1-4.81,2.16A4.36,4.36,0,0,1,407.4,375a6.87,6.87,0,0,1-2.16-3.14,5.94,5.94,0,0,0-2.35-2.75,2,2,0,0,0-1.38-.1A1,1,0,0,1,401.62,368.28Z" style="fill: #38478f;stroke: #333;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                                <path d="M456.41,389.2a10.53,10.53,0,0,0,2.16-2.16,6,6,0,0,0,.09-3.64,2.4,2.4,0,0,1-.78,1.57Z" style="fill: #1a1a1a" />
+                                                <g>
+                                                    <path d="M398.43,386.1c-.72,1.57-1.5,3.2-1.38,4,.61,1.47,1.91,2.23,3.83,2.36a9.33,9.33,0,0,0,3.83.09l6.09.59h4.32c5.69.38,11,.6,15.41.49a83.26,83.26,0,0,0,11.39,0,34.33,34.33,0,0,0,8.55-1.27,20,20,0,0,0,6.38-3.54l.29-.39.89-2.36-.2-1.08a28.43,28.43,0,0,1-9.72,2.75,32.59,32.59,0,0,1-11.29-1.11c-7.64-4.32-14.57-5.06-20.92-2.75l-4.41.78a22.89,22.89,0,0,1-1.48,2.16,6,6,0,0,1-1.37.79A34,34,0,0,1,398.43,386.1Z" style="fill: #1a1a1a" />
+                                                    <g style="opacity: 0.10000000149011612">
+                                                        <use id="image" transform="translate(361.04 346.17)" xlink:href="#image-2" style="isolation: isolate" />
+                                                    </g>
+                                                    <path d="M398.43,386.1c-.72,1.57-1.5,3.2-1.38,4,.61,1.47,1.91,2.23,3.83,2.36a9.33,9.33,0,0,0,3.83.09l6.09.59h4.32c5.69.38,11,.6,15.41.49a83.26,83.26,0,0,0,11.39,0,34.33,34.33,0,0,0,8.55-1.27,20,20,0,0,0,6.38-3.54l.29-.39.89-2.36-.2-1.08a28.43,28.43,0,0,1-9.72,2.75,32.59,32.59,0,0,1-11.29-1.11c-7.64-4.32-14.57-5.06-20.92-2.75l-4.41.78a22.89,22.89,0,0,1-1.48,2.16,6,6,0,0,1-1.37.79A34,34,0,0,1,398.43,386.1Z" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                                </g>
+                                                <path d="M398.38,386.06a4.78,4.78,0,0,1,1.47-2.56,4,4,0,0,0,2.46,1.38,30.07,30.07,0,0,0,5.69.19l3.44-.39-1.4,2.06a1.9,1.9,0,0,1-1.27.79A29.11,29.11,0,0,1,398.38,386.06Z" style="fill: #38478f;stroke: #333;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                                <path d="M398.82,384.73c3,1.43,7,1.87,11.39,1.77-.28.86-1.06,1.3-2.65,1.08a27.86,27.86,0,0,1-6.68-.79,5,5,0,0,1-2.45-.78Z" style="fill: #4d4d4d;fill-opacity: 0.5;opacity: 0.800000011920929;isolation: isolate" />
+                                                <path d="M433.91,385.11l6.68-6.75-6.68-2-8.33,6.37A23.79,23.79,0,0,1,433.91,385.11Z" style="fill: #38478f;stroke: #333;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                            </g>
+                                            <path d="M298,303.17l6-68,19-1c2.62-1.86,2-3.48,0-5H275c-1.83,2.59-3.11,5.2,0,8h9l3,74Z" />
+                                            <g>
+                                                <path d="M375,374.17c-2.24,6-3.37,11.76-3,17,29.14,8.06,53,9,59.72-1.33L403,381.17l-3-4c-2.31-.88-3.81-4.12-6-2-2.57,2.5-7.51,8.18-11,7C379.14,380.85,377.89,374.52,375,374.17Z" style="fill: #231f20" />
+                                                <path d="M389.3,378.63a9.78,9.78,0,0,1-1.33-4.37,9.5,9.5,0,0,1,1.2-3.38.12.12,0,0,1,.17,0,.12.12,0,0,1,.05.1,16.63,16.63,0,0,0,.15,4.88,8.57,8.57,0,0,0,.54,2A2.07,2.07,0,0,1,389.3,378.63Z" style="fill: #fff;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                                <path d="M389.94,377.72l2.74-2.75a2.54,2.54,0,0,1,3.15.1l4,2.7.4-.59-2-1-4.32-3.63a12,12,0,0,1-2.45-1.87c-.71-.87-1.68-1.24-2.26.1l.2,3.53A21.81,21.81,0,0,0,389.94,377.72Z" />
+                                                <path d="M374.62,374.28a1.59,1.59,0,0,1,2.06-.09,4.25,4.25,0,0,1,2.46,2.74,14.52,14.52,0,0,0,1.76,3.15,4.65,4.65,0,0,0,3.24,1.47,8.68,8.68,0,0,0,3.93-1.77l3.53-3.73c1.71-2,3.38-2,5-.39,1.17.8,2.78,1.08,3.43,1.51l2,3c-1-.71-5-3.36-5.53-3.73-1.35-1.24-2.7-.95-4.37.54a9.06,9.06,0,0,1-3.19,3.29,9.77,9.77,0,0,1-4.81,2.16A4.36,4.36,0,0,1,380.4,381a6.87,6.87,0,0,1-2.16-3.14,5.94,5.94,0,0,0-2.35-2.75,2,2,0,0,0-1.38-.1A1,1,0,0,1,374.62,374.28Z" style="fill: #38478f;stroke: #333;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                                <path d="M429.41,395.2a10.53,10.53,0,0,0,2.16-2.16,6,6,0,0,0,.09-3.64,2.4,2.4,0,0,1-.78,1.57Z" style="fill: #1a1a1a" />
+                                                <g>
+                                                    <path d="M371.43,392.1c-.72,1.57-1.5,3.2-1.38,4,.61,1.47,1.91,2.23,3.83,2.36a9.33,9.33,0,0,0,3.83.09l6.09.59h4.32c5.69.38,11,.6,15.41.49a83.26,83.26,0,0,0,11.39,0,34.33,34.33,0,0,0,8.55-1.27,20,20,0,0,0,6.38-3.54l.29-.39.89-2.36-.2-1.08a28.43,28.43,0,0,1-9.72,2.75,32.59,32.59,0,0,1-11.29-1.11c-7.64-4.32-14.57-5.06-20.92-2.75l-4.41.78a22.89,22.89,0,0,1-1.48,2.16,6,6,0,0,1-1.37.79A34,34,0,0,1,371.43,392.1Z" style="fill: #1a1a1a" />
+                                                    <g style="opacity: 0.10000000149011612">
+                                                        <use transform="translate(334.04 352.17)" xlink:href="#image-2" style="isolation: isolate" />
+                                                    </g>
+                                                    <path d="M371.43,392.1c-.72,1.57-1.5,3.2-1.38,4,.61,1.47,1.91,2.23,3.83,2.36a9.33,9.33,0,0,0,3.83.09l6.09.59h4.32c5.69.38,11,.6,15.41.49a83.26,83.26,0,0,0,11.39,0,34.33,34.33,0,0,0,8.55-1.27,20,20,0,0,0,6.38-3.54l.29-.39.89-2.36-.2-1.08a28.43,28.43,0,0,1-9.72,2.75,32.59,32.59,0,0,1-11.29-1.11c-7.64-4.32-14.57-5.06-20.92-2.75l-4.41.78a22.89,22.89,0,0,1-1.48,2.16,6,6,0,0,1-1.37.79A34,34,0,0,1,371.43,392.1Z" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                                </g>
+                                                <path d="M371.38,392.06a4.78,4.78,0,0,1,1.47-2.56,4,4,0,0,0,2.46,1.38,30.07,30.07,0,0,0,5.69.19l3.44-.39-1.4,2.06a1.9,1.9,0,0,1-1.27.79A29.11,29.11,0,0,1,371.38,392.06Z" style="fill: #38478f;stroke: #333;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                                <path d="M371.82,390.73c3,1.43,7,1.87,11.39,1.77-.28.86-1.06,1.3-2.65,1.08a27.86,27.86,0,0,1-6.68-.79,5,5,0,0,1-2.45-.78Z" style="fill: #4d4d4d;fill-opacity: 0.5;opacity: 0.800000011920929;isolation: isolate" />
+                                                <path d="M406.91,391.11l6.68-6.75-6.68-2-8.33,6.37A23.79,23.79,0,0,1,406.91,391.11Z" style="fill: #38478f;stroke: #333;stroke-miterlimit: 10;stroke-width: 0.25px" />
+                                            </g>
+                                            <g>
+                                                <path d="M164,364.17c-23.78-28.06-49.57-49.11-78-61,20.63,1.84,42.11,2.34,53,18Z" style="fill: #216130" />
+                                                <path d="M111,312.17c11.72,3.19,38.21,29.68,43.5,39.5" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <path d="M156.73,370.17c-7.54-38.66-20.75-72.19-41.38-99,18.61,13.38,38.74,26,40.69,46.25l.69,52.75" style="fill: #296a37" />
+                                                <path d="M134.27,293.45c9.42,9.51,20.38,48.31,20.14,60.12" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <path d="M152.14,365.09c6-40.19,4.72-76.86-6.1-108.92,13.49,18.27,28.71,36.22,23.62,56.7l-17.52,52.22" style="fill: #216130" />
+                                                <path d="M156.76,283.3c5.88,11.94,3.16,53.2-1.15,64.78" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <path d="M147.19,361.27c20.34-33.74,33-67.48,35.69-101.19,4.84,22.4,11.3,45.28-.82,61.59l-34.87,39.6" style="fill: #2d703b" />
+                                                <path d="M182,289.29c.61,13.37-17.27,49.51-25.37,58.11" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <path d="M144.58,357.84c29.09-28.38,50.25-58.35,61-90.42-.3,22.7,1,46.2-15.48,59.44l-45.54,31" style="fill: #216130" />
+                                                <path d="M197.73,295.5c-2.54,13.07-29.66,44.28-40.1,50.9" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <path d="M157.16,347.09c7.62-40.31,8-79.11-1.12-115.92,12.32,23.16,26.33,46.46,20.48,66.46l-19.36,49.46" style="fill: #216130" />
+                                                <path d="M166.54,263.63c5.19,14.28-5.3,70.16-10,81" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                <rect x="128.04" y="342.17" width="58" height="50" />
+                                            </g>
+                                            <polygon points="337.04 402.17 345.04 402.17 346.04 216.17 337.04 216.17 337.04 402.17" />
+                                        </g>
+                                        <g id="Light">
+                                            <polygon class="light_profile" points="449.04 92.17 445.04 190.17 311.04 191.17 271.04 121.17 280.04 112.17 272.04 105.17 271.04 89.17 265.04 76.17 293.04 46.17 314.04 46.17 449.04 92.17" style=" opacity: 0.10000000149011612;isolation: isolate" />
+                                            <g>
+                                                <rect x="475.58" y="171.94" width="23.83" height="27.23" style="fill: #c69c6d" />
+                                                <polygon points="475.73 181.88 472.17 181.88 472.17 190.1 477.85 190.1 477.85 192.37 471.04 192.37 471.04 179.88 476.71 179.88 475.73 181.88" style="fill: #c69c6d" />
+                                                <rect x="481.25" y="186.69" width="12.48" height="7.94" style="fill: #754c24" />
+                                                <path d="M483.52,186.69v-6.81c2.57-3,5.22-2.82,8,0v8h-8Z" style="fill: none;stroke: #754c24;stroke-miterlimit: 10;stroke-width: 0.75px" />
+                                                <path d="M486.82,189.82v1.71a.75.75,0,1,0,1.5,0v-1.71a.75.75,0,0,0-1.5,0Z" />
+                                                <path class="smoke3" d="M494.22,169.73a7.68,7.68,0,0,1-1.24-3.8c.09-1.27.86-1.84,1.29-2.9a8.09,8.09,0,0,0,0-4.87c-.2-.94-1.65-.54-1.45.4a6.28,6.28,0,0,1-.44,4.73,6.26,6.26,0,0,0-.83,1.91c-.35,1.89.51,3.65,1.35,5.28.45.86,1.74.1,1.3-.75Z" />
+                                                <g class="smoke1" data-name="Smoke 1">
+                                                    <path d="M483,169a5.73,5.73,0,0,1-.46-4.51,26.38,26.38,0,0,0,1.22-2.84,7.27,7.27,0,0,0-1.08-4.45c-.42-.86-1.72-.11-1.29.76.78,1.59,1.17,3,.38,4.67a8.64,8.64,0,0,0-.93,2.56,7.25,7.25,0,0,0,.87,4.56c.44.86,1.74.1,1.29-.75Z" />
+                                                </g>
+                                                <g class="smoke2">
+                                                    <path d="M488.86,167.8c-1.68-2.79.56-6.25.23-9.29s-2.13-5.81-.85-9c.54-1.34-1.64-1.93-2.17-.6-1.44,3.64.51,6.83.63,10.51.11,3.4-1.7,6.38.22,9.56a1.13,1.13,0,0,0,1.94-1.14Z" />
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="live_app_view">
+                        <div class="live_app_view_container">
+                            <div>
+                                <p>This is probably what I am doing:</p>
+                                <p>
+                                    <span class="letter1">
+                                        C
+                                    </span>
+                                    <span class="letter2">
+                                        o
+                                    </span>
+                                    <span class="letter3">
+                                        d
+                                    </span>
+                                    <span class="letter4">
+                                        i
+                                    </span>
+                                    <span class="letter5">
+                                        n
+                                    </span>
+                                    <span class="letter6">
+                                        g
+                                    </span>
+                                    <span class="letter7">
+                                        !
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+            @if (show_options_screen == true)
+            {
+                <div class="options">
+                    <div class="options_container">
+
+                        <div class="wallpaper">
+                            <div class="wallpaper_container">
+
+                                <div class="option_title">
+                                    <h2>Choose wallpaper</h2>
+                                </div>
+
+                                <div class="wallpaper_choices">
+                                    @foreach (var w in wallpapers)
+                                    {
+                                        <div class="wallpaper_choice">
+                                            <div @onclick="@(e => ChangeCurrentWallpaper(w.Id))" class="img_overlay"></div>
+                                            <img src="@w.Path" alt="@w.Style" />
+                                        </div>
+                                    }
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="color_scheme">
+                            <div class="color_scheme_container">
+                                <div class="option_title">
+                                    <h2>Choose color scheme</h2>
+                                </div>
+
+                                <div class="color_scheme_choices">
+                                    <div @onclick="@(e => ChangeColorScheme(1))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.87 70.87">
+                                            <title>Color_sheme1</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #27437b;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="39.34" y="15.83" width="20.83" height="20.83" style="fill: #6182c1;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="40.35" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(2))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_2</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #8a2d91;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #a43a95;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(3))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_3</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #454952;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #868d9d;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(4))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_4</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ebebeb;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #fff;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #1a1a1a;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(5))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_5</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #73bf44;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #0c8441;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(6))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_6</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #ed184a;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #af1f23;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                    <div @onclick="@(e => ChangeColorScheme(7))" class="color_scheme_option">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70.87 70.87">
+                                            <title>color_scheme_7</title>
+                                            <g id="Warstwa_2" data-name="Warstwa 2">
+                                                <g id="Warstwa_1-2" data-name="Warstwa 1">
+                                                    <g>
+                                                        <rect x="9.85" y="15.83" width="20.83" height="20.83" style="fill: #f8ec24;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="40.61" y="15.83" width="20.83" height="20.83" style="fill: #cab72e;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <rect x="25.02" y="41.4" width="20.83" height="20.83" style="fill: #f8f8f8;stroke: #231f20;stroke-miterlimit: 10" />
+                                                        <circle cx="35.44" cy="35.44" r="34.94" style="fill: none;stroke: #231f20;stroke-miterlimit: 10" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+            @if (show_gallery_app == true)
+            {
+                <div class="gallery_app">
+                    <div class="gallery_app_container">
+                        <div class="images_scroll">
+                            @if (display_img == false)
+                            {
+                                <div class="gallery">
+                                    <div class="gallery_container">
+
+                                        @foreach (var i in images)
+                                        {
+                                            <div class="img_box">
+                                                <div @onclick="@(e => OpenImage(i.Id))" class="cover_img">
+                                                    <p>@i.Title</p>
+                                                </div>
+                                                <div class="img_box_container">
+                                                    <img src="@i.Path" alt="@i.Alt" />
+                                                </div>
+                                            </div>
+                                        }
+
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="focused_gallery">
+                                    <div class="focused_gallery_container">
+
+                                        <div class="center_img">
+                                            <div @onclick="PreviousImage" class="button_left">
+                                                <button>&lt;</button>
+                                            </div>
+
+                                            <div @onclick="NextImage" class="button_right">
+                                                <button>&gt;</button>
+                                            </div>
+
+                                            <div class="img_box">
+                                                <img src="@current_img.Path" alt="@current_img.Alt" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+            @if (show_internet_app == true)
+            {
+                <div class="internet">
+                    <div class="internet_container">
+
+                        <div class="page_link">
+                            <div class="page_link_container">
+
+                                <div class="image_container">
+                                    <img src="../images/Clothe.png" />
+                                </div>
+
+                                <div class="description">
+                                    <h2>Clothe Online</h2>
+
+                                    <p>
+                                        Come and do some shopping!
+                                    </p>
+
+                                    <NavLink target="_blank" href="ClotheDescription">
+                                        See Live
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page_link">
+                            <div class="page_link_container">
+
+                                <div class="image_container">
+                                    <img src="../images/bank_background.png" />
+                                </div>
+
+                                <div class="description">
+                                    <h2>Four Circles Bank</h2>
+
+                                    <p>
+                                        Open account and seve some money!
+                                    </p>
+
+                                    <NavLink target="_blank" href="BankAppDescription">
+                                        See Live
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="page_link">
+                            <div class="page_link_container">
+
+                                <div class="image_container">
+                                    <img src="../images/math_background.jpg" />
+                                </div>
+
+                                <div class="description">
+                                    <h2>Buisness Math</h2>
+
+                                    <p>
+                                        Learn mathematics and statistics.
+                                    </p>
+
+                                    <NavLink target="_blank" href="BuisnessMathDescription">
+                                        See Live
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page_link">
+                            <div class="page_link_container">
+
+                                <div class="image_container">
+                                    <img src="../images/data_sharp.png" />
+                                </div>
+
+                                <div class="description">
+                                    <h2>Data #</h2>
+
+                                    <p>
+                                        Do you need to manage your data? Use this program create charts, sort data and get valuable informations from it.
+                                    </p>
+
+                                    <NavLink target="_blank" href="DataSharpDescription">
+                                        See Live
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="page_link">
+                            <div class="page_link_container">
+
+                                <div class="image_container">
+                                    <img src="../images/data_structures.png" />
+                                </div>
+
+                                <div class="description">
+                                    <h2>Data Structures</h2>
+
+                                    <p>
+                                        Are you going to master data structures? Come visit our website and see how data structures are working.
+                                    </p>
+
+                                    <NavLink target="_blank" href="DataStructuresDescription">
+                                        See Live
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page_link">
+                            <div class="page_link_container">
+
+                                <div class="image_container">
+                                    <img src="../images/tried_recipe.png" />
+                                </div>
+
+                                <div class="description">
+                                    <h2>I Tried Recipie</h2>
+
+                                    <p>
+                                        Get this app if you want to master your cooking skills. You can input recipie and then update it every time you do changes to it so you can get the best flavor.
+                                    </p>
+                                    <NavLink target="_blank" href="TriedRecipieDescription">
+                                        See Live
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page_link">
+                            <div class="page_link_container">
+
+                                <div class="image_container">
+                                    <img src="../images/restaurant_1.png" />
+                                </div>
+
+                                <div class="description">
+                                    <h2>That Resutaurant</h2>
+
+                                    <p>
+                                        Come nad see our restaurant and check what we got to offer.
+                                    </p>
+                                    <NavLink target="_blank" href="RestaurantDescription">
+                                        See Live
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page_link">
+                            <div class="page_link_container">
+
+                                <div class="image_container">
+                                    <img src="../images/jsgames.png" />
+                                </div>
+
+                                <div class="description">
+                                    <h2>Online Games</h2>
+
+                                    <p>
+                                        Do you want to play some games. Come play solo or with friend some JS games.
+                                    </p>
+                                    <NavLink target="_blank" href="JSGamesDescription">
+                                        See Live
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page_link">
+                            <div class="page_link_container">
+
+                                <div class="image_container">
+                                    <img src="../images/Ezsat.png" />
+                                </div>
+
+                                <div class="description">
+                                    <h2>Ezsat League</h2>
+
+                                    <p>
+                                        You got your e-sport team and you want to start competing with other teams. Join our league with the games we offer: League of legends, CS-GO, Hearthsotne and more! Check our website.
+                                    </p>
+
+                                    <NavLink href="EzsatDescription">
+                                        See Gallery
+                                    </NavLink>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="page_link">
+                            <div class="page_link_container">
+
+                                <div class="image_container">
+                                    <img src="../images/coffe_1.png" />
+                                </div>
+
+                                <div class="description">
+                                    <h2>Coffe shop</h2>
+
+                                    <p>
+                                        We make wonderfull coffe from Brasilian coffe beans. You must check it out!
+                                    </p>
+
+                                    <NavLink href="CoffeDescription">
+                                        See Live
+                                    </NavLink>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            }
+
+
+            @if (show_skills_app == true)
+            {
+                <div class="skills">
+                    <div class="skills_container">
+                        <div class="all_skills">
+                            <div class="front_end">
+                                <h3>Front-End</h3>
+                                <p>Html</p>
+                                <p>CSS</p>
+                                <p>SCSS</p>
+                                <p>Javascript</p>
+                                <p>TypeScript</p>
+                                <p>React</p>
+                                <p>Blazor</p>
+                                <p>GatsbyJS(Learning)</p>
+                            </div>
+
+                            <div class="back_end">
+                                <h3>Back-End</h3>
+                                <p>C#</p>
+                                <p>.NET</p>
+                                <p>.NET-Core</p>
+                                <p>SQL</p>
+                                <p>Java(Basics)</p>
+                                <p>Python(Learing)</p>
+                            </div>
+
+                            <div class="other">
+                                <h3>Other</h3>
+                                <p>GIT</p>
+                                <p>Adobe Ilustrator</p>
+                                <p>Adobe Photoshop</p>
+                                <p>Facebook for developers platform</p>
+                                <p>Azure</p>
+                                <p>Accessibility</p>
+                                <p>Agile(Scrum)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="tablet_bottom">
+                <div @onclick="OpenMainScreen" class="tablet_bottom_button">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+
+@code{
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        ChatAppOutput q1 = new ChatAppOutput();
+        q1.Id = 0;
+        q1.Question = "What programing language is your favourite?";
+        q1.Answer = "C#";
+
+        new_questions.Add(q1);
+
+        ChatAppOutput q2 = new ChatAppOutput();
+        q2.Id = 1;
+        q2.Question = "Any hoobies?";
+        q2.Answer = "Yes, I do like reading about history, going to the gym, playing video games and study about anything interesting no matter in which field.";
+
+        new_questions.Add(q2);
+
+        ChatAppOutput q3 = new ChatAppOutput();
+        q3.Id = 2;
+        q3.Question = "Which book is your favorite?";
+        q3.Answer = "The Witcher Saga";
+
+        new_questions.Add(q3);
+
+        ChatAppOutput q4 = new ChatAppOutput();
+        q4.Id = 3;
+        q4.Question = "Favorite qote?";
+        q4.Answer = "When something is important enough, you do it even if the odds are not in your favor - Elon Musk";
+
+        new_questions.Add(q4);
+
+        ChatAppOutput q5 = new ChatAppOutput();
+        q5.Id = 4;
+        q5.Question = "What are your ambitions?";
+        q5.Answer = "To be good at no matter what I am going to do.";
+
+        new_questions.Add(q5);
+
+        ChatAppOutput q6 = new ChatAppOutput();
+        q6.Id = 5;
+        q6.Question = "Your best treat?";
+        q6.Answer = "I think is that I am good at problem solving, but I am definetly hardworking if I can say so myself.";
+
+        new_questions.Add(q6);
+
+        ChatAppOutput q7 = new ChatAppOutput();
+        q7.Id = 6;
+        q7.Question = "Your worst treat?";
+        q7.Answer = "I would say lack of confidence, but I am definetly working on it.";
+
+        new_questions.Add(q7);
+
+        ChatAppOutput q8 = new ChatAppOutput();
+        q8.Id = 7;
+        q8.Question = "What is your favorite game?";
+        q8.Answer = "So far it is old game called Gothic 2 Night of the Raven.";
+
+        new_questions.Add(q8);
+
+        //Wallpaper 
+        current_wallpeper.Id = 1;
+        current_wallpeper.Style = "wallpaper2";
+
+        Wallpaper w1 = new Wallpaper();
+        w1.Id = 0;
+        w1.Path = "../images/wallpaper1.jpg";
+        w1.Style = "wallpaper1";
+        wallpapers.Add(w1);
+
+        Wallpaper w2 = new Wallpaper();
+        w2.Id = 1;
+        w2.Path = "../images/wallpaper2.jpg";
+        w2.Style = "wallpaper2";
+        wallpapers.Add(w2);
+
+        Wallpaper w3 = new Wallpaper();
+        w3.Id = 2;
+        w3.Path = "../images/wallpaper3.jpg";
+        w3.Style = "wallpaper3";
+        wallpapers.Add(w3);
+
+        Wallpaper w4 = new Wallpaper();
+        w4.Id = 3;
+        w4.Path = "../images/wallpaper4.jpg";
+        w4.Style = "wallpaper4";
+        wallpapers.Add(w4);
+
+        Wallpaper w5 = new Wallpaper();
+        w5.Id = 4;
+        w5.Path = "../images/wallpaper5.jpg";
+        w5.Style = "wallpaper5";
+        wallpapers.Add(w5);
+
+        Wallpaper w6 = new Wallpaper();
+        w6.Id = 5;
+        w6.Path = "../images/wallpaper6.jpg";
+        w6.Style = "wallpaper6";
+        wallpapers.Add(w6);
+
+        //Gallery
+
+        Img i1 = new Img();
+
+        i1.Id = 0;
+        i1.Path = "../images/bank_background.png";
+        i1.Alt = "Bank";
+        i1.Title = "Bank";
+
+        images.Add(i1);
+
+        Img i2 = new Img();
+
+        i2.Id = 1;
+        i2.Path = "../images/Clothe.png";
+        i2.Alt = "Audi";
+        i2.Title = "Audi";
+
+        images.Add(i2);
+
+        Img i3 = new Img();
+
+        i3.Id = 2;
+        i3.Path = "../images/tried_recipe.png";
+        i3.Alt = "Mercedes";
+        i3.Title = "Mercedes";
+
+        images.Add(i3);
+
+        Img i4 = new Img();
+
+        i4.Id = 3;
+        i4.Path = "../images/data_sharp.png";
+        i4.Alt = "Mustang";
+        i4.Title = "Mustang";
+
+        images.Add(i4);
+
+        Img i5 = new Img();
+
+        i5.Id = 4;
+        i5.Path = "../images/data_structures.png";
+        i5.Alt = "Hundai";
+        i5.Title = "Hundai";
+
+
+        images.Add(i5);
+
+        Img i6 = new Img();
+
+        i6.Id = 5;
+        i6.Path = "../images/math_background.jpg";
+        i6.Alt = "Lamborghini";
+        i6.Title = "Lamborghini";
+
+        images.Add(i6);
+
+        Img i7 = new Img();
+
+        i7.Id = 6;
+        i7.Path = "../images/js_games.jpg";
+        i7.Alt = "Lamborghini";
+        i7.Title = "Lamborghini";
+
+        images.Add(i7);
+
+
+
+        Img i8 = new Img();
+
+        i8.Id = 7;
+        i8.Path = "../images/Ezsat.png";
+        i8.Alt = "Lamborghini";
+        i8.Title = "Lamborghini";
+
+        images.Add(i8);
+
+        Img i9 = new Img();
+
+        i9.Id = 8;
+        i9.Path = "../images/restaurant_1.png";
+        i9.Alt = "Lamborghini";
+        i9.Title = "Lamborghini";
+
+        images.Add(i9);
+
+
+        Img i10 = new Img();
+
+        i10.Id = 9;
+        i10.Path = "../images/coffe_1.png";
+        i10.Alt = "Lamborghini";
+        i10.Title = "Lamborghini";
+
+        images.Add(i10);
+
+    }
+
+
+
+    #region Variables and functions for toggleing apps within tablet
+    protected bool show_main_screen = true;
+    protected bool show_chat_app = false;
+    protected bool show_live_app = false;
+    protected bool show_options_screen = false;
+    protected bool show_internet_app = false;
+    protected bool show_gallery_app = false;
+    protected bool show_skills_app = false;
+
+    public void CloseAllApps()
+    {
+        show_chat_app = false;
+        show_main_screen = false;
+        show_live_app = false;
+        show_options_screen = false;
+        show_internet_app = false;
+        show_gallery_app = false;
+        show_skills_app = false;
+        display_img = false;
+    }
+
+    /// <summary>
+    /// Will open chat window inside of tablet
+    /// </summary>
+    public void OpenChatApp()
+    {
+        if (show_chat_app == false)
+        {
+            CloseAllApps();
+            show_chat_app = true;
+        }
+        else
+        {
+            CloseAllApps();
+            show_main_screen = true;
+        }
+    }
+
+    /// <summary>
+    /// Will open main screen section
+    /// </summary>
+    public void OpenMainScreen()
+    {
+        if (show_main_screen == false)
+        {
+            CloseAllApps();
+            show_main_screen = true;
+        }
+        else
+        {
+            CloseAllApps();
+            show_main_screen = true;
+        }
+    }
+
+    /// <summary>
+    /// Will open live app screen
+    /// </summary>
+    public void OpenLiveApp()
+    {
+        if (show_live_app == false)
+        {
+            CloseAllApps();
+            show_live_app = true;
+        }
+        else
+        {
+            CloseAllApps();
+            show_live_app = true;
+        }
+    }
+
+    /// <summary>
+    /// This function will open options window
+    /// </summary>
+    public void OpenOptions()
+    {
+        if (show_options_screen == false)
+        {
+            CloseAllApps();
+            show_options_screen = true;
+        }
+        else
+        {
+            CloseAllApps();
+            show_options_screen = true;
+        }
+    }
+
+    /// <summary>
+    /// Will open internet app
+    /// </summary>
+    public void OpenInternetApp()
+    {
+        if (show_internet_app == false)
+        {
+            CloseAllApps();
+            show_internet_app = true;
+        }
+        else
+        {
+            CloseAllApps();
+            show_internet_app = true;
+        }
+    }
+
+    /// <summary>
+    /// Will open gallery app
+    /// </summary>
+    public void OpenGalleryApp()
+    {
+        if (show_gallery_app == false)
+        {
+            CloseAllApps();
+            show_gallery_app = true;
+        }
+        else
+        {
+            CloseAllApps();
+            show_gallery_app = true;
+        }
+    }
+
+    /// <summary>
+    /// Will open skills display
+    /// </summary>
+    public void OpenSkillsApp()
+    {
+        if (show_skills_app == false)
+        {
+            CloseAllApps();
+            show_skills_app = true;
+        }
+        else
+        {
+            CloseAllApps();
+            show_skills_app = true;
+        }
+    }
+    #endregion
+
+    #region Chat App Functions
+    public class ChatAppOutput
+    {
+        public int Id { get; set; }
+        public string Answer { get; set; }
+        public string Question { get; set; }
+
+        public ChatAppOutput() { }
+    }
+
+
+    //Question lists
+    protected List<ChatAppOutput> new_questions = new List<ChatAppOutput>();
+    protected List<ChatAppOutput> asked_questions = new List<ChatAppOutput>();
+
+
+
+
+
+    /// <summary>
+    /// User can ask questinon
+    /// </summary>
+    /// <param name="id"></param>
+    public void AskQuestion(int id)
+    {
+        asked_questions.Add(new_questions[id]);
+
+        DeleteFromNew(id);
+    }
+
+
+    public void DeleteFromNew(int id)
+    {
+        new_questions.RemoveAt(id);
+
+        //Reset ids
+        if (new_questions.Count > 0)
+        {
+            for (int i = 0; i < new_questions.Count; i++)
+            {
+                new_questions[i].Id = i;
+            }
+        }
+    }
+    #endregion
+
+    #region Options Functions
+    public class Wallpaper
+    {
+        public int Id { get; set; }
+        public string Style { get; set; }
+        public string Path { get; set; }
+
+        public Wallpaper() { }
+    }
+
+    /// <summary>
+    /// Current walpaper class
+    /// </summary>
+    protected Wallpaper current_wallpeper = new Wallpaper();
+
+
+    /// <summary>
+    /// Will store wallpapers for the tablet
+    /// </summary>
+    protected List<Wallpaper> wallpapers = new List<Wallpaper>();
+
+    /// <summary>
+    /// Will change wallpaper of tablet
+    /// </summary>
+    public void ChangeCurrentWallpaper(int id)
+    {
+        if (wallpapers.Count > 0)
+        {
+            current_wallpeper = wallpapers[id];
+        }
+    }
+
+    /// <summary>
+    /// Current color scheme for the tablet
+    /// </summary>
+    protected string ActualScheme = "Scheme_1";
+
+    /// <summary>
+    /// Will change color scheme of the tablet
+    /// </summary>
+    /// <param name="id"></param>
+    public void ChangeColorScheme(int id)
+    {
+        switch (id)
+        {
+            case 1: { ActualScheme = "Scheme_1"; break; }
+            case 2: { ActualScheme = "Scheme_2"; break; }
+            case 3: { ActualScheme = "Scheme_3"; break; }
+            case 4: { ActualScheme = "Scheme_4"; break; }
+            case 5: { ActualScheme = "Scheme_5"; break; }
+            case 6: { ActualScheme = "Scheme_6"; break; }
+            case 7: { ActualScheme = "Scheme_7"; break; }
+        }
+    }
+
+    #endregion
+
+    #region Gallery variables functions
+    public class Img
+    {
+        public int Id { get; set; }
+        public string Path { get; set; }
+        public string Alt { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+
+        public Img() { }
+    }
+
+    protected List<Img> images = new List<Img>();
+
+    protected bool display_img = false;
+
+    protected Img current_img = new Img();
+
+
+    public void OpenImage(int id)
+    {
+        if (images.Count > 0)
+        {
+            current_img = images[id];
+            display_img = true;
+        }
+
+    }
+
+    public void NextImage()
+    {
+        if (images.Count > 0)
+        {
+            if (current_img.Id < images.Count - 1)
+            {
+                current_img = images[current_img.Id + 1];
+            }
+            else
+            {
+                current_img = images[0];
+            }
+        }
+    }
+
+    public void PreviousImage()
+    {
+        if (images.Count > 0)
+        {
+            if (current_img.Id != 0)
+            {
+                current_img = images[current_img.Id - 1];
+            }
+            else
+            {
+                current_img = images[images.Count - 1];
+            }
+        }
+    }
+
+
+    public void CloseGallery()
+    {
+        current_img = new Img();
+        display_img = false;
+    }
+
+    #endregion
+}
