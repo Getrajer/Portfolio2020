@@ -2,11 +2,13 @@
     margin:0;
     padding:0;
 }
+
 body{
     background-color:white;
 }
+
 nav{
-    display:none
+    display:none;
 }
 
 label, textarea, p, h1, h2, h3, h4, h5, input{
@@ -877,3 +879,10 @@ button:focus{
 .all_recipies .name:hover{
     background-color:rgba(0, 0, 0, 0.0);
 }
+
+.all_recipies img{
+    width:100%;
+    height:470px;
+}
+
+/*End of display recipes*/
