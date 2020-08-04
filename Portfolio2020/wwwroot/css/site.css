@@ -60,10 +60,10 @@ nav .l_box{
 }
 
 nav a{
-    font-size: 1rem;
+    font-size: 1.1rem;
     display:block;
-    font-weight: 600;
-    letter-spacing: 8px;
+    font-weight: 900;
+    letter-spacing: 15px;
     padding: 0 2em;
     color:white;
     transition: color 0.5s;

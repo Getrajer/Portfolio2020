@@ -31,8 +31,8 @@
 }
 #about h3{
     font-size: 3.5rem;
-    letter-spacing:4px;
-    font-weight:800;
+    letter-spacing:6px;
+    font-weight:900;
     margin-bottom:1em;
     color: #081a33;
 }
@@ -46,7 +46,7 @@
 
 #about .about_txt{
     padding:1em 2em;
-    color: #0a1626;
+    color:  #081a33;
     height:100%;
     width:100%;
     display:flex;

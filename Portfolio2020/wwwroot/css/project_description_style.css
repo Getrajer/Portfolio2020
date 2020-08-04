@@ -4,16 +4,14 @@
     display: flex;
     justify-content: center;
     background-color: #1d233e;
+    padding: 10em 0 3em 0;
 }
 
-nav{
-    display:none;
-}
-
-.project_description_container{
-    width:100%;
-    max-width:600px;
-    background-color:#ebebeb;
+.project_description_container {
+    width: 100%;
+    max-width: 700px;
+    background-color: #ebebeb;
+    box-shadow: 5px 5px 10px rgba(31, 33, 40, 0.49);
 }
 
 .project_description h1{
@@ -41,14 +39,18 @@ nav{
 
 .project_description img{
     width:100%;
+    margin: 0 0 1em 0;
 }
 
-.project_description .type_container p{
-    color:#050012;
-    font-weight:900;
+.project_description .type_container {
+    padding: 0 60px;
+}
+
+.project_description .type_container p {
+    color: #050012;
+    font-weight: 900;
     line-height: 30px;
-    padding: 0 1.5em;
-    font-size:1.3rem;
+    font-size: 1.5rem;
 }
 
 .project_description .tech_icons {
@@ -81,11 +83,11 @@ nav{
 
 .project_description .description_footer{
     width: 100%;
-    max-width:600px;
+    max-width:870px;
     background-color: #050012;
     text-align:center;
     padding:0.5em 0;
-    margin-top:1em;
+    margin-top:2em;
 }
 
 .project_description .description_footer p {
