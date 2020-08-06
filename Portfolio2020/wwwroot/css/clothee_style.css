@@ -10,6 +10,13 @@ p{
     font-family: sans-serif!important;
 }
 
+.site {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
 body {
     margin: 0;
     padding: 0;

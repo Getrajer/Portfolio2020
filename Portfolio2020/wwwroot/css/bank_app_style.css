@@ -10,6 +10,13 @@
     display:none;
 }
 
+.site {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
 .content {
     width: 100%;
 }

@@ -19,6 +19,13 @@ button:focus{
     outline:unset;
 }
 
+.site{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns: 1fr;
+
+}
+
 /*Navigation*/
 /*Navbar style*/
 .bank_app_nav{

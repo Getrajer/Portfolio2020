@@ -5,7 +5,6 @@ h4 {
 }
 
 body {
-    background-color: rgb(15, 25, 46);
 }
 
 p{
@@ -200,7 +199,7 @@ button:focus{
 
 .gallery .gallery_container{
     width:100%;
-    max-width:1500px;
+    max-width:1200px;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
@@ -266,7 +265,7 @@ button:focus{
 
 .focused_gallery .focused_gallery_container{
     width:100%;
-    max-width:1500px;
+    max-width:1200px;
 }
 
 .focused_gallery .focused_gallery_container .img_box{
@@ -349,7 +348,7 @@ button:focus{
 
 .focused_gallery .close_button{
     position:absolute;
-    top: -80px;
+    top: -40px;
     right: 260px;
 }
 
@@ -369,7 +368,6 @@ button:focus{
 #Ezsat .gallery {
     min-height: 100vh;
     padding-top: 5em;
-    background-color: black;
 }
 
 #Ezsat .gallery_container img {
@@ -393,5 +391,4 @@ button:focus{
     position: relative;
     padding-top: 5em;
     min-height: 100vh;
-    background-color:black;
 }

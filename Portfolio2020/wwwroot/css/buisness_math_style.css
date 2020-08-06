@@ -18,6 +18,11 @@ a {
     color: white;
 }
 
+.site {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+}
 
 
 .math_menu_container {
