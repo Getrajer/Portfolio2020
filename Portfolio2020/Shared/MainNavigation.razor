@@ -50,43 +50,38 @@
 
             <div class="navigation_links">
 
-                <div class="l_box">
+                <NavLink @onclick="CloseNav" class="l_box" href="/">
+
                     <div class="font_aws_icon">
                         <i class="fas fa-home"></i>
                     </div>
 
                     <div class="link_n">
-                        <NavLink @onclick="CloseNav" class="link_nav" href="/">
-                            Home
-                        </NavLink>
+                        Home
                     </div>
-                </div>
+                </NavLink>
 
-                <div class="l_box">
+                <NavLink @onclick="CloseNav" class="l_box" href="About">
 
                     <div class="font_aws_icon">
                         <i class="fas fa-user-astronaut"></i>
                     </div>
 
                     <div class="link_n">
-                        <NavLink @onclick="CloseNav" class="link_nav" href="Projects">
-                            About
-                        </NavLink>
+                        About
                     </div>
-                </div>
+                </NavLink>
 
-                <div class="l_box">
+                <NavLink @onclick="CloseNav" class="l_box" href="Projects">
 
                     <div class="font_aws_icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
 
                     <div class="link_n">
-                        <NavLink @onclick="CloseNav" class="link_nav" href="Projects">
-                            Projects
-                        </NavLink>
+                        Projects
                     </div>
-                </div>
+                </NavLink>
 
             </div>
 
@@ -99,21 +94,21 @@
                     <div class="shots">
                         <div class="shots_container">
 
-                            <div class="shot">
-                                <img src="../images/Clothe.png" alt="clothe" />
-                            </div>
+                            <NavLink class="shot" href="OnlineGroceary">
+                                <img src="../images/OnlineGroceary.png" alt="Groceary" />
+                            </NavLink>
 
-                            <div class="shot">
-                                <img src="../images/Clothe.png" alt="clothe" />
-                            </div>
+                            <NavLink class="shot" href="ComponentsDescription">
+                                <img src="../images/Components.png" alt="Components" />
+                            </NavLink>
 
-                            <div class="shot">
-                                <img src="../images/Clothe.png" alt="clothe" />
-                            </div>
+                            <NavLink class="shot" href="BankAppDescription">
+                                <img src="../images/bank_background.png" alt="BankApp" />
+                            </NavLink>
 
-                            <div class="shot">
-                                <img src="../images/Clothe.png" alt="clothe" />
-                            </div>
+                            <NavLink class="shot" href="ClotheDescription">
+                                <img src="../images/Clothe.png" alt="Clothe" />
+                            </NavLink>
 
                         </div>
                     </div>
@@ -125,11 +120,11 @@
                 <div class="media_container">
 
                     <div class="medium">
-                        <a><i class="fab fa-linkedin-in"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/mateusz-owczarek-21a301188/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
 
                     <div class="medium">
-                        <a><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://github.com/Getrajer"><i class="fab fa-github"></i></a>
                     </div>
 
                     <div class="medium">

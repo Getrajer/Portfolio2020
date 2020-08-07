@@ -21,20 +21,19 @@ html {
 .site{
     min-height:100vh;
     display:grid;
-    grid-template-columns: 280px auto;
+    grid-template-columns: 260px auto;
 
 }
 
 #main_nav {
-    background-color: #21264a;
+    background-color: #161a39;
 }
 
 #main_nav .navigation {
     display: grid;
     grid-template-rows: 25% 35% 27% 13%;
     min-height: 100vh;
-    background-color:#21264a;
-    color: white;
+    background-color:white;
 }
 
 #main_nav .l_box{
@@ -52,7 +51,8 @@ html {
     justify-content:center;
     align-content:center;
     align-items:center;
-    background-color:rgba(0, 0, 0, 0.10);
+    background-color:#161a39;
+    color:white;
 }
 
 #main_nav .top_nav svg{
@@ -66,13 +66,13 @@ html {
 
 #main_nav .top_nav p{
     font-size:  1.1rem;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-align:center;
 }
 
 #main_nav .top_nav .name{
     font-size:1.4rem;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 #main_nav .top_nav div{
@@ -84,11 +84,14 @@ html {
     flex-direction: column;
     justify-content: space-around;
     padding: 0 30px;
-    border-bottom: 1px solid rgba(156, 191, 212, 0.10);
+    border-bottom: 1px solid rgba(165, 165, 165, 0.50);
+    border-right: 1px solid rgba(165, 165, 165, 0.50);
 }
 
 #main_nav .navigation_links .l_box{
-    font-size:1.2rem;
+    font-size:1.3rem;
+    color:#161a39;
+    font-weight:600;
     padding:1em 0.5em;
     letter-spacing: 4px;
     cursor:pointer;
@@ -96,11 +99,12 @@ html {
 }
 
 #main_nav .navigation_links .l_box:hover{
-    background-color:rgba(156, 191, 212, 0.50);
+    background-color:rgba(22, 26, 57, 0.40);
+    color:#161a39;
 }
 
 #main_nav .navigation_links .l_box a{
-    color:white;
+    color:#161a39;
 }
 
 #main_nav .navigation_links .l_box a:hover{
@@ -108,11 +112,19 @@ html {
 }
 
 #main_nav .work_shots {
-    border-bottom: 1px solid rgba(156, 191, 212, 0.10);
+    border-bottom: 1px solid rgba(165, 165, 165, 0.50);
+    border-right: 1px solid rgba(165, 165, 165, 0.50);
+
 }
 
 #main_nav .work_shots_container{
     height:100%;
+}
+
+#main_nav .work_shots .title p{
+    font-size: 1.3rem;
+    font-weight:600;
+    letter-spacing:4px;
 }
 
 #main_nav .shots{
@@ -157,7 +169,7 @@ html {
     align-content: center;
     align-items: center;
     padding: 0 20px;
-    border-bottom: 1px solid rgba(156, 191, 212, 0.10);
+    background-color:#161a39;
 }
 
 #main_nav .media_container{
@@ -174,6 +186,7 @@ html {
     transition: 0.5s;
     font-weight:100;
     cursor:pointer;
+    color:white;
 }
 
 #main_nav .medium a:hover{
@@ -186,7 +199,7 @@ html {
         z-index: 10;
         position:absolute;
         top: 10px;
-        right: 40px;
+        right: 5%;
     }
 
     #main_nav .toggle-button button {

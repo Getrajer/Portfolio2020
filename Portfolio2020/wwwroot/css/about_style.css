@@ -1,0 +1,326 @@
+﻿.about {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.about .about_container{
+    width:100%;
+    min-height:100vh;
+
+}
+
+header{
+    width:100%;
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+.bacground_color {
+    height: 640px;
+    position: absolute;
+    width: 100%;
+    background-color: #161a39;
+}
+
+.about .header_container {
+    min-height: 856px;
+    width: 100%;
+    max-width: 1100px;
+    height: 100%;
+    background-image: url(../images/About_Background.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    z-index:1;
+}
+
+.about .about_content {
+    width:100%;
+    color:white;
+    max-width:500px;
+    height:400px;
+    padding-top:2em;
+    margin-left: 5em;
+}
+
+.about .head_title{
+    padding: 1em 0 3em 0;
+}
+
+.about .head_title h1{
+    font-size: 3em;
+}
+
+.about .head_txt {
+    font-size:1.2rem;
+}
+
+
+.front_back {
+    display: flex;
+    justify-content: center;
+    min-height: 60vh;
+    padding-bottom: 5em;
+}
+
+.front_back .front_back_container{
+    width:100%;
+    max-width: 1100px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.front_back .svg_container{
+    display:flex;
+    justify-content:center;
+    padding:1em 0;
+}
+
+.front_back .card_title{
+    text-align:center;
+    padding:1em 0;
+}
+
+.front_back .card_text{
+    padding:1em 0;
+
+}
+
+.skill_card {
+    display: flex;
+    justify-content: center;
+}
+
+.skill_card .skill_card_container {
+    width: 100%;
+    max-width: 300px;
+    padding: 1em;
+}
+
+
+
+
+.development_process{
+    display:flex;
+    justify-content:center;
+    padding: 3em 0;
+}
+
+.development_process .development_process_container{
+    width:100%;
+    max-width:1100px;
+}
+
+.development_process .title{
+    text-align:center;
+    padding:1em 0;
+}
+
+
+.development_process_time_line{
+    width:100%;
+
+    display:grid;
+    grid-template-columns: 45% 10% 45%;
+}
+
+.development_process_time_line .middle{
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+}
+
+.development_process_time_line .icon{
+    height:100px;
+    width:100px;
+    border-radius:50%;
+    background-color: rgb(46,56,135);
+    color:white;
+    font-size:3rem;
+
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+}
+
+.development_process_time_line .left{
+    display:grid;
+    grid-template-columns: 80% 20%;
+    padding: 3em 2em;
+}
+
+.development_process_time_line .right{
+    display:grid;
+    grid-template-columns: 20% 80%;
+    padding: 0 1em;
+}
+
+.development_process_time_line .time_stamp{  
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+}
+
+.development_process_time_line .right .time_stamp{
+    color:white;
+    background-color:rgb(46,56,135);
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+}
+
+.development_process_time_line .left .time_stamp{
+    color:white;
+    background-color:rgb(46,56,135);
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.development_process_time_line .right .content{
+    padding: 1em;
+    border: 1px solid rgb(46,56,135);
+}
+
+.development_process_time_line .left .content{
+    padding: 1em;
+    border: 1px solid rgb(46,56,135);
+}
+
+
+/*---------------------*/
+/*Contact Section*/
+.contact {
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/contact_background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 850px;
+}
+
+
+.contact_container {
+    width: 100%;
+    max-width: 950px;
+    padding-top: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact .title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.contact .title_container {
+    width: 100%;
+    height: 550px;
+    padding: 1em;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: rgb(46,56,135);
+    align-items: center;
+}
+
+
+.contact .title h1{
+    color:white;
+    font-weight:700;
+    font-size:3rem;
+    letter-spacing: 6px;
+}
+
+.contact .underline {
+    height: 6px;
+    width: 100%;
+    background-color: #201d93;
+}
+
+.contact_form{
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    align-items:center;
+}
+
+.contact_form .contact_form_container{
+    width:100%;
+    padding:1em;
+    height:550px;
+    background-color: white;
+}
+
+.contact_form label{
+    display:block;
+    font-weight:600;
+    letter-spacing:3px;
+}
+
+
+.contact_form input{
+    width:100%;
+    padding:0.5em;
+    margin: 0 0 2em 0; 
+    border-radius:unset;
+    background-color:transparent;
+    border:unset;
+    border: 1px solid rgba(180, 180, 180, 0.50);
+    color:white;
+    text-align:center;
+    transition:0.5s;
+}
+
+.contact_form input:focus{
+    outline:none;
+    border: 1px solid rgba(46, 56, 135, 0.50);
+}
+
+.contact_form textarea{
+    width:100%;
+    height: 160px;
+    padding:0.5em;
+    margin: 1em 0;
+    background-color:transparent;
+    border:unset;
+    border: 1px solid rgba(180, 180, 180, 0.50);
+    color:white;
+    text-align:center;
+    resize:unset;
+    transition:0.5s;
+}
+
+.contact_form textarea:focus{
+    outline:none;
+    border: 1px solid rgba(46, 56, 135, 0.50);
+}
+
+.contact_form .button_container{
+    text-align:right;
+    padding:1em 0;
+}
+
+.contact_form .button_container button {
+    background: rgb(46,56,135);
+    background: linear-gradient(90deg, rgba(46,56,135,1) 4%, rgba(19,65,149,1) 69%, rgba(24,66,168,1) 100%);
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    font-weight:600;
+    letter-spacing:4px;
+    transition: 0.5s;
+}
+
+.contact_form .button_container button:hover{
+    transform: translateY(-3px);
+}

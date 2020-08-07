@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200.91" height="202.05" viewBox="0 0 200.91 202.05">
+  <title>Zasób 20</title>
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_2-2" data-name="Warstwa 2">
+      <g>
+        <circle cx="69.42" cy="133.14" r="32.2" style="fill: #1934a9"/>
+        <circle cx="68.91" cy="132.32" r="4.89" style="stroke: #000;stroke-miterlimit: 10"/>
+        <g>
+          <rect x="64.02" y="69.55" width="8.97" height="8.97" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="65.17" y="188.58" width="8.97" height="8.97" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="123.53" y="128.38" width="8.97" height="8.97" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="4.5" y="128.38" width="8.97" height="8.97" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="103.96" y="83.41" width="8.97" height="8.97" transform="translate(88.03 -50.2) rotate(42.57)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="24.88" y="173.9" width="8.97" height="8.97" transform="translate(128.41 27.14) rotate(42.57)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="108.04" y="169.83" width="8.97" height="8.97" transform="translate(147.57 -30.18) rotate(42.57)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="24.07" y="85.85" width="8.97" height="8.97" transform="translate(68.63 4.49) rotate(42.57)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+        </g>
+        <circle cx="69.42" cy="133.14" r="52.59" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 11px"/>
+      </g>
+      <g>
+        <ellipse cx="154" cy="46" rx="21.64" ry="20.54" style="fill: #1934a9"/>
+        <circle cx="153.51" cy="46.68" r="3.29" style="stroke: #000;stroke-miterlimit: 10"/>
+        <g>
+          <rect x="138.39" y="6.42" width="6.03" height="6.03" transform="translate(3.78 43.24) rotate(-17.62)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="163.33" y="82.41" width="6.03" height="6.03" transform="translate(-18.05 54.35) rotate(-17.62)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="188.46" y="32" width="6.03" height="6.03" transform="translate(-1.62 59.59) rotate(-17.62)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="112.24" y="56.2" width="6.03" height="6.03" transform="translate(-12.52 37.66) rotate(-17.62)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="166.79" y="7.17" width="6.03" height="6.03" transform="translate(20.15 -70.68) rotate(24.95)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="134.55" y="81.21" width="6.03" height="6.03" transform="translate(48.37 -50.17) rotate(24.95)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="186.97" y="61.69" width="6.03" height="6.03" transform="translate(45.02 -74.11) rotate(24.95)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+          <rect x="116.12" y="24.99" width="6.03" height="6.03" transform="translate(22.93 -47.64) rotate(24.95)" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 9px"/>
+        </g>
+        <circle cx="154" cy="47.1" r="35.33" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 11px"/>
+      </g>
+    </g>
+  </g>
+</svg>

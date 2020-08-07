@@ -44,19 +44,27 @@
     padding: 3em 0 0 10px;
 }
 
-.home_page .go_btn button{
+.home_page .go_btn a{
     border:unset;
+    display:block;  
+    text-align:center;
+    color:white;
     background-color: #21264a;
     color:white;
     font-size:1.5rem;
-    padding:0.5em;
+    cursor: pointer;
+    padding:1em 0.5em;
     width:300px;
+    border-top-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+
     transition: 0.5s;
 }
 
-.home_page .go_btn button:hover{
+.home_page .go_btn a:hover{
     transform: translateY(-3px);
     background-color:#2a2f5c;
+    color:white;
 }
 
 .home_page .right_home{
@@ -120,5 +128,42 @@
 
     .home_page .right_home_container .info_icon{
         padding:0 25px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .home_page .left_home_container {
+        max-width: 700px;
+        padding: 5em 10px 5em 10px;
+    }
+
+    .home_page .left_home .hello_message h1 {
+        font-size: 6rem;
+        letter-spacing: 10px;
+    }
+
+    .home_page .right_home_container .info_icon {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .home_page .right_home_container .info_icon i {
+        font-size: 2rem;
+        padding: 15px 5px 0 5px;
+    }
+
+    .home_page .go_btn{
+        text-align:center;
+    }
+
+    .home_page .go_btn a{
+        border:unset;
+        background-color: #21264a;
+        color:white;
+        font-size:1.5rem;
+        padding:0.5em;
+        width:200px;
+        transition: 0.5s;
     }
 }
