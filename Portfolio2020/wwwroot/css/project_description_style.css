@@ -1,9 +1,28 @@
-﻿.project_description {
+﻿* {
+    box-sizing: border-box;
+    font-family: 'Zilla Slab', serif;
+}
+
+/*Header section*/
+p {
+    padding: 0;
+    margin: 0;
+}
+
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Oswald', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+.project_description {
     width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 5em 0 3em 0;
+    padding: 10em 0 3em 0;
 }
 
 h1, h2, h3, h4{

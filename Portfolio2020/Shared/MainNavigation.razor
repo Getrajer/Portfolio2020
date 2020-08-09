@@ -1,169 +1,108 @@
-﻿<nav id="main_nav" class="@displayed_nav">
-
-    <div class="toggle-button">
-        @if (button_display == false)
-        {
-            <button @onclick="ToggleNav"><i class="fas fa-bars"></i></button>
-        }
-        else
-        {
-            <button class="x_btn" @onclick="ToggleNav">X</button>
-        }
-    </div>
-    <div class="@display_nav">
-        <div class="navigation ">
-
-            <div class="top_nav">
-                <div class="logo_l">
-                    <NavLink @onclick="CloseNav" class="logo" href="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="90px" height="70px" viewBox="0 0 235 132">
-                            <title>Home</title>
-                            <g id="Warstwa_2" data-name="Warstwa 2">
-                                <g id="Logo">
-                                    <g>
-                                        <polygon points="26.07 50.14 58.2 6.54 79.61 6.54 45.35 50.14 26.07 50.14" />
-                                        <polygon points="83.89 11.21 73.19 25.22 92.46 92.18 101.03 75.05 83.89 11.21" />
-                                        <polygon points="98.88 92.18 107.45 78.17 124.58 78.17 133.15 92.18 98.88 92.18" />
-                                        <polygon points="208.1 50.14 175.98 6.54 154.56 6.54 188.83 50.14 208.1 50.14" />
-                                        <polygon points="150.28 11.21 160.99 25.22 141.71 92.18 133.15 75.05 150.28 11.21" />
-                                        <g>
-                                            <polygon points="26.07 60.48 30.11 104.46 47.49 116.54 47.49 60.48 26.07 60.48" />
-                                            <polygon points="28.56 107.46 42.53 117.46 11.48 117.46 28.56 107.46" />
-                                        </g>
-                                        <g>
-                                            <polygon points="209.89 60.48 205.85 104.46 188.48 116.54 188.48 60.48 209.89 60.48" />
-                                            <polygon points="207.4 107.46 193.43 117.46 224.48 117.46 207.4 107.46" />
-                                        </g>
-                                    </g>
+﻿<div class="top_row">
+    <div class="top_container">
+        <div class="logo">
+            <a class="navbar-brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60px" height="40px" viewBox="0 0 235 132">
+                    <title>Home</title>
+                    <g id="Warstwa_2" data-name="Warstwa 2">
+                        <g id="Logo">
+                            <g>
+                                <polygon points="26.07 50.14 58.2 6.54 79.61 6.54 45.35 50.14 26.07 50.14" />
+                                <polygon points="83.89 11.21 73.19 25.22 92.46 92.18 101.03 75.05 83.89 11.21" />
+                                <polygon points="98.88 92.18 107.45 78.17 124.58 78.17 133.15 92.18 98.88 92.18" />
+                                <polygon points="208.1 50.14 175.98 6.54 154.56 6.54 188.83 50.14 208.1 50.14" />
+                                <polygon points="150.28 11.21 160.99 25.22 141.71 92.18 133.15 75.05 150.28 11.21" />
+                                <g>
+                                    <polygon points="26.07 60.48 30.11 104.46 47.49 116.54 47.49 60.48 26.07 60.48" />
+                                    <polygon points="28.56 107.46 42.53 117.46 11.48 117.46 28.56 107.46" />
+                                </g>
+                                <g>
+                                    <polygon points="209.89 60.48 205.85 104.46 188.48 116.54 188.48 60.48 209.89 60.48" />
+                                    <polygon points="207.4 107.46 193.43 117.46 224.48 117.46 207.4 107.46" />
                                 </g>
                             </g>
-                        </svg>
-                    </NavLink>
-                </div>
-
-                <div class="info">
-                    <p class="name">Mateusz Owczarek</p>
-                    <p>Software Engenieer</p>
-                </div>
-            </div>
-
-
-            <div class="navigation_links">
-
-                <NavLink @onclick="CloseNav" class="l_box" href="/">
-
-                    <div class="font_aws_icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-
-                    <div class="link_n">
-                        Home
-                    </div>
-                </NavLink>
-
-                <NavLink @onclick="CloseNav" class="l_box" href="About">
-
-                    <div class="font_aws_icon">
-                        <i class="fas fa-user-astronaut"></i>
-                    </div>
-
-                    <div class="link_n">
-                        About
-                    </div>
-                </NavLink>
-
-                <NavLink @onclick="CloseNav" class="l_box" href="Projects">
-
-                    <div class="font_aws_icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-
-                    <div class="link_n">
-                        Projects
-                    </div>
-                </NavLink>
-
-            </div>
-
-            <div class="work_shots">
-                <div class="work_shots_container">
-                    <div class="title">
-                        <p>Work Shots</p>
-                    </div>
-
-                    <div class="shots">
-                        <div class="shots_container">
-
-                            <NavLink class="shot" href="OnlineGroceary">
-                                <img src="../images/OnlineGroceary.png" alt="Groceary" />
-                            </NavLink>
-
-                            <NavLink class="shot" href="ComponentsDescription">
-                                <img src="../images/Components.png" alt="Components" />
-                            </NavLink>
-
-                            <NavLink class="shot" href="BankAppDescription">
-                                <img src="../images/bank_background.png" alt="BankApp" />
-                            </NavLink>
-
-                            <NavLink class="shot" href="ClotheDescription">
-                                <img src="../images/Clothe.png" alt="Clothe" />
-                            </NavLink>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="media">
-                <div class="media_container">
-
-                    <div class="medium">
-                        <a target="_blank" href="https://www.linkedin.com/in/mateusz-owczarek-21a301188/"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-
-                    <div class="medium">
-                        <a target="_blank" href="https://github.com/Getrajer"><i class="fab fa-github"></i></a>
-                    </div>
-
-                    <div class="medium">
-                        <a><i class="fab fa-instagram"></i></a>
-                    </div>
-
-                </div>
-            </div>
-
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </div>
+        <div class="toggle_button">
+            @if (collapseNavMenu == true)
+            {
+                <button class="navbar-toggler" @onclick="ToggleNavMenu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            }
+            else
+            {
+                <button class="navbar-toggler" @onclick="ToggleNavMenu">
+                    X
+                </button>
+            }
 
         </div>
     </div>
-    
-</nav>
 
-@code{
-    protected string display_nav = "display_none";
-    protected string displayed_nav = "";
-    protected bool button_display = false;
+</div>
 
-    public void ToggleNav()
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+
+
+
+    <div class="nav">
+        <div class="placeholder">
+        </div>
+
+        <ul class="nav_links">
+            <li>
+                <h1>TheMattech</h1>
+            </li>
+            <li class="nav_item">
+                <NavLink class="nav_link" href="" Match="NavLinkMatch.All">
+                    <i class="fas fa-home"></i> Home
+                </NavLink>
+            </li>
+            <li class="nav_item">
+                <NavLink class="nav_link" href="About">
+                    <i class="fas fa-user-astronaut"></i> About
+                </NavLink>
+            </li>
+            <li class="nav_item">
+                <NavLink class="nav_link" href="Projects">
+                    <i class="fab fa-connectdevelop"></i> Projects
+                </NavLink>
+            </li>
+            <li class="nav_item">
+                <NavLink class="nav_link" href="Contact">
+                    <i class="fas fa-envelope-open-text"></i> Contact
+                </NavLink>
+            </li>
+            <li class="media">
+                <div class="medium">
+                    <a target="_blank" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="medium">
+                    <a target="_blank" href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="medium">
+                    <a target="_blank" href="#"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="medium">
+                    <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
     {
-        if (display_nav == "display_none")
-        {
-            display_nav = "";
-            displayed_nav = "nav_displayed";
-            button_display = true;
-        }
-        else
-        {
-            display_nav = "display_none";
-            displayed_nav = "";
-            button_display = false;
-        }
-    }
-
-    public void CloseNav()
-    {
-        display_nav = "display_none";
-        button_display = false;
+        collapseNavMenu = !collapseNavMenu;
     }
 }

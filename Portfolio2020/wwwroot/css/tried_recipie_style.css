@@ -204,38 +204,52 @@ button:focus{
 
 .tried_recepie .new_recepie_button:hover .img1{
     top: -140px;
+    z-index:1;
+
 }
 
 .tried_recepie .new_recepie_button:hover .img2{
     top: -90px;
     left: 280px;
+    z-index:1;
+
 }
 
 .tried_recepie .new_recepie_button:hover .img3{
     left: 350px;
+    z-index:1;
+
 }
 
 .tried_recepie .new_recepie_button:hover .img4{
     top: 290px;
     left: 280px;
+    z-index:1;
+
 }
 
 .tried_recepie .new_recepie_button:hover .img5{
     top: 350px;
+    z-index:1;
+
 }
 
 .tried_recepie .new_recepie_button:hover .img6{
     top: 290px;
     left: -100px;
+    z-index:1;
+
 }
 
 .tried_recepie .new_recepie_button:hover .img7{
     left: -180px;
+    z-index:1;
 }
 
 .tried_recepie .new_recepie_button:hover .img8{
     left: -100px;
     top: -90px;
+    z-index:1;
 }
 
 /*End of new recepie button*/

@@ -1,4 +1,28 @@
 ﻿
+
+* {
+    box-sizing: border-box;
+    font-family: 'Zilla Slab', serif;
+}
+
+/*Header section*/
+p {
+    padding: 0;
+    margin: 0;
+}
+
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Oswald', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+.top_row{
+    display:none;
+}
+
 .home_page{
     min-height: 100vh;
     display:flex;
@@ -62,8 +86,8 @@
 }
 
 .home_page .go_btn a:hover{
-    transform: translateY(-3px);
-    background-color:#2a2f5c;
+    background-color:#283067;
+    transform:translateY(-1px);
     color:white;
 }
 
