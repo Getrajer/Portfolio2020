@@ -9,9 +9,10 @@
     font-family: sans-serif!important;
 }
 
-nav{
-    display:none;
+.top_row {
+    display: none
 }
+
 
 .main{
     padding: 3em 0;

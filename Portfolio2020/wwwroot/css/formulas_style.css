@@ -4,6 +4,11 @@
     padding: 1em 0;
 }
 
+.top_row {
+    display: none
+}
+
+
 .median_interpolation_formula_container div{
     display:block;
     font-size:1.3rem;

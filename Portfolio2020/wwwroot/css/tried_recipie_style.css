@@ -5,8 +5,8 @@
 body{
     background-color:white;
 }
-nav{
-    display:none
+.top_row {
+    display: none
 }
 
 label, textarea, p, h1, h2, h3, h4, h5, input{

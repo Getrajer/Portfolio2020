@@ -16,6 +16,10 @@ p{
     grid-template-columns: 1fr;
 }
 
+.top_row {
+    display: none
+}
+
 
 body {
     margin: 0;

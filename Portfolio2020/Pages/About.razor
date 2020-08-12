@@ -31,12 +31,10 @@
             </div>
 
             <div class="right">
-                <div class="right_container">
-
+                <div type="button" onclick="document.getElementById('about_me').scrollIntoView({behavior:'smooth'})" class="right_container">
                     <div class="see_more_btn">
                         <i class="fas fa-arrow-alt-circle-down"></i>
                     </div>
-
                 </div>
             </div>
 
@@ -45,8 +43,8 @@
 </header>
 
 
-<section class="about_1">
-    <div class="about_1_container">
+<section id="about_me" class="about_1">
+    <div  class="about_1_container">
 
         <div class="title">
             <h1>Why to work with me?</h1>
@@ -415,3 +413,5 @@
         <p>@DateTime.Now.Year &copy; Mateusz Owczarek</p>
     </div>
 </footer>
+
+

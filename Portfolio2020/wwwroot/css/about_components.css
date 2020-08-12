@@ -5,6 +5,11 @@
     background-size: cover;
 }
 
+.top_row {
+    display: none
+}
+
+
 #about{
     position:relative;
     top: 0;

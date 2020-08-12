@@ -1,24 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 117.83 61.36">
-  <title>Zasób 4</title>
-  <g id="Warstwa_2" data-name="Warstwa 2">
-    <g id="Warstwa_9" data-name="Warstwa 9">
-      <g id="Logo">
-        <g>
-          <polygon points="8.07 24.12 25.84 0 37.69 0 18.74 24.12 8.07 24.12" style="fill:#3772db"/>
-          <polygon points="40.06 2.58 34.14 10.33 44.8 47.38 49.54 37.9 40.06 2.58" style="fill: #3772db"/>
-          <polygon points="48.35 47.38 53.09 39.63 62.57 39.63 67.31 47.38 48.35 47.38" style="fill: #3772db"/>
-          <polygon points="108.77 24.12 91 0 79.15 0 98.11 24.12 108.77 24.12" style="fill: #3772db"/>
-          <polygon points="76.78 2.58 82.71 10.33 72.04 47.38 67.31 37.9 76.78 2.58" style="fill: #3772db"/>
-          <g>
-            <polygon points="8.07 29.84 10.31 54.17 19.92 60.85 19.92 29.84 8.07 29.84" style="fill: #3772db"/>
-            <polygon points="9.45 55.83 17.18 61.36 0 61.36 9.45 55.83" style="fill: #3772db"/>
-          </g>
-          <g>
-            <polygon points="109.76 29.84 107.52 54.17 97.92 60.85 97.92 29.84 109.76 29.84" style="fill:#3772db"/>
-            <polygon points="108.38 55.83 100.65 61.36 117.83 61.36 108.38 55.83" style="fill:#3772db"/>
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1100 1080" style="enable-background:new 0 0 1100 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#3772DB;}
+	.st1{fill:#FFFFFF;}
+</style>
+<title>Zasób 4</title>
+<circle class="st0" cx="403.9" cy="354.7" r="45.4"/>
+<g>
+	<g id="Warstwa_9">
+		<g id="Logo">
+			<g>
+				<polygon class="st1" points="386.5,352.1 392.6,342.7 396.6,342.7 390.1,352.1 				"/>
+				<polygon class="st1" points="397.4,343.7 395.4,346.7 399,361.2 400.7,357.5 				"/>
+				<polygon class="st1" points="400.2,361.2 401.9,358.2 405.1,358.2 406.7,361.2 				"/>
+				<polygon class="st1" points="420.9,352.1 414.8,342.7 410.8,342.7 417.3,352.1 				"/>
+				<polygon class="st1" points="410,343.7 412,346.7 408.3,361.2 406.7,357.5 				"/>
+				<g>
+					<polygon class="st1" points="386.5,354.4 387.2,363.9 390.5,366.5 390.5,354.4 					"/>
+					<polygon class="st1" points="386.9,364.5 389.6,366.7 383.7,366.7 					"/>
+				</g>
+				<g>
+					<polygon class="st1" points="421.2,354.4 420.5,363.9 417.2,366.5 417.2,354.4 					"/>
+					<polygon class="st1" points="420.8,364.5 418.1,366.7 424,366.7 					"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

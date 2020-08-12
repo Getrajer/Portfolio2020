@@ -55,7 +55,12 @@
                     </p>
 
                     <div class="img_descrition">
-                        <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="PlanImg" />
+                        <div class="img_cover">
+
+                        </div>
+                        <div class="img">
+                            <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="PlanImg" />
+                        </div>
                     </div>
 
                     <p>
@@ -67,22 +72,40 @@
                         <br />
                         Relational database table names:
                     </p>
+
                     <div class="img_descrition">
-                        <img src="../images/DataStructureGroceary2.png" alt="DataStructureGroceary2" />
+                        <div @onclick="@(e => open_img("1"))" class="img_cover">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="img">
+                            <img src="../images/DataStructureGroceary2.png" alt="DataStructureGroceary2" />
+                        </div>
                     </div>
 
                     <p>
                         Relational database table content:
                     </p>
+
                     <div class="img_descrition">
-                        <img src="../images/DataStructureGroceary1.png" alt="DataStructureGroceary1" />
+                        <div @onclick="@(e => open_img("2"))" class="img_cover">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="img">
+                            <img src="../images/DataStructureGroceary1.png" alt="DataStructureGroceary1" />
+                        </div>
                     </div>
 
                     <p>
                         Database informtaion storeage:
                     </p>
+
                     <div class="img_descrition">
-                        <img src="../images/DataStructureGroceary3.png" alt="DataStructureGroceary3" />
+                        <div @onclick="@(e => open_img("3"))" class="img_cover">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="img">
+                            <img src="../images/DataStructureGroceary3.png" alt="DataStructureGroceary3" />
+                        </div>
                     </div>
 
                     <p>
@@ -181,3 +204,63 @@
 
     </div>
 </section>
+
+@if (img1_open)
+{
+    <div class="enlarged_img">
+        <div @onclick="@(e => open_img("1"))" class="close_btn">
+            X
+        </div>
+        <div class="enlarged_img_container">
+            <img src="../images/DataStructureGroceary2.png" alt="DataStructureGroceary2" />
+        </div>
+    </div>
+}
+
+@if (img2_open)
+{
+    <div class="enlarged_img">
+        <div @onclick="@(e => open_img("2"))" class="close_btn">
+            X
+        </div>
+        <div class="enlarged_img_container">
+            <img src="../images/DataStructureGroceary1.png" alt="DataStructureGroceary1" />
+        </div>
+    </div>
+}
+
+@if (img3_open)
+{
+    <div class="enlarged_img">
+        <div @onclick="@(e => open_img("3"))" class="close_btn">
+            X
+        </div>
+        <div class="enlarged_img_container">
+            <img src="../images/DataStructureGroceary3.png" alt="DataStructureGroceary3" />
+        </div>
+    </div>
+}
+
+
+@code{
+    bool img1_open = false;
+    bool img2_open = false;
+    bool img3_open = false;
+
+
+    void open_img(string img)
+    {
+        switch (img)
+        {
+            case "1":
+                img1_open = img1_open ? false : true;
+                break;
+            case "2":
+                img2_open = img2_open ? false : true;
+                break;
+            case "3":
+                img3_open = img3_open ? false : true;
+                break;
+        }
+    }
+}

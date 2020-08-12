@@ -2,9 +2,12 @@
     font-family: sans-serif;
 }
 
-#main_nav{
-    display:none;
+.top_row {
+    display: none
 }
+ ul{
+     padding:0;
+ }
 
 .site {
     min-height: 100vh;

@@ -6,9 +6,10 @@
 }
 
 /*General style*/
-#main_footer{
-    display:none;
+.top_row {
+    display: none
 }
+
 
 .site {
     min-height: 100vh;
