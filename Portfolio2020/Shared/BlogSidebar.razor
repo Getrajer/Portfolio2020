@@ -1,0 +1,96 @@
+﻿
+<head>
+    <link rel="stylesheet" href="../css/blog_sidebar_style.css.css"/>
+</head>
+
+<section class="sidebar">
+    <div class="sidebar_container">
+
+        <div class="sidebar_logo">
+            <a class="navbar-brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="80px" viewBox="0 0 235 132">
+                    <title>Home</title>
+                    <g id="Warstwa_2" data-name="Warstwa 2">
+                        <g id="Logo">
+                            <g>
+                                <polygon points="26.07 50.14 58.2 6.54 79.61 6.54 45.35 50.14 26.07 50.14" />
+                                <polygon points="83.89 11.21 73.19 25.22 92.46 92.18 101.03 75.05 83.89 11.21" />
+                                <polygon points="98.88 92.18 107.45 78.17 124.58 78.17 133.15 92.18 98.88 92.18" />
+                                <polygon points="208.1 50.14 175.98 6.54 154.56 6.54 188.83 50.14 208.1 50.14" />
+                                <polygon points="150.28 11.21 160.99 25.22 141.71 92.18 133.15 75.05 150.28 11.21" />
+                                <g>
+                                    <polygon points="26.07 60.48 30.11 104.46 47.49 116.54 47.49 60.48 26.07 60.48" />
+                                    <polygon points="28.56 107.46 42.53 117.46 11.48 117.46 28.56 107.46" />
+                                </g>
+                                <g>
+                                    <polygon points="209.89 60.48 205.85 104.46 188.48 116.54 188.48 60.48 209.89 60.48" />
+                                    <polygon points="207.4 107.46 193.43 117.46 224.48 117.46 207.4 107.46" />
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+        </div>
+
+        <div class="sidebar_navigation">
+            <div class="side_navlink_box">
+                <NavLink href="" Match="NavLinkMatch.All">
+                    <i class="fas fa-book"></i> Blog home
+                </NavLink>
+            </div>
+
+            <div class="side_navlink_box">
+                <NavLink href="" Match="NavLinkMatch.All">
+                    <i class="fas fa-swatchbook"></i> Blog entries
+                </NavLink>
+            </div>
+
+            <div class="side_navlink_box">
+                <NavLink href="" Match="NavLinkMatch.All">
+                    <i class="fas fa-newspaper"></i> Articles
+                </NavLink>
+            </div>
+
+            <div class="side_navlink_box">
+                <NavLink href="" Match="NavLinkMatch.All">
+                    <i class="fas fa-microchip"></i> Exercises
+                </NavLink>
+            </div>
+
+            <div class="side_navlink_box">
+                <NavLink href="" Match="NavLinkMatch.All">
+                    <i class="fas fa-paint-brush"></i> Graphics
+                </NavLink>
+            </div>
+        </div>
+
+        <div class="time">
+            <p>@date_string</p>
+            <p>@time_clock</p>
+        </div>
+
+    </div>
+</section>
+
+@code{
+
+    protected string date_string = "";
+    protected string time_clock = "";
+
+    public async void Clock()
+    {
+        while (true)
+        {
+            date_string = $"{DateTime.Now.DayOfWeek}/{DateTime.Now.Month}/{DateTime.Now.Year}";
+            time_clock = $"{DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}";
+            StateHasChanged();
+            await Task.Delay(1000);
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Clock();
+    }
+}
