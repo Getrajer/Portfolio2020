@@ -5,10 +5,6 @@
 .blog {
     min-height: 100vh;
     width: 100%;
-    background-image: url(../blog_images/blog_background.jpg);
-    background-position:center;
-    background-size:cover;
-    background-attachment:fixed;
 }
 
 .blog_container{
@@ -31,97 +27,4 @@
 .blog_page_container{
     width:100%;
     max-width:1100px;
-}
-
-/*Header blog*/
-
-.header_blog {
-    margin-top: 1em;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 500px;
-    text-align: center;
-    font-family: 'Poiret One', cursive;
-}
-
-.b_fst_t h2 {
-    color: #a8b0ca;
-    margin: 1em 0 0 0;
-    font-size: 4rem;
-    letter-spacing: 6px;
-}
-
-
-.b_nd_t h2 {
-    color: #a8b0ca;
-    font-size: 1.5rem;
-    letter-spacing: 4px;
-    margin: 0 0 3em 0;
-}
-
-.underline_container{
-    width:100%;
-    padding: 0 25%;
-}
-
-.underline {
-    height: 1px;
-    width: 100%;
-    background-color: rgba(155, 164, 195, 0.30);
-    margin: 0.5em 0;
-}
-
-/*About blog*/
-
-.about_blog_container {
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 25px;
-    margin-top: 10em;
-    margin-bottom:5em;
-}
-
-.about_blog_container .card_img {
-    text-align: center;
-    padding: 0.5em 0;
-    font-size: 3rem;
-    color: black;
-    background-color: #a8b0ca;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    transition:0.7s;
-}
-
-.card_a:hover .card_img {
-    color: #a8b0ca;
-    background-color: transparent;
-    transform: translateY(-6px);
-}
-
-.about_blog_container .card_title {
-    text-align: center;
-    padding: 0.5em 0;
-    background-color: black;
-    color: #a8b0ca;
-    transition: 0.7s;
-}
-
-.card_a:hover .card_title {
-    background-color:transparent;   
-}
-
-.about_blog_container .card_text{
-    background-color: rgba(168, 176, 202, 0.8);
-    padding: 1.5em 1em;
-    border-bottom-left-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-    min-height: 250px;
-    transition:0.7s;
-}
-
-.card_a:hover .card_text {
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    transform: translateY(6px);
 }
