@@ -1,0 +1,53 @@
+﻿h1, h3{
+    margin:0;
+}
+
+.blog_title {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.blog_title_container {
+    width: 400px;
+    padding: 1em 0;
+    text-align: center;
+    background-color: #1b4064;
+    transform: rotate(-7deg);
+}
+
+.blog_title_container {
+    color: white;
+}
+
+.blog_title_container h1{
+    font-size:3rem;
+    font-weight:700;
+    letter-spacing: 5px;
+}
+
+.challenges {
+    margin-top: 5em;
+}
+
+.challenges_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap:10px;
+}
+
+.challenge {
+    text-align: center;
+    padding: 1em ;
+    border: 1px solid rgba(128, 128, 128, 0.60);
+    border-radius: 5px;
+}
+
+
+.challenge h4{
+    font-size:1.1rem;
+}
+
+.challenge h5{
+    font-size:0.9rem;
+}
