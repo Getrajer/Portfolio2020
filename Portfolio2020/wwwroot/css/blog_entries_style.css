@@ -2,13 +2,13 @@
     margin:0;
 }
 
-.entries_title{
+.blog_title{
     margin-top:4rem;
     display:flex;
     justify-content:center;
 }
 
-.entries_title_container{
+.blog_title_container{
     width:400px;
     padding: 1em 0;
     text-align:center;
@@ -16,11 +16,11 @@
     transform: rotate(-7deg);
 }
 
-.entries_title_container{
+.blog_title_container{
     color:white;
 }
 
-.entries_title_container h1{
+.blog_title_container h1{
     font-size:3rem;
     font-weight:700;
     letter-spacing: 5px;

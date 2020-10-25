@@ -24,7 +24,9 @@
 
 .sidebar_logo a{
     fill:#f8f8f8;
-    transition:0.5s;
+    transition:0.5s fill, 0.5s transform;
+
+  
 }
 
 .sidebar_logo a:hover{
@@ -49,9 +51,11 @@
     width: 150px;
     margin:1.5em 0;
     border-radius: 0.5em;
-    transition:0.5s;
     color:black;
     font-weight:600;
+
+    transition:0.5s transform, 0.5s background-color;
+
 }
 
 .sidebar_navigation .side_navlink_box a:hover{

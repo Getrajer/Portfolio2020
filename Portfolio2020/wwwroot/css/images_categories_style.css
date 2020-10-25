@@ -1,0 +1,83 @@
+﻿h1{
+    margin:0;
+}
+
+.blog_title {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.blog_title_container {
+    width: 400px;
+    padding: 1em 0;
+    text-align: center;
+    background-color: #1b4064;
+    transform: rotate(-7deg);
+}
+
+.blog_title_container {
+    color: white;
+}
+
+.blog_title_container h1{
+    font-size:3rem;
+    font-weight:700;
+    letter-spacing: 5px;
+}
+
+.categories{
+    margin-top: 3em;
+    padding: 2em 1em;
+}
+
+.categories_container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.category {
+    color: white;
+    background-color: #1b4064;
+    box-shadow: 10px 10px 20px #d5d5d5, -10px -10px 20px #dcdcdc;
+}
+
+.name{
+    text-align:center;
+    padding:1em 0;
+    height:100px;
+}
+
+.name h3{
+    letter-spacing:4px;
+    font-weight:600;
+    text-transform:uppercase;
+}
+
+.category img {
+    width: 100%;
+}
+
+.link_box{
+    display:flex;
+    justify-content:center;
+    padding: 0 0 1em 0;
+}
+
+.link_box a{
+    display:block;
+    text-align:center;
+    padding:0.2em 0;
+    width: 100px;
+    background-color: #ebebeb;
+    color:#1b4064;
+    font-weight:600;
+    letter-spacing:3px;
+    transition: transform 0.5s, background-color 0.5s;
+}
+
+.link_box a:hover{
+    background-color:#fff;
+    transform: translateY(-3px);
+}
