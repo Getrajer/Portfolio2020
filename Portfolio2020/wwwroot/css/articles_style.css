@@ -35,7 +35,7 @@
 .articles_container{
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 60px;
+    grid-gap: 70px;
 }
 
 .article img {
@@ -45,8 +45,15 @@
 }
 
 .article {
-    box-shadow: 10px 10px 20px rgba(81, 86, 108, 0.54), -10px -10px 20px rgba(81, 86, 108, 0.54);
+    background: #fafafa;
+    box-shadow: 9px 9px 10px #dcdcdc, -9px -9px 10px #ffffff;
     border-radius: 30px;
+    transition: box-shadow 0.5s;
+}
+
+.article:hover {
+    background: #fafafa;
+    box-shadow: 15px 15px 30px #dcdcdc, -15px -15px 30px #ffffff;
 }
 
 .article_title {

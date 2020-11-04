@@ -12,13 +12,11 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 500px;
     text-align: center;
-    font-family: 'Poiret One', cursive;
 }
 
 .b_fst_t h2 {
-    color: #a8b0ca;
+    color: #24252a;
     margin: 1em 0 0 0;
     font-size: 4rem;
     letter-spacing: 6px;
@@ -26,7 +24,7 @@
 
 
 .b_nd_t h2 {
-    color: #a8b0ca;
+    color: #24252a;
     font-size: 1.5rem;
     letter-spacing: 4px;
     margin: 0 0 3em 0;
@@ -40,7 +38,7 @@
 .underline {
     height: 1px;
     width: 100%;
-    background-color: rgba(155, 164, 195, 0.30);
+    background-color: #24252a;
     margin: 0.5em 0;
 }
 
@@ -50,7 +48,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 25px;
-    margin-top: 10em;
+    margin-top: 7em;
     margin-bottom: 5em;
 }
 
@@ -75,7 +73,7 @@
     text-align: center;
     padding: 0.5em 0;
     background-color: black;
-    color: #a8b0ca;
+    color: white;
     transition: 0.7s;
 }
 
