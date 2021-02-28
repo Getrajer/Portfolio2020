@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="32.5" viewBox="0 0 1200 32.5">
+  <title>Top Blog Post Foot</title>
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_3" data-name="Warstwa 3">
+      <g>
+        <rect x="533" y="23" width="53" height="5" style="fill: #f121f8"/>
+        <polygon points="669 23 678.5 32.5 688 23 669 23" style="fill: #f121f8"/>
+        <polygon points="0 0 0 8 37 8 37 23 202.73 23 217.61 8.12 232.49 23 309 23 309 9 386 9 386 23 800 23 800 9 865 9 865 23 1025 23 1038.5 9.5 1052 23 1200 23 1200 0 0 0" style="fill: #f121f8"/>
+        <rect x="1096" y="23" width="53" height="8" style="fill: #f121f8"/>
+      </g>
+    </g>
+  </g>
+</svg>

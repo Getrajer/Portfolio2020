@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1648" height="1238" viewBox="0 0 1648 1238">
+  <title>BackIndexRam_1</title>
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_4" data-name="Warstwa 4">
+      <g>
+        <rect x="758.5" y="-670.5" width="118" height="1459" transform="translate(758.5 876.5) rotate(-90)" style="fill: #d200f3"/>
+        <polygon points="147.99 223.66 118.31 180 65.51 179.71 97.86 137.98 81.83 87.68 131.5 105.55 174.39 74.75 172.75 127.53 215.28 158.8 164.59 173.54 147.99 223.66" style="fill: #d200f3"/>
+        <polygon points="64.28 889.01 118 861.49 118 672 93 672 93 650 118 650 118 0 0 0 0 1238 118 1238 118 914.52 64.28 889.01" style="fill: #d200f3"/>
+        <polygon points="111 911 180 948 111 1000 111 911" style="fill: #d200f3"/>
+        <g>
+          <rect x="109" y="489" width="42" height="43" style="fill: #d200f3"/>
+          <rect x="109" y="405" width="42" height="44" style="fill: #d200f3"/>
+        </g>
+        <polygon points="489 1120 516 1093 558.5 1135.5 489 1120" style="fill: #d200f3"/>
+        <polygon points="1046 1120 1046 1130 993 1130 993 1120 489 1120 462.45 1146.55 435.91 1120 259 1120 259 1150 244 1150 244 1120 105 1120 105 1238 1547 1238 1547 1120 1046 1120" style="fill: #d200f3"/>
+        <rect x="1046" y="1109" width="53" height="21" style="fill: #d200f3"/>
+        <polygon points="1083.8 203.18 1040.09 168.34 986.61 184.59 1006.24 132.25 974.26 86.41 1030.1 88.91 1063.81 44.32 1078.69 98.2 1131.52 116.49 1084.87 147.29 1083.8 203.18" style="fill: #d200f3"/>
+        <rect x="1273.83" y="1081" width="13.17" height="44" style="fill: #d200f3"/>
+        <polyline points="1274 1081 1234.29 1120.71 1274 1120.71" style="fill: #d200f3"/>
+        <rect x="1511" y="1100.5" width="28" height="29.5" style="fill: #d200f3"/>
+        <circle cx="118.5" cy="1119.5" r="17.5" style="fill: #d200f3"/>
+        <rect x="1316" y="1081" width="14" height="44" style="fill: #d200f3"/>
+        <polygon points="1547.48 153.5 1477.96 169.92 1428.98 117.92 1449.52 49.5 1519.04 33.08 1568.02 85.08 1547.48 153.5" style="fill: #d200f3"/>
+        <rect x="1508" y="601" width="43" height="88" rx="12" style="fill: #d200f3"/>
+        <path d="M1530,0V231h27v75h-27V513h9a12,12,0,0,1,12,12v64a12,12,0,0,1-12,12h-9V845a18,18,0,0,1,0,36v357h118V0Z" style="fill: #d200f3"/>
+        <circle cx="1530" cy="899" r="18" style="fill: #d200f3"/>
+        <path d="M714.43,1.85,609.09,2.7,557.16,94.35l53.41,90.8,2.46,0c0-.38,0-.75,0-1.13a50,50,0,0,1,100,0c0,.11,0,.21,0,.32l2.92,0,51.93-91.65Z" style="fill: #d200f3"/>
+        <circle cx="744" cy="1121" r="34" style="fill: #d200f3"/>
+      </g>
+    </g>
+  </g>
+</svg>

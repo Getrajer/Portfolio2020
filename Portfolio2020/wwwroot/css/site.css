@@ -177,6 +177,16 @@ app {
     .nav_links{
         padding-left:30px;
     }
+
+    .top_row .toggle_button{
+        padding: 0;
+        text-align:left;
+        justify-content:center;
+    }
+
+    .top_row .toggle_button{
+        float:left;
+    }
 }
 
 #blazor-error-ui{

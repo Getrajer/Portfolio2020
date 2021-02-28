@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="651" height="727.31" viewBox="0 0 651 727.31">
+  <title>IndexGoButton_2</title>
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_3" data-name="Warstwa 3">
+      <polygon id="Arrow" points="329.5 727.31 484.5 687.31 166.5 687.31 329.5 727.31" style="fill: #fff"/>
+      <text transform="translate(291.41 354.43)" style="font-size: 51px;fill: #fff;font-family: MyriadPro-Regular, Myriad Pro">GO</text>
+      <rect id="Ram" x="0.5" y="0.5" width="650" height="672" style="fill: none;stroke: #fff;stroke-miterlimit: 10"/>
+      <g id="OutsideFigure">
+        <path d="M325.28,84.5c-138.9,0-251.5,112.6-251.5,251.5s112.6,251.5,251.5,251.5S576.78,474.9,576.78,336,464.18,84.5,325.28,84.5Zm0,410.5a159,159,0,1,1,159-159A159,159,0,0,1,325.28,495Z" style="fill: #fff"/>
+        <rect x="274.28" y="66" width="103" height="38" style="fill: #fff"/>
+        <rect x="273.28" y="569" width="103" height="38" style="fill: #fff"/>
+        <rect x="22.22" y="317.13" width="103" height="38" transform="translate(409.84 262.41) rotate(90)" style="fill: #fff"/>
+      </g>
+      <g id="MiddleFigure">
+        <path d="M325.4,223.48a112.8,112.8,0,1,0,112.8,112.8A112.79,112.79,0,0,0,325.4,223.48Zm0,184.1a71.31,71.31,0,1,1,71.31-71.3A71.3,71.3,0,0,1,325.4,407.58Z" style="fill: #fff"/>
+        <rect x="302.53" y="215.19" width="46.19" height="17.04" style="fill: #fff"/>
+        <rect x="302.08" y="440.77" width="46.19" height="17.04" style="fill: #fff"/>
+        <rect x="415.32" y="327.98" width="46.19" height="17.04" transform="translate(774.92 -101.92) rotate(90)" style="fill: #fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

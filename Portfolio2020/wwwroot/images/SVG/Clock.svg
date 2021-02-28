@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="201" height="201" viewBox="0 0 201 201">
+  <title>Clock</title>
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_2-2" data-name="Warstwa 2">
+      <circle cx="100.5" cy="100.5" r="98.5" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 4px"/>
+      <circle cx="101" cy="100" r="80" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 4px"/>
+      <polyline points="121 81 101 100 39 100" style="fill: none;stroke: #fff;stroke-miterlimit: 10;stroke-width: 4px"/>
+    </g>
+  </g>
+</svg>

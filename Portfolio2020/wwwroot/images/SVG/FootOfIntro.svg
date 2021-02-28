@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1198" height="46.5" viewBox="0 0 1198 46.5">
+  <title>FootOfIntro</title>
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_3" data-name="Warstwa 3">
+      <rect x="213" y="22" width="22" height="8" style="fill: #f121f8"/>
+      <polygon points="513 23 514.5 24.5 516 23 513 23" style="fill: #f121f8"/>
+      <polygon points="517 28 514.5 25.5 512 28 517 28" style="fill: #f121f8"/>
+      <rect x="583" y="22" width="19" height="6" style="fill: #f121f8"/>
+      <circle cx="610.5" cy="24.5" r="0.5" style="fill: #f121f8"/>
+      <circle cx="610.5" cy="26.5" r="0.5" style="fill: #f121f8"/>
+      <circle cx="610.5" cy="28.5" r="0.5" style="fill: #f121f8"/>
+      <circle cx="610.5" cy="30.5" r="0.5" style="fill: #f121f8"/>
+      <circle cx="610.5" cy="32.5" r="0.5" style="fill: #f121f8"/>
+      <ellipse cx="615.5" cy="26.5" rx="0.5" ry="2.5" style="fill: #f121f8"/>
+      <rect x="583" y="30" width="19" height="5" style="fill: #f121f8"/>
+      <polygon points="583 37 602 37 592.5 46.5 583 37" style="fill: #f121f8"/>
+      <rect x="1197" y="19" width="1" height="16" style="fill: #f121f8"/>
+      <polygon points="0 16 0 31 10.5 20.5 0 16" style="fill: #f121f8"/>
+      <circle cx="8.5" cy="25.5" r="0.5" style="fill: #f121f8"/>
+      <circle cx="8.5" cy="27.5" r="0.5" style="fill: #f121f8"/>
+      <circle cx="8.5" cy="29.5" r="0.5" style="fill: #f121f8"/>
+      <circle cx="8.5" cy="31.5" r="0.5" style="fill: #f121f8"/>
+      <circle cx="8.5" cy="33.5" r="0.5" style="fill: #f121f8"/>
+      <circle cx="8.5" cy="35.5" r="0.5" style="fill: #f121f8"/>
+      <circle cx="8.5" cy="37.5" r="0.5" style="fill: #f121f8"/>
+      <path d="M0,0V23H71l5.54-7.5H93L98.54,23H322.85l4.65-5.5,3,3.5H349V15h9v8H746V18h30v5H916.77L913.7,9.84,935,19.46l20-12.06L953.21,23h153a13.91,13.91,0,0,1,27.56,0H1198V0Z" style="fill: #f121f8"/>
+      <rect x="358" y="15" width="9" height="19" style="fill: #f121f8"/>
+      <circle cx="1020" cy="27" r="1" style="fill: #f121f8"/>
+      <circle cx="1020" cy="31" r="1" style="fill: #f121f8"/>
+      <circle cx="1020" cy="35" r="1" style="fill: #f121f8"/>
+      <circle cx="1025" cy="27" r="1" style="fill: #f121f8"/>
+      <circle cx="1025" cy="31" r="1" style="fill: #f121f8"/>
+      <circle cx="1025" cy="35" r="1" style="fill: #f121f8"/>
+    </g>
+  </g>
+</svg>
