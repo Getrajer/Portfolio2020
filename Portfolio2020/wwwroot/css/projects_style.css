@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5 {
 
 .page_container {
     min-height: 100vh;
+    padding: 0 1em;
 }
 
 .page_container .title{

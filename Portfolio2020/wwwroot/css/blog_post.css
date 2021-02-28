@@ -1,0 +1,251 @@
+﻿/*------------Blog Post------------*/
+#blog_post {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 5em 0;
+    background-image: url(../images/blog_post_back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+    #blog_post .blog_post_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #0000007c;
+        z-index: 0;
+    }
+
+    #blog_post .blog_post_container {
+        width: 100%;
+        max-width: 850px;
+        z-index: 1;
+        overflow-y: hidden;
+    }
+
+    #blog_post .blog_post_header {
+        background-color: #f121f8;
+        color: #000000;
+        padding: 2em 3em;
+        position: relative;
+    }
+
+        #blog_post .blog_post_header .top_title {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+
+            #blog_post .blog_post_header .top_title .title {
+                font-size: 3.8rem;
+            }
+
+            #blog_post .blog_post_header .top_title .icon_type {
+                text-align: right;
+                font-size: 3rem;
+            }
+
+        #blog_post .blog_post_header .underline {
+            margin: 1.3em 0;
+            height: 1px;
+            background-color: #000000;
+        }
+
+        #blog_post .blog_post_header .other_blog_info {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            font-size: 1.2rem;
+        }
+
+            #blog_post .blog_post_header .other_blog_info .date {
+                font-weight: 600;
+                padding: 0.5em 0;
+            }
+
+            #blog_post .blog_post_header .other_blog_info .share_buttons {
+                text-align: right;
+            }
+
+                #blog_post .blog_post_header .other_blog_info .share_buttons i {
+                    padding: 0.5em 0.5em;
+                    cursor: pointer;
+                    -webkit-transition: 0.5s color, 0.5s background-color, border 0.5s;
+                    transition: 0.5s color, 0.5s background-color, border 0.5s;
+                }
+
+                    #blog_post .blog_post_header .other_blog_info .share_buttons i:hover {
+                        background-color: #000000;
+                        color: #f121f8;
+                    }
+
+        #blog_post .blog_post_header .blog_post_foot {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            height: 32px;
+            background-image: url(../images/SVG/TopBlogPostFoot.svg);
+            z-index: 2;
+        }
+
+    #blog_post .blog_post_content {
+        padding: 2em 3em 0 3em;
+    }
+
+        #blog_post .blog_post_content h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            padding: 0.2em 0;
+        }
+
+        #blog_post .blog_post_content h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            padding: 0.2em 0;
+        }
+
+        #blog_post .blog_post_content h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 0.2em 0;
+        }
+
+        #blog_post .blog_post_content h4 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            padding: 0.2em 0;
+        }
+
+        #blog_post .blog_post_content h5 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 0.2em 0;
+        }
+
+        #blog_post .blog_post_content p {
+            font-size: 1.25rem;
+        }
+
+        #blog_post .blog_post_content ul {
+            padding: 1em 0 1em 0.5em;
+            list-style: inside;
+        }
+
+        #blog_post .blog_post_content li {
+            font-size: 1.2rem;
+        }
+
+    #blog_post .blog_post_footer {
+        margin-top: 4em;
+        padding: 2em 3em;
+        background-color: #f121f8;
+        position: relative;
+        text-align: center;
+    }
+
+        #blog_post .blog_post_footer .foot {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background-image: url(../images/SVG/PostBlogFootBottom.svg);
+            z-index: 2;
+        }
+
+        #blog_post .blog_post_footer .support_message {
+            font-size: 1.3rem;
+            color: #dadada;
+            padding-bottom: 1.2em;
+        }
+
+.coffe_button {
+    color: #f121f8;
+    background-color: #dadada;
+    padding: 0.5em;
+    border-radius: 10px;
+    transition: 0.5s background-color;
+    text-decoration:none;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.coffe_button:hover{
+    background-color: #000000;
+    color:  #dadada;
+}
+
+#blog_post .expandeble {
+    background-color: rgba(0, 0, 0, 0.98);
+    color: #dadada;
+    padding-top: 3em;
+    -webkit-animation-name: blog_post_animation;
+    animation-name: blog_post_animation;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    border-left: 1px solid #f121f8;
+    border-right: 1px solid #f121f8;
+}
+
+@-webkit-keyframes blog_post_animation {
+    0% {
+        -webkit-transform: translateY(-60%);
+        transform: translateY(-60%);
+        background-color: transparent;
+        color: transparent;
+    }
+
+    87% {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        background-color: transparent;
+    }
+
+    90% {
+        background-color: #000000;
+        color: transparent;
+    }
+
+    100% {
+        color: #dbdbdb;
+    }
+}
+
+@keyframes blog_post_animation {
+    0% {
+        -webkit-transform: translateY(-60%);
+        transform: translateY(-60%);
+        background-color: transparent;
+        color: transparent;
+    }
+
+    87% {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        background-color: transparent;
+    }
+
+    90% {
+        background-color: #000000;
+        color: transparent;
+    }
+
+    100% {
+        color: #dbdbdb;
+    }
+}
+
+/*------------End Blog Post------------*/
