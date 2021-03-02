@@ -226,10 +226,12 @@
             #blog_homepage #blog_posts .blog_post .post_heading {
                 font-size: 1.4rem;
                 font-weight: 600;
+                padding-bottom: 0.5em;
             }
 
             #blog_homepage #blog_posts .blog_post .post_description {
                 height: 100px;
+                padding-bottom: 0.5em;
             }
 
             #blog_homepage #blog_posts .blog_post .link_container {
