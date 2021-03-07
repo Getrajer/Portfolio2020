@@ -19,7 +19,7 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
 
         public async Task<JPPhoto> AddNewPhoto(JPPhoto newPhoto)
         {
-            return await httpClient.PostJsonAsync<JPPhoto>($"photos", new);
+            return await httpClient.PostJsonAsync<JPPhoto>($"photos", newPhoto);
         }
 
         public async Task DeletePhoto(int photoId)

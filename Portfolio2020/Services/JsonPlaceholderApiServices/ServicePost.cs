@@ -19,7 +19,7 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
 
         public async Task<JPPost> AddNewPost(JPPost newPost)
         {
-            return await httpClient.PostJsonAsync<JPPost>($"posts", new);
+            return await httpClient.PostJsonAsync<JPPost>($"posts", newPost);
         }
 
         public async Task DeletePost(int postId)

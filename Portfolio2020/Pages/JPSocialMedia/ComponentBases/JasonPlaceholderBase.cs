@@ -8,16 +8,22 @@ using System.Threading.Tasks;
 
 namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 {
-    public class JPIndexBase : ComponentBase
+    public class JasonPlaceholderBase : ComponentBase
     {
         [Inject]
         public IUserService UserService { get; set; }
 
-        public IEnumerable<JPUser> Users { get; set; }
+        [Inject]
+        public IPhotoService PhotoService { get; set; }
 
-        public async Task LoadUsers()
+        public IEnumerable<JPUser> Users { get; set; }
+        public IEnumerable<JPPhoto> Photos { get; set; }
+
+
+        protected override async Task OnInitializedAsync()
         {
             Users = await UserService.GetAllUsers();
+            Photos = await PhotoService.GetAllPhotos();
         }
     }
 }

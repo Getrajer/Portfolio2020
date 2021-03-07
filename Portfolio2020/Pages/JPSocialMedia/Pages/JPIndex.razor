@@ -1,18 +1,21 @@
 ﻿@page "/"
 
-@inherits JPIndexBase
+@inherits JasonPlaceholderBase
 
-<h3>JPIndex</h3>
+<section id="homePage">
 
-<button @onclick="LoadUsers" >Load Users</button>
+</section>
 
-@if (Users != null)
-{
-    @foreach (var user in Users) 
-    {
-        <p>@user.Name</p>
-    }
-}
+<section id="usersDisplay">
+    <div class="usersDisplayContainer">
+
+        
+
+    </div>
+</section>
+
+
+
 
 
 
