@@ -1,0 +1,20 @@
+﻿@page "/"
+
+@inherits JPIndexBase
+
+<h3>JPIndex</h3>
+
+<button @onclick="LoadUsers" >Load Users</button>
+
+@if (Users != null)
+{
+    @foreach (var user in Users) 
+    {
+        <p>@user.Name</p>
+    }
+}
+
+
+
+
+

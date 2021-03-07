@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Portfolio2020.Services.JsonPlaceholderApiServices;
 
 namespace Portfolio2020
 {
@@ -29,6 +30,10 @@ namespace Portfolio2020
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<HttpClient>();
+            services.AddHttpClient<IUserService, ServiceUser>(client =>
+            {
+                client.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
