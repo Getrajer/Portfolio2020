@@ -12,6 +12,6 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
         Task<JPUser> GetUserById(int userId);
         Task<JPUser> AddNewUser(JPUser newUser);
         Task<JPUser> UpdateUser(JPUser userToUpdate);
-        Task<JPUser> DeleteUser(int userId);
+        Task DeleteUser(int userId);
     }
 }

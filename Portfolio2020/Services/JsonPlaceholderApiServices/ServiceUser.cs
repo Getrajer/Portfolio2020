@@ -19,12 +19,12 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
 
         public async Task<JPUser> AddNewUser(JPUser newUser)
         {
-            throw new NotImplementedException();
+            return await httpClient.PostJsonAsync<JPUser>($"users", newUser);
         }
 
-        public async Task<JPUser> DeleteUser(int userId)
+        public async Task DeleteUser(int userId)
         {
-            throw new NotImplementedException();
+            await httpClient.DeleteAsync($"users/{userId}");
         }
 
         public async Task<IEnumerable<JPUser>> GetAllUsers()
@@ -34,12 +34,12 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
 
         public async Task<JPUser> GetUserById(int userId)
         {
-            throw new NotImplementedException();
+            return await httpClient.GetJsonAsync<JPUser>($"users/{userId}");
         }
 
         public async Task<JPUser> UpdateUser(JPUser userToUpdate)
         {
-            throw new NotImplementedException();
+            return await httpClient.PutJsonAsync<JPUser>($"users", userToUpdate);
         }
     }
 }

@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 
 namespace Portfolio2020.Models.JsonPlaceholderApiModels
 {
-    public class JPComments
+    public class JPTodo
     {
         public int Id { get; set; }
-        public int PostId { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Body { get; set; }
+        public int UserId { get; set; }
+        public string Title { get; set; }
+        public bool Completed { get; set; }
     }
 }

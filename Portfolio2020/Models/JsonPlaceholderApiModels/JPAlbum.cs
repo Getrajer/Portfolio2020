@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Portfolio2020.Models.JsonPlaceholderApiModels
 {
-    public class Album
+    public class JPAlbum
     {
         public int Id { get; set; }
         public int UserId { get; set; }
