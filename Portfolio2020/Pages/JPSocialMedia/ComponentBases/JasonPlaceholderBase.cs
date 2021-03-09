@@ -19,6 +19,12 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         public IEnumerable<JPUser> Users { get; set; }
         public IEnumerable<JPPhoto> Photos { get; set; }
 
+        protected int count = 0;
+
+        public void Up()
+        {
+            count++;
+        }
 
         protected override async Task OnInitializedAsync()
         {
