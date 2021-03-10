@@ -34,7 +34,7 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
 
         public async Task<IEnumerable<JPComment>> GetCommentsOfPosId(int postId)
         {
-            return await httpClient.GetJsonAsync<JPComment[]>($"comments/{postId}/posts");
+            return await httpClient.GetJsonAsync<JPComment[]>($"posts/{postId}/comments");
         }
 
         public async Task<JPComment> UpdateComment(JPComment commentToUpdate)
