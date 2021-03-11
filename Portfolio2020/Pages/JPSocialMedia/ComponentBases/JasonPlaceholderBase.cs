@@ -81,7 +81,12 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
         public async Task DisplayUserProfile(int userId)
         {
+            UserDetailsViewModel.Posts = await GetPostsOfUser(userId);
+            UserDetailsViewModel.User.JPUser = await UserService.GetUserById(userId);
+            UserDetailsViewModel.User.ProfileImgUrl = $"../images/profile_png_{userId}.png";
 
+            ResetToggleVariables();
+            display_profile_page = true;
         }
         #endregion
 
@@ -116,6 +121,45 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
             }
         }
+
+        public async Task<List<JPPostDisplay>> GetPostsOfUser(int userId)
+        {
+            List<JPPostDisplay> DisplayPosts = new List<JPPostDisplay>();
+            IEnumerable<JPPost> userPosts = await PostService.GetAllPostsOfUser(userId);
+
+            if(userPosts != null)
+            {
+                foreach (var post in userPosts)
+                {
+                    JPPostDisplay pd = new JPPostDisplay();
+                    IEnumerable<JPComment> comments = await CommentService.GetCommentsOfPosId(post.Id);
+
+                    if (comments != null)
+                    {
+                        foreach (var c in comments)
+                        {
+                            JpCommentDisplay displayC = new JpCommentDisplay();
+                            displayC.JPComment = c;
+                            int num = RandomNumber(1, 10);
+                            displayC.ProfileImgUrl = $"../images/profile_png_{num}.png";
+                            pd.Comments.Add(displayC);
+                        }
+                    }
+
+                    JPPost jPPost = post;
+
+                    pd.Id = Posts.Count();
+                    pd.Post = jPPost;
+                    DisplayPosts.Add(pd);
+                }
+
+                return DisplayPosts;
+
+            }
+
+            return DisplayPosts;
+
+        }
         #endregion
 
         #region Users Functionality
@@ -143,6 +187,9 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
                 }
             }
         }
+
+
+
         #endregion
 
         #region Comments functionality

@@ -7,6 +7,12 @@ namespace Portfolio2020.Models.JsonPlaceholderApiModels
 {
     public class UserDetailsViewModel
     {
+        public UserDetailsViewModel()
+        {
+            User = new JPUserDisplay();
+            Posts = new List<JPPostDisplay>();
+        }
+
         public JPUserDisplay User { get; set; }
         public List<JPPostDisplay> Posts { get; set; }
     }

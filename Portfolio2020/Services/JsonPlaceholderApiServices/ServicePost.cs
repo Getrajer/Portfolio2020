@@ -34,7 +34,7 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
 
         public async Task<IEnumerable<JPPost>> GetAllPostsOfUser(int userId)
         {
-            return await httpClient.GetJsonAsync<JPPost[]>($"posts/{userId}/users");
+            return await httpClient.GetJsonAsync<JPPost[]>($"users/{userId}/posts");
         }
 
         public async Task<JPPost> GetPost(int postId)
