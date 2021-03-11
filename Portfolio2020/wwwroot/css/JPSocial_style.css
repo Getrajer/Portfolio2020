@@ -1,6 +1,39 @@
 ﻿.top_row{
-    display: none;
+    display:none;
 }
+
+
+.main_feed_loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index:2;
+}
+
+.display_none{
+    display:none;
+}
+
+.loader {
+    border: 16px solid #fff; 
+    border-top: 16px solid #7dc4ff; 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 
 * {
     margin: 0;
@@ -27,6 +60,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 #login {
@@ -574,7 +608,7 @@ body {
         }
 
 #login .register_redirect {
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
     #login .register_redirect p {
@@ -880,12 +914,13 @@ body {
 
 .post_feed_container {
     width: 100%;
+    min-height: 100vh;
     max-width: 700px;
 }
 
 .post {
     background-color: white;
-    margin: 2em 0;
+    margin: 5em 0;
     border-radius: 30px;
     padding-bottom: 2em;
 }
@@ -1070,8 +1105,8 @@ body {
     transition: transform 0.5s, -webkit-transform 0.5s;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 200px 1fr;
-    grid-template-columns: 200px 1fr;
+    -ms-grid-columns: 220px 1fr;
+    grid-template-columns: 220px 1fr;
 }
 
     .comment:hover {
@@ -1091,7 +1126,8 @@ body {
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        padding-left: 1em;
+        font-size: 0.9rem;
+        padding: 1em 1em 1em 1em;
     }
 
     .comment img {
@@ -1102,8 +1138,8 @@ body {
     .comment .user {
         display: -ms-grid;
         display: grid;
-        -ms-grid-columns: 100px 1fr;
-        grid-template-columns: 100px 1fr;
+        -ms-grid-columns: 90px 1fr;
+        grid-template-columns: 90px 1fr;
     }
 
         .comment .user .img_container {
@@ -1130,6 +1166,7 @@ body {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
+            font-size: 0.7rem;
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
             -ms-flex-direction: column;

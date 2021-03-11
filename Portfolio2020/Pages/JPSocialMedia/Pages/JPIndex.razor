@@ -390,7 +390,7 @@
 
             <div class="post_feed">
                 <div class="post_feed_container">
-                    @if (Posts != null)
+                    @if (Posts != null || Posts.Count == 0)
                     {
                         @foreach (var post in Posts)
                         {
@@ -430,7 +430,6 @@
                                                 </div>
                                                 <div class="user_info">
                                                     <p>@comment.Email</p>
-                                                    <p>Active IS</p>
                                                 </div>
                                             </div>
 
@@ -443,15 +442,23 @@
                                     }
 
 
-                                    <div class="add_comment_button">
-                                        <button>Add Comment</button>
-                                    </div>
 
-                                    <div class="add_comment_container">
-                                        <textarea></textarea>
-                                        <button>Add</button>
-                                        <button>Cancel</button>
-                                    </div>
+                                    @if (!post.IfAddComment)
+                                    {
+                                        <div class="add_comment_button">
+                                            <button @onclick ="() => ToggleAddComment(post.Id)">Add Comment</button>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="add_comment_container">
+                                            <input @bind="post.CommentAddName" placeholder="Title of the comment" />
+                                            <textarea @bind="post.CommentAddBody" placeholder="You comment"></textarea>
+                                            <p>@post.ErrorResponse</p>
+                                            <button @onclick ="() => AddComment(post.Id)">Add</button>
+                                            <button @onclick ="() => ToggleAddComment(post.Id)">Cancel</button>
+                                        </div>
+                                    }
 
                                 </div>
                             </div>
@@ -459,11 +466,15 @@
                     }
                     else
                     {
-                        <h1>Loading...</h1>
+
+
+
                     }
 
 
-
+                    <div class="main_feed_loader @display_init_loader">
+                        <div class="loader"></div>
+                    </div>
 
                 </div>
             </div>

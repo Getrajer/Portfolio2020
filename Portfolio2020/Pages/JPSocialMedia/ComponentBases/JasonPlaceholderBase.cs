@@ -36,6 +36,11 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         public IEnumerable<JPPhoto> Photos { get; set; }
         public List<JPPostDisplay> Posts = new List<JPPostDisplay>();
 
+        #region Variables
+        protected int post_display_modyfier = 1;
+        protected string display_init_loader = "";
+        #endregion
+
         #region DisplayPagesVariables
         protected bool display_index_page = false;
         protected bool display_register_page = false;
@@ -64,24 +69,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
         public async Task DisplayMainFeed()
         {
-            IEnumerable<JPPost> postsGet = await PostService.GetAllPosts();
-
-            if (postsGet != null)
-            {
-                foreach (var p in postsGet)
-                {
-                    JPPostDisplay pd = new JPPostDisplay();
-                    pd.Post = p;
-                    IEnumerable<JPComment> jPComments = await CommentService.GetCommentsOfPosId(p.Id);
-
-                    if (jPComments != null)
-                    {
-                        pd.Comments = jPComments;
-                    }
-
-                    Posts.Add(pd);
-                }
-            }
+            await RenderPosts();
 
             ResetToggleVariables();
             display_main_feed_page = true;
@@ -90,27 +78,84 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         }
         #endregion
 
+        #region Render functions for post
+        public async Task RenderPosts()
+        {
+            for(int i = post_display_modyfier; i < post_display_modyfier + 10; i++)
+            {
+                JPPost post = await PostService.GetPost(post_display_modyfier);
+
+                if(post != null)
+                {
+                    JPPostDisplay pd = new JPPostDisplay();
+                    IEnumerable<JPComment> comments = await CommentService.GetCommentsOfPosId(post.Id);
+
+                    if(comments != null)
+                    {
+                        foreach(var c in comments)
+                        {
+                            pd.Comments.Add(c);
+                        }
+                    }
+
+                    pd.Id = Posts.Count();
+                    pd.Post = post;
+                    Posts.Add(pd);
+                }
+
+            }
+        }
+        #endregion
+
+
+        #region Comments functionality
+        public void ToggleAddComment(int postId)
+        {
+            if (Posts[postId].IfAddComment)
+            {
+                Posts[postId].IfAddComment = false;
+                Posts[postId].CommentAddBody = "";
+                Posts[postId].CommentAddName = "";
+            }
+            else
+            {
+                Posts[postId].IfAddComment = true;
+            }
+        }
+
+        public async Task AddComment(int postId)
+        {
+            if(Posts[postId].CommentAddBody != "")
+            {
+                JPComment addedComment = new JPComment();
+
+                addedComment.Body = Posts[postId].CommentAddBody;
+                addedComment.Name = Posts[postId].CommentAddName;
+                addedComment.Email = "test@test.com";
+                addedComment.PostId = Posts[postId].Post.Id;
+
+                JPComment responseComment = await CommentService.AddNewComment(addedComment);
+
+
+                if (responseComment != null)
+                {
+                    Posts[postId].Comments.Add(responseComment);
+                    Posts[postId].CommentAddBody = "";
+                    Posts[postId].CommentAddName = "";
+                    ToggleAddComment(postId);
+                }
+                else
+                {
+                    Posts[postId].ErrorResponse = "Something went wrong with adding the comment. Try again.";
+                }
+            }
+        }
+        #endregion
 
         protected override async Task OnInitializedAsync()
         {
-            IEnumerable<JPPost> postsGet = await PostService.GetAllPosts();
-
-            if (postsGet != null)
-            {
-                foreach (var p in postsGet)
-                {
-                    JPPostDisplay pd = new JPPostDisplay();
-                    pd.Post = p;
-                    IEnumerable<JPComment> jPComments = await CommentService.GetCommentsOfPosId(p.Id);
-
-                    if (jPComments != null)
-                    {
-                        pd.Comments = jPComments;
-                    }
-
-                    Posts.Add(pd);
-                }
-            }
+            await RenderPosts();
+            display_init_loader = "display_none";
 
         }
     }

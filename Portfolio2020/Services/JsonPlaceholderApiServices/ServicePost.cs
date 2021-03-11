@@ -37,6 +37,11 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
             return await httpClient.GetJsonAsync<JPPost[]>($"posts/{userId}/users");
         }
 
+        public async Task<JPPost> GetPost(int postId)
+        {
+            return await httpClient.GetJsonAsync<JPPost>($"posts/{postId}");
+        }
+
         public async Task<JPPost> UpdatePost(JPPost postToUpdate)
         {
             return await httpClient.PutJsonAsync<JPPost>($"posts/{postToUpdate.Id}", postToUpdate);

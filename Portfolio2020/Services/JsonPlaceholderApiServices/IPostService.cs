@@ -10,6 +10,7 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
     {
         Task<IEnumerable<JPPost>> GetAllPosts();
         Task<IEnumerable<JPPost>> GetAllPostsOfUser(int userId);
+        Task<JPPost> GetPost(int postId);
         Task<JPPost> AddNewPost(JPPost newPost);
         Task<JPPost> UpdatePost(JPPost postToUpdate);
         Task DeletePost(int postId);
