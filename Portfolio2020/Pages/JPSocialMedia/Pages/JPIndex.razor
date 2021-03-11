@@ -359,7 +359,7 @@
                                 </div>
                             }
                         }
-                        
+
 
                     </div>
                 </div>
@@ -398,44 +398,49 @@
 
                                 <div class="comments">
 
-                                    @foreach (var comment in post.Comments)
+                                    @if (post.Comments != null && post.Comments.Any())
                                     {
-                                        <div class="comment">
-                                            <div class="user">
-                                                <div class="img_container">
-                                                    <img src="@comment.ProfileImgUrl" alt="@comment.JPComment.Email">
+                                        @foreach (var comment in post.Comments)
+                                        {
+                                            <div class="comment">
+                                                <div class="user">
+                                                    <div class="img_container">
+                                                        <img src="@comment.ProfileImgUrl" alt="@comment.JPComment.Email">
+                                                    </div>
+                                                    <div class="user_info">
+                                                        <p>@comment.JPComment.Email</p>
+                                                    </div>
                                                 </div>
-                                                <div class="user_info">
-                                                    <p>@comment.JPComment.Email</p>
+
+                                                <div class="comment_body">
+                                                    <p>
+                                                        @comment.JPComment.Body
+                                                    </p>
                                                 </div>
                                             </div>
+                                        }
 
-                                            <div class="comment_body">
-                                                <p>
-                                                    @comment.JPComment.Body
-                                                </p>
+
+
+                                        @if (!post.IfAddComment)
+                                        {
+                                            <div class="add_comment_button">
+                                                <button @onclick="() => ToggleAddComment(post.Id)">Add Comment</button>
                                             </div>
-                                        </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="add_comment_container">
+                                                <input @bind="post.CommentAddName" placeholder="Title of the comment" />
+                                                <textarea @bind="post.CommentAddBody" placeholder="You comment"></textarea>
+                                                <p>@post.ErrorResponse</p>
+                                                <button @onclick="() => AddComment(post.Id)">Add</button>
+                                                <button @onclick="() => ToggleAddComment(post.Id)">Cancel</button>
+                                            </div>
+                                        }
                                     }
 
 
-
-                                    @if (!post.IfAddComment)
-                                    {
-                                        <div class="add_comment_button">
-                                            <button @onclick ="() => ToggleAddComment(post.Id)">Add Comment</button>
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <div class="add_comment_container">
-                                            <input @bind="post.CommentAddName" placeholder="Title of the comment" />
-                                            <textarea @bind="post.CommentAddBody" placeholder="You comment"></textarea>
-                                            <p>@post.ErrorResponse</p>
-                                            <button @onclick ="() => AddComment(post.Id)">Add</button>
-                                            <button @onclick ="() => ToggleAddComment(post.Id)">Cancel</button>
-                                        </div>
-                                    }
 
                                 </div>
                             </div>
@@ -455,6 +460,201 @@
 
                 </div>
             </div>
+
+            <div class="navigation">
+                <nav>
+                    <ul>
+                        <li>
+                            <button>
+                                <i class="fas fa-home"></i> Home
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                <i class="fas fa-house-user"></i> My Profile
+                            </button>
+                        </li>
+                        <li>
+                            <button>
+                                <i class="fas fa-sign-out-alt"></i> Logoff
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </section>
+}
+
+@if (display_profile_page)
+{
+    <section id="profile">
+        <div class="profile_container">
+
+            <div class="users_display">
+                <div class="users_display_container">
+                    <div class="title">
+                        <h2>Explore other users</h2>
+                    </div>
+
+                    <div class="users_carousel">
+
+                        @if (Users != null && Users.Any())
+                        {
+                            @foreach (var user in Users)
+                            {
+                                <div class="user">
+                                    <div class="img_container">
+                                        <img src="@user.ProfileImgUrl" alt="@user.JPUser.Name">
+                                    </div>
+                                    <div class="user_info">
+                                        <p class="name">@user.JPUser.Name</p>
+                                        <p class="company">@user.JPUser.Company.Name</p>
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile_box">
+                <div class="profile_box_container">
+                    <div class="user_profile">
+                        <div class="profile_top">
+                            <div class="profile_image">
+                                <img src="@UserDetailsViewModel.User.ProfileImgUrl" alt="@UserDetailsViewModel.User.JPUser.Name">
+                            </div>
+                            <div class="profile_information">
+                                <div>
+                                    <p><span class="info_label">Name:</span> @UserDetailsViewModel.User.JPUser.Name</p>
+                                    <p><span class="info_label">Username:</span> @UserDetailsViewModel.User.JPUser.UserName</p>
+                                    <p><span class="info_label">Email:</span> @UserDetailsViewModel.User.JPUser.Email</p>
+                                    <p><span class="info_label">Phone:</span> @UserDetailsViewModel.User.JPUser.Phone</p>
+                                    <p><span class="info_label">Website:</span> @UserDetailsViewModel.User.JPUser.Website</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile_bottom">
+                            <div class="address">
+                                <h2>Address</h2>
+                                <p><span class="info_label">Street:</span> @UserDetailsViewModel.User.JPUser.Address.Street</p>
+                                <p><span class="info_label">Suite:</span> @UserDetailsViewModel.User.JPUser.Address.Suite</p>
+                                <p><span class="info_label">City:</span> @UserDetailsViewModel.User.JPUser.Address.City</p>
+                                <p><span class="info_label">Zipcode:</span> @UserDetailsViewModel.User.JPUser.Address.ZipCode</p>
+                                <p><span class="info_label">(GEO) Lat:</span> @UserDetailsViewModel.User.JPUser.Address.Geo.GeoLat</p>
+                                <p><span class="info_label">(GEO) Lng:</span> @UserDetailsViewModel.User.JPUser.Address.Geo.GeoLng</p>
+
+                            </div>
+                            <div class="company">
+                                <h2>Company</h2>
+                                <p><span class="info_label">Name:</span> @UserDetailsViewModel.User.JPUser.Company.Name</p>
+                                <p><span class="info_label">Catch phrase:</span> @UserDetailsViewModel.User.JPUser.Company.CatchPhrase</p>
+                                <p><span class="info_label">Business Strategy:</span> @UserDetailsViewModel.User.JPUser.Company.BS</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="gallery_button">
+                        <button>View Gallery</button>
+                    </div>
+
+                    <div class="user_post_feed_title">
+                        <h1>@UserDetailsViewModel.User.JPUser.Name's posts</h1>
+                    </div>
+
+                    <div class="post_feed">
+                        <div class="post_feed_container">
+
+                            @if(UserDetailsViewModel.Posts != null && UserDetailsViewModel.Posts.Any())
+
+                            @foreach(var post in UserDetailsViewModel.Posts)
+                            {
+                            <div class="post">
+                                <div class="post_body">
+                                    <div class="post_title">
+                                        <h3>@post.Post.Title</h3>
+                                    </div>
+                                    <div class="body">
+                                        <p>
+                                            @post.Post.Body
+                                        </p>
+                                    </div>
+                                    <div class="post_creator">
+                                        <div class="img_container">
+                                            <img src="@UserDetailsViewModel.User.ProfileImgUrl" alt="@UserDetailsViewModel.User.JPUser.Name">
+                                        </div>
+                                        <div class="user_info">
+                                            <p>@UserDetailsViewModel.User.JPUser.Name</p>
+                                            <p>@UserDetailsViewModel.User.JPUser.Company.Name</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="comment_title">
+                                    <h2>Comments</h2>
+                                </div>
+
+                                <div class="comments">
+
+                                    @if (post.Comments != null && post.Comments.Any())
+                                    {
+                                        @foreach (var comment in post.Comments)
+                                        {
+                                            <div class="comment">
+                                                <div class="user">
+                                                    <div class="img_container">
+                                                        <img src="@comment.ProfileImgUrl" alt="@comment.JPComment.Email">
+                                                    </div>
+                                                    <div class="user_info">
+                                                        <p>@comment.JPComment.Email</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="comment_body">
+                                                    <p>
+                                                        @comment.JPComment.Body
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        }
+
+
+
+                                        @if (!post.IfAddComment)
+                                        {
+                                            <div class="add_comment_button">
+                                                <button @onclick="() => ToggleAddComment(post.Id)">Add Comment</button>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="add_comment_container">
+                                                <input @bind="post.CommentAddName" placeholder="Title of the comment" />
+                                                <textarea @bind="post.CommentAddBody" placeholder="You comment"></textarea>
+                                                <p>@post.ErrorResponse</p>
+                                                <button @onclick="() => AddComment(post.Id)">Add</button>
+                                                <button @onclick="() => ToggleAddComment(post.Id)">Cancel</button>
+                                            </div>
+                                        }
+                                    }
+
+                                </div>
+                            </div>
+                            }
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="navigation">
                 <nav>

@@ -39,6 +39,10 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         #region Variables
         protected int post_display_modyfier = 1;
         protected string display_init_loader = "";
+
+
+        protected UserDetailsViewModel UserDetailsViewModel = new UserDetailsViewModel();
+
         #endregion
 
         #region DisplayPagesVariables
@@ -73,7 +77,10 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
             ResetToggleVariables();
             display_main_feed_page = true;
+        }
 
+        public async Task DisplayUserProfile(int userId)
+        {
 
         }
         #endregion
@@ -112,6 +119,9 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         #endregion
 
         #region Users Functionality
+
+
+
         public async Task RenderUsersForSideBar()
         {
             IEnumerable<JPUser> users = await UserService.GetAllUsers();
