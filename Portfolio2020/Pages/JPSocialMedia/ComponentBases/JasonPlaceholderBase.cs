@@ -32,7 +32,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
         #endregion
 
-        public IEnumerable<JPUser> Users { get; set; }
+        public List<JPUserDisplay> Users = new List<JPUserDisplay>();
         public IEnumerable<JPPhoto> Photos { get; set; }
         public List<JPPostDisplay> Posts = new List<JPPostDisplay>();
 
@@ -78,7 +78,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         }
         #endregion
 
-        #region Render functions for post
+        #region Functions for post
         public async Task RenderPosts()
         {
             for(int i = post_display_modyfier; i < post_display_modyfier + 10; i++)
@@ -94,7 +94,11 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
                     {
                         foreach(var c in comments)
                         {
-                            pd.Comments.Add(c);
+                            JpCommentDisplay displayC = new JpCommentDisplay();
+                            displayC.JPComment = c;
+                            int num = RandomNumber(1, 10);
+                            displayC.ProfileImgUrl = $"../images/profile_png_{num}.png";
+                            pd.Comments.Add(displayC);
                         }
                     }
 
@@ -107,6 +111,29 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         }
         #endregion
 
+        #region Users Functionality
+        public async Task RenderUsersForSideBar()
+        {
+            IEnumerable<JPUser> users = await UserService.GetAllUsers();
+
+            if(users != null)
+            {
+                int i = 1;
+                foreach(var user in users)
+                {
+                    JPUserDisplay userD = new JPUserDisplay();
+                    userD.JPUser = user;
+                    userD.ProfileImgUrl = $"../images/profile_png_{i}.png";
+                    Users.Add(userD);
+                    i++;
+                    if(i == 10)
+                    {
+                        i = 1;
+                    }
+                }
+            }
+        }
+        #endregion
 
         #region Comments functionality
         public void ToggleAddComment(int postId)
@@ -139,7 +166,10 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
                 if (responseComment != null)
                 {
-                    Posts[postId].Comments.Add(responseComment);
+                    JpCommentDisplay displayC = new JpCommentDisplay();
+                    displayC.JPComment = responseComment;
+                    displayC.ProfileImgUrl = $"../images/profile_png_1.png";
+                    Posts[postId].Comments.Add(displayC);
                     Posts[postId].CommentAddBody = "";
                     Posts[postId].CommentAddName = "";
                     ToggleAddComment(postId);
@@ -154,9 +184,20 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
         protected override async Task OnInitializedAsync()
         {
+            await RenderUsersForSideBar();
             await RenderPosts();
             display_init_loader = "display_none";
 
         }
+
+
+        #region Helping Functions
+        private readonly Random _random = new Random();
+
+        public int RandomNumber(int min, int max)
+        {
+            return _random.Next(min, max);
+        }
+        #endregion
     }
 }

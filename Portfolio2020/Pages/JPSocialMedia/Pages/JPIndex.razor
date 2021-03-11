@@ -344,45 +344,22 @@
 
                     <div class="users_carousel">
 
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
-
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
-
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
-
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
+                        @if (Users != null && Users.Any())
+                        {
+                            @foreach (var user in Users)
+                            {
+                                <div class="user">
+                                    <div class="img_container">
+                                        <img src="@user.ProfileImgUrl" alt="@user.JPUser.Name">
+                                    </div>
+                                    <div class="user_info">
+                                        <p class="name">@user.JPUser.Name</p>
+                                        <p class="company">@user.JPUser.Company.Name</p>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        
 
                     </div>
                 </div>
@@ -426,16 +403,16 @@
                                         <div class="comment">
                                             <div class="user">
                                                 <div class="img_container">
-                                                    <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
+                                                    <img src="@comment.ProfileImgUrl" alt="@comment.JPComment.Email">
                                                 </div>
                                                 <div class="user_info">
-                                                    <p>@comment.Email</p>
+                                                    <p>@comment.JPComment.Email</p>
                                                 </div>
                                             </div>
 
                                             <div class="comment_body">
                                                 <p>
-                                                    @comment.Body
+                                                    @comment.JPComment.Body
                                                 </p>
                                             </div>
                                         </div>

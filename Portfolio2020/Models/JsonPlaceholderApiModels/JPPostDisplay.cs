@@ -9,7 +9,7 @@ namespace Portfolio2020.Models.JsonPlaceholderApiModels
     {
         public JPPostDisplay()
         {
-            Comments = new List<JPComment>();
+            Comments = new List<JpCommentDisplay>();
         }
 
         public int Id { get; set; }
@@ -18,6 +18,6 @@ namespace Portfolio2020.Models.JsonPlaceholderApiModels
         public string CommentAddBody { get; set; }
         public string ErrorResponse { get; set; }
         public bool IfAddComment { get; set; }
-        public List<JPComment> Comments { get; set; }
+        public List<JpCommentDisplay> Comments { get; set; }
     }
 }
