@@ -32,6 +32,11 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
             return await httpClient.GetJsonAsync<JPPhoto[]>($"photos");
         }
 
+        public async Task<JPPhoto> GetPhotoOfId(int photoId)
+        {
+            return await httpClient.GetJsonAsync<JPPhoto>($"photos/{photoId}");
+        }
+
         public async Task<IEnumerable<JPPhoto>> GetPhotosOfAlbum(int albumId)
         {
             return await httpClient.GetJsonAsync<JPPhoto[]>($"photos/{albumId}/albums");

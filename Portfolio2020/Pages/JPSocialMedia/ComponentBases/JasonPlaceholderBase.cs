@@ -42,7 +42,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
 
         protected UserDetailsViewModel UserDetailsViewModel = new UserDetailsViewModel();
-
+        protected GalleriesViewModel GetGalleriesViewModel = new GalleriesViewModel();
         #endregion
 
         #region DisplayPagesVariables
@@ -88,6 +88,23 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
             ResetToggleVariables();
             display_profile_page = true;
         }
+
+        public async Task DisplayGalleries(int userId)
+        {
+            List<JPAlbum> Albums = await GetGalleriesOfUser(userId);
+            for(int i = 0; i < Albums.Count; i++)
+            {
+                JpAlbumDisplay jpAlbumDisplay = new JpAlbumDisplay();
+                jpAlbumDisplay.Album = Albums[i];
+                JPPhoto photo = await GetPhotoOfId(1);
+                jpAlbumDisplay.ExamplePhotoUrl = photo.ThumbNailUrl;
+                GetGalleriesViewModel.Albums.Add(jpAlbumDisplay);
+            }
+
+            GetGalleriesViewModel.User = UserDetailsViewModel.User;
+            ResetToggleVariables();
+            display_galleries_page = true;
+        }  
         #endregion
 
         #region Functions for post
@@ -164,8 +181,6 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
         #region Users Functionality
 
-
-
         public async Task RenderUsersForSideBar()
         {
             IEnumerable<JPUser> users = await UserService.GetAllUsers();
@@ -188,11 +203,10 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
             }
         }
 
-
-
         #endregion
 
         #region Comments functionality
+
         public void ToggleAddComment(int postId)
         {
             if (Posts[postId].IfAddComment)
@@ -237,6 +251,29 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
                 }
             }
         }
+
+        #endregion
+
+        #region Album functions
+
+        public async Task<List<JPAlbum>> GetGalleriesOfUser(int userId)
+        {
+            IEnumerable<JPAlbum> IAlbums = await AlbumService.GetAlbumByUserId(userId);
+            List<JPAlbum> ReturnAlbum = new List<JPAlbum>();
+            foreach(var albumV in IAlbums)
+            {
+                JPAlbum album = albumV;
+                ReturnAlbum.Add(album);
+            }
+
+            return ReturnAlbum;
+        }
+
+        public async Task<JPPhoto> GetPhotoOfId(int photoId)
+        {
+            return await PhotoService.GetPhotoOfId(photoId);
+        }
+
         #endregion
 
         protected override async Task OnInitializedAsync()

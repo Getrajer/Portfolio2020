@@ -561,7 +561,7 @@
 
 
                     <div class="gallery_button">
-                        <button>View Gallery</button>
+                        <button @onclick="() => DisplayGalleries(UserDetailsViewModel.User.JPUser.Id)">View Gallery</button>
                     </div>
 
                     <div class="user_post_feed_title">
@@ -696,45 +696,21 @@
 
                     <div class="users_carousel">
 
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
-
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
-
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
-
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
+                        @if (Users != null && Users.Any())
+                        {
+                            @foreach (var user in Users)
+                            {
+                                <div @onclick="() => DisplayUserProfile(user.JPUser.Id)" class="user">
+                                    <div class="img_container">
+                                        <img src="@user.ProfileImgUrl" alt="@user.JPUser.Name">
+                                    </div>
+                                    <div class="user_info">
+                                        <p class="name">@user.JPUser.Name</p>
+                                        <p class="company">@user.JPUser.Company.Name</p>
+                                    </div>
+                                </div>
+                            }
+                        }
 
                     </div>
                 </div>
@@ -743,16 +719,23 @@
             <div class="galleries_display_box">
                 <div class="galleries_display_box_c">
                     <div class="title">
-                        <h1>Leanne Graham's galleries</h1>
+                        <h1>@GetGalleriesViewModel.User.JPUser.Name's galleries</h1>
                     </div>
 
 
                     <div class="galleries_display">
+                        @if (GetGalleriesViewModel.Albums != null && GetGalleriesViewModel.Albums.Any())
+                        {
+                            @foreach (var album in GetGalleriesViewModel.Albums)
+                            {
+                                <div class="album">
+                                    <div class="img_back" style="background-image: url(@album.ExamplePhotoUrl);"></div>
+                                    <button>@album.Album.Title</button>
+                                </div>
+                            }
+                        }
 
-                        <div class="album">
-                            <div class="img_back" style="background-image: url(../images/plac_img.jpg);"></div>
-                            <button>quidem molestiae enim</button>
-                        </div>
+
 
                     </div>
                 </div>
