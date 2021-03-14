@@ -27,6 +27,11 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
             await httpClient.DeleteAsync($"albums/{albumId}");
         }
 
+        public async Task<JPAlbum> GetAlbum(int albumId)
+        {
+            return await httpClient.GetJsonAsync<JPAlbum>($"albums/{albumId}");
+        }
+
         public async Task<IEnumerable<JPAlbum>> GetAlbumByUserId(int userId)
         {
             return await httpClient.GetJsonAsync<JPAlbum[]>($"albums/{userId}/users");

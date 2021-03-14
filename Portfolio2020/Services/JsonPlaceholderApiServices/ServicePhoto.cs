@@ -39,7 +39,7 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
 
         public async Task<IEnumerable<JPPhoto>> GetPhotosOfAlbum(int albumId)
         {
-            return await httpClient.GetJsonAsync<JPPhoto[]>($"photos/{albumId}/albums");
+            return await httpClient.GetJsonAsync<JPPhoto[]>($"albums/{albumId}/photos");
         }
 
         public async Task<JPPhoto> UpdatePhoto(JPPhoto photoToUpdate)

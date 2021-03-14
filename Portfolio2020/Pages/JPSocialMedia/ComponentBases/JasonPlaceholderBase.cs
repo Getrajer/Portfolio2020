@@ -41,8 +41,15 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         protected string display_init_loader = "";
 
 
-        protected UserDetailsViewModel UserDetailsViewModel = new UserDetailsViewModel();
-        protected GalleriesViewModel GetGalleriesViewModel = new GalleriesViewModel();
+        //Photo pop up
+        protected bool show_pop_up = false;
+        protected JPPhoto PopUpPhoto = new JPPhoto();
+        protected int currentPhotoId = 0;
+
+
+        protected JPUserDetailsViewModel UserDetailsViewModel = new JPUserDetailsViewModel();
+        protected JPGalleriesViewModel GetGalleriesViewModel = new JPGalleriesViewModel();
+        protected JPGalleryViewModel JPGalleryViewModel = new JPGalleryViewModel();
         #endregion
 
         #region DisplayPagesVariables
@@ -53,6 +60,8 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         protected bool display_galleries_page = false;
         protected bool display_gallery_page = false;
         #endregion
+
+
 
         #region DisplayPagesFunctions
         public void ResetToggleVariables()
@@ -105,6 +114,29 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
             ResetToggleVariables();
             display_galleries_page = true;
         }  
+
+        public async Task DisplayGallery(int albumId)
+        {
+            JPGalleryViewModel.Photos = await GetPhotossOfAlbumId(albumId);
+            JPGalleryViewModel.Album = await GetAlbumOfId(albumId);
+            ResetToggleVariables();
+            display_gallery_page = true;
+        }
+
+        public void ToggleImgPopUp(int photoId)
+        {
+            if(photoId == -1)
+            {
+                PopUpPhoto = new JPPhoto();
+                show_pop_up = false;
+            }
+            else
+            {
+                PopUpPhoto = JPGalleryViewModel.Photos[photoId];
+                currentPhotoId = photoId;
+                show_pop_up = true;
+            }
+        }
         #endregion
 
         #region Functions for post
@@ -269,9 +301,31 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
             return ReturnAlbum;
         }
 
+        public async Task<JPAlbum> GetAlbumOfId(int albumId)
+        {
+            return await AlbumService.GetAlbum(albumId);
+        }
+
+        #endregion
+
+        #region Photos functions
+
         public async Task<JPPhoto> GetPhotoOfId(int photoId)
         {
             return await PhotoService.GetPhotoOfId(photoId);
+        }
+
+        public async Task<List<JPPhoto>> GetPhotossOfAlbumId(int albumId)
+        {
+            IEnumerable<JPPhoto> IPhotos = await PhotoService.GetPhotosOfAlbum(albumId);
+            List<JPPhoto> ReturnPhotos = new List<JPPhoto>();
+            foreach(var photoV in IPhotos)
+            {
+                JPPhoto photo = photoV;
+                ReturnPhotos.Add(photo);
+            }
+
+            return ReturnPhotos;
         }
 
         #endregion

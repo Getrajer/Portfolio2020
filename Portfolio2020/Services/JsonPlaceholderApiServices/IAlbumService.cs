@@ -10,6 +10,7 @@ namespace Portfolio2020.Services.JsonPlaceholderApiServices
     {
         Task<IEnumerable<JPAlbum>> GetAlbums();
         Task<IEnumerable<JPAlbum>> GetAlbumByUserId(int userId);
+        Task<JPAlbum> GetAlbum(int albumId);
         Task<JPAlbum> AddNewAlbum(JPAlbum newAlbum);
         Task<JPAlbum> UpdateAlbum(JPAlbum albumToUpdate);
         Task DeleteAlbum(int albumId);

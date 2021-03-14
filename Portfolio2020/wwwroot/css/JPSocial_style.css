@@ -47,6 +47,8 @@ p, a, input, label, div {
     padding: 0;
 }
 
+
+
 footer {
     display: none;
 }
@@ -1595,7 +1597,7 @@ body {
 
         #img_pop_up .button_container button {
             font-size: 4rem;
-            color: white;
+            color: rgb(165, 35, 35);
             background-color: unset;
             border: none;
             cursor: pointer;

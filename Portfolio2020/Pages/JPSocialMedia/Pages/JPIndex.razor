@@ -730,7 +730,7 @@
                             {
                                 <div class="album">
                                     <div class="img_back" style="background-image: url(@album.ExamplePhotoUrl);"></div>
-                                    <button>@album.Album.Title</button>
+                                    <button @onclick="() => DisplayGallery(album.Album.Id)" >@album.Album.Title</button>
                                 </div>
                             }
                         }
@@ -783,45 +783,21 @@
 
                     <div class="users_carousel">
 
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
-
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
-
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
-
-                        <div class="user">
-                            <div class="img_container">
-                                <img src="../images/profile_png_1.png" alt="Mateusz Owczarek">
-                            </div>
-                            <div class="user_info">
-                                <p>Mateusz Owczarek</p>
-                                <p>Active IS</p>
-                            </div>
-                        </div>
+                        @if (Users != null && Users.Any())
+                        {
+                            @foreach (var user in Users)
+                            {
+                                <div @onclick="() => DisplayUserProfile(user.JPUser.Id)" class="user">
+                                    <div class="img_container">
+                                        <img src="@user.ProfileImgUrl" alt="@user.JPUser.Name">
+                                    </div>
+                                    <div class="user_info">
+                                        <p class="name">@user.JPUser.Name</p>
+                                        <p class="company">@user.JPUser.Company.Name</p>
+                                    </div>
+                                </div>
+                            }
+                        }
 
                     </div>
                 </div>
@@ -830,16 +806,23 @@
             <div class="images_display_box">
                 <div class="images_display_box_c">
                     <div class="title">
-                        <h1>Leanne Graham's galleries</h1>
+                        <h1>@JPGalleryViewModel.Album.Title</h1>
                     </div>
 
 
                     <div class="images_display">
 
-                        <div class="image">
-                            <div class="img_back" style="background-image: url(../images/plac_img.jpg);"></div>
-                            <button>quidem molestiae enim</button>
-                        </div>
+                        @if(JPGalleryViewModel.Photos != null && JPGalleryViewModel.Photos.Any())
+                        {
+                            foreach(var photo in JPGalleryViewModel.Photos)
+                            {
+                                <div class="image">
+                                    <div class="img_back" style="background-image: url(@photo.ThumbNailUrl);"></div>
+                                    <button @onclick="() => ToggleImgPopUp(photo.Id - 1)" >@photo.Title</button>
+                                </div>
+                            }
+                        }
+
 
                     </div>
                 </div>
@@ -871,21 +854,30 @@
 
         </div>
     </section>
+    @if (show_pop_up)
+    {
+        <div id="img_pop_up">
+            <div class="img_pop_up_container">
 
-    <div id="img_pop_up">
-        <div class="img_pop_up_container">
+                <div class="exit_button" @onclick="() => ToggleImgPopUp(-1)"><button>X</button></div>
 
-            <div class="exit_button"><button>X</button></div>
-
-            <div class="button_container">
-                <button><i class="fas fa-arrow-left"></i></button>
-            </div>
-            <div class="img_display">
-                <img src="../images/plac_img.jpg" alt="">
-            </div>
-            <div class="button_container">
-                <button><i class="fas fa-arrow-right"></i></button>
+                <div class="button_container">
+                    @if (currentPhotoId != 0)
+                    {
+                        <button @onclick="() => ToggleImgPopUp(currentPhotoId - 1)"><i class="fas fa-arrow-left"></i></button>
+                    }
+                </div>
+                <div class="img_display">
+                    <img src="@PopUpPhoto.Url" alt="@PopUpPhoto.Title">
+                </div>
+                <div class="button_container">
+                    @if (currentPhotoId != JPGalleryViewModel.Photos.Count())
+                    {
+                        <button @onclick="() => ToggleImgPopUp(currentPhotoId + 1)"><i class="fas fa-arrow-right"></i></button>
+                    }
+                </div>
             </div>
         </div>
-    </div>
+    }
+    
 }

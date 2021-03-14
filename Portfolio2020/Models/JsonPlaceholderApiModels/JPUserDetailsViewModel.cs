@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Portfolio2020.Models.JsonPlaceholderApiModels
 {
-    public class UserDetailsViewModel
+    public class JPUserDetailsViewModel
     {
-        public UserDetailsViewModel()
+        public JPUserDetailsViewModel()
         {
             User = new JPUserDisplay();
             Posts = new List<JPPostDisplay>();

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Portfolio2020.Models.JsonPlaceholderApiModels
 {
-    public class GalleriesViewModel
+    public class JPGalleriesViewModel
     {
-        public GalleriesViewModel()
+        public JPGalleriesViewModel()
         {
             Albums = new List<JpAlbumDisplay>();
             User = new JPUserDisplay();
