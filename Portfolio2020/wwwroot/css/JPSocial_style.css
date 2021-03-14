@@ -1189,7 +1189,7 @@ body {
 .navigation {
     position: fixed;
     top: 35%;
-    right: 300px;
+    right: 150px;
 }
 
     .navigation ul {
@@ -1438,4 +1438,172 @@ body {
             height: 300px;
             width: 100%;
         }
+
+#gallery .images_display_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+    #gallery .images_display_box .images_display_box_c {
+        padding-top: 3em;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    #gallery .images_display_box .title {
+        text-align: center;
+    }
+
+        #gallery .images_display_box .title h1 {
+            color: white;
+            font-size: 3rem;
+        }
+
+    #gallery .images_display_box .images_display {
+        padding-top: 4em;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2em;
+    }
+
+    #gallery .images_display_box .image {
+        position: relative;
+        height: 300px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+    }
+
+        #gallery .images_display_box .image button {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            border: unset;
+            background-color: rgba(255, 255, 255, 0.582);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: capitalize;
+            cursor: pointer;
+            -webkit-transition: 0.5s background-color;
+            transition: 0.5s background-color;
+        }
+
+            #gallery .images_display_box .image button:hover {
+                background-color: rgba(255, 255, 255, 0);
+            }
+
+        #gallery .images_display_box .image .img_back {
+            position: absolute;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 300px;
+            width: 100%;
+        }
+
+#img_pop_up {
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+    #img_pop_up .exit_button {
+        position: absolute;
+        right: 150px;
+    }
+
+        #img_pop_up .exit_button button {
+            font-size: 4rem;
+            color: white;
+            background-color: unset;
+            border: none;
+            cursor: pointer;
+            -webkit-transition: 0.5s color;
+            transition: 0.5s color;
+        }
+
+            #img_pop_up .exit_button button:hover {
+                color: #3b44a1;
+            }
+
+    #img_pop_up .img_pop_up_container {
+        width: 100%;
+        max-width: 1100px;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 100px 1fr 100px;
+        grid-template-columns: 100px 1fr 100px;
+    }
+
+    #img_pop_up .img_display {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+        #img_pop_up .img_display img {
+            width: 100%;
+        }
+
+    #img_pop_up .button_container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+    }
+
+        #img_pop_up .button_container button {
+            font-size: 4rem;
+            color: white;
+            background-color: unset;
+            border: none;
+            cursor: pointer;
+            -webkit-transition: 0.5s color;
+            transition: 0.5s color;
+        }
+
+            #img_pop_up .button_container button:hover {
+                color: #3b44a1;
+            }
 /*# sourceMappingURL=JPstyle.css.map */

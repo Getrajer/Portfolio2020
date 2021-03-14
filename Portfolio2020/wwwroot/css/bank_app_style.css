@@ -1156,7 +1156,7 @@ footer p a{
 /*PIN showcase*/
 .pin_display {
     position: fixed;
-    top: 30%;
+    top: 100px;
     right: 20px;
     background-color: black;
     display: flex;
