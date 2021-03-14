@@ -54,7 +54,6 @@ input:focus{
 .page {
     margin: 2em 0 1em 0;
     width: 100%;
-    min-height: 880px;
     display: flex;
     justify-content: center;
     align-content:center;
@@ -68,13 +67,15 @@ input:focus{
 
 .page_container{
     position:relative;
-    width:1800px;
+    width: 100%;
+    max-width: 1450px;
     min-height:850px;
     max-height:100vh;
     display:grid;
-    grid-template-columns: 650px 1150px;
+    padding: 0 1em;
+    grid-template-columns: 37% 63%;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 2em;
+    grid-gap: 1em;
     grid-template-areas:
         "console_output graph"
         "console_output graph"
@@ -141,11 +142,6 @@ input:focus{
     color:#aa616f;
 }
 
-h2{
-    font-weight: 900;
-    font-size:2rem;
-}
-
 /*------------------*/
 
 .console {
@@ -180,7 +176,7 @@ h2{
     margin: 1em 0 0 0;
     font-size: 1.2rem;
     background-color: unset;
-    height:150px;
+    height:110px;
     border-radius:unset;
     resize:none;
     padding:0.3em 0.3em 0 0.3em;
@@ -233,7 +229,7 @@ h2{
 
 .graph .btn_container button{
     height:100%;
-    width:150px;
+    width:100px;
     background-color: #9d6f42;
     color: #e8e8e8;
     border: unset;
@@ -367,12 +363,12 @@ text{
 
 .data .btn_container button{
     height:100%;
-    width:250px;
+    width:100px;
     background-color: #9d6f42;
     color: #e8e8e8;
     border: unset;
-    font-weight: 900;
-    font-size:1.1rem;
+    font-weight: 700;
+    font-size:1rem;
     padding: 0.3em 0.5em;
     transition: 0.5s background-color;
 
