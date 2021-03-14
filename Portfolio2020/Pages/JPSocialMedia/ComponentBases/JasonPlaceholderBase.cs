@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using Portfolio2020.Models.JsonPlaceholderApiModels;
 using Portfolio2020.Services.JsonPlaceholderApiServices;
 using System;
@@ -11,6 +12,8 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
     public class JasonPlaceholderBase : ComponentBase
     {
         #region InjectingServices
+        [Inject]
+        IJSRuntime JSRuntime { get; set; }
 
         [Inject]
         public IAlbumService AlbumService { get; set; }
@@ -64,7 +67,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
 
         #region DisplayPagesFunctions
-        public void ResetToggleVariables()
+        public async Task ResetToggleVariables()
         {
             display_index_page = false;
             display_register_page = false;
@@ -117,6 +120,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
         public async Task DisplayGallery(int albumId)
         {
+
             JPGalleryViewModel.Photos = await GetPhotossOfAlbumId(albumId);
             JPGalleryViewModel.Album = await GetAlbumOfId(albumId);
             ResetToggleVariables();
@@ -132,7 +136,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
             }
             else
             {
-                PopUpPhoto = JPGalleryViewModel.Photos[photoId];
+                PopUpPhoto = JPGalleryViewModel.Photos[photoId].Photo;
                 currentPhotoId = photoId;
                 show_pop_up = true;
             }
@@ -315,14 +319,17 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
             return await PhotoService.GetPhotoOfId(photoId);
         }
 
-        public async Task<List<JPPhoto>> GetPhotossOfAlbumId(int albumId)
+        public async Task<List<JPPhotoDisplay>> GetPhotossOfAlbumId(int albumId)
         {
             IEnumerable<JPPhoto> IPhotos = await PhotoService.GetPhotosOfAlbum(albumId);
-            List<JPPhoto> ReturnPhotos = new List<JPPhoto>();
+            List<JPPhotoDisplay> ReturnPhotos = new List<JPPhotoDisplay>();
+            
             foreach(var photoV in IPhotos)
             {
-                JPPhoto photo = photoV;
-                ReturnPhotos.Add(photo);
+                JPPhotoDisplay photoDisplay = new JPPhotoDisplay();
+                photoDisplay.Photo = photoV;
+                photoDisplay.Id = ReturnPhotos.Count();
+                ReturnPhotos.Add(photoDisplay);
             }
 
             return ReturnPhotos;
@@ -345,6 +352,11 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         public int RandomNumber(int min, int max)
         {
             return _random.Next(min, max);
+        }
+        private async Task ScrollTop()
+        {
+            await JSRuntime.InvokeAsync<string>("ScrollTopJS");
+
         }
         #endregion
     }

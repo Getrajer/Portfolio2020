@@ -817,8 +817,8 @@
                             foreach(var photo in JPGalleryViewModel.Photos)
                             {
                                 <div class="image">
-                                    <div class="img_back" style="background-image: url(@photo.ThumbNailUrl);"></div>
-                                    <button @onclick="() => ToggleImgPopUp(photo.Id - 1)" >@photo.Title</button>
+                                    <div class="img_back" style="background-image: url(@photo.Photo.ThumbNailUrl);"></div>
+                                    <button @onclick="() => ToggleImgPopUp(photo.Id)" >@photo.Photo.Title</button>
                                 </div>
                             }
                         }

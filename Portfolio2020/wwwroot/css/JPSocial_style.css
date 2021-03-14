@@ -47,7 +47,17 @@ p, a, input, label, div {
     padding: 0;
 }
 
+button {
+    outline: none !important;
+}
 
+    button:focus {
+        outline: none !important;
+    }
+
+    button:hover {
+        outline: none !important;
+    }
 
 footer {
     display: none;
@@ -1541,8 +1551,8 @@ body {
 }
 
     #img_pop_up .exit_button {
-        position: absolute;
-        right: 150px;
+        position: fixed;
+        top: 100px;
     }
 
         #img_pop_up .exit_button button {
@@ -1579,6 +1589,7 @@ body {
 
         #img_pop_up .img_display img {
             width: 100%;
+            max-height: 600px;
         }
 
     #img_pop_up .button_container {
@@ -1597,7 +1608,7 @@ body {
 
         #img_pop_up .button_container button {
             font-size: 4rem;
-            color: rgb(165, 35, 35);
+            color: white;
             background-color: unset;
             border: none;
             cursor: pointer;

@@ -9,10 +9,10 @@ namespace Portfolio2020.Models.JsonPlaceholderApiModels
     {
         public JPGalleryViewModel()
         {
-            Photos = new List<JPPhoto>();
+            Photos = new List<JPPhotoDisplay>();
         }
 
-        public List<JPPhoto> Photos { get; set; }
+        public List<JPPhotoDisplay> Photos { get; set; }
         public JPAlbum Album { get; set; }
     }
 }
