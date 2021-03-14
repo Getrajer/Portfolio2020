@@ -56,9 +56,9 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
         #endregion
 
         #region DisplayPagesVariables
-        protected bool display_index_page = false;
+        protected bool display_index_page = true;
         protected bool display_register_page = false;
-        protected bool display_main_feed_page = true;
+        protected bool display_main_feed_page = false;
         protected bool display_profile_page = false;
         protected bool display_galleries_page = false;
         protected bool display_gallery_page = false;
@@ -77,6 +77,23 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
             display_gallery_page = false;
         }
 
+        public void DisplayIndex()
+        {
+            ResetToggleVariables();
+            display_index_page = true;
+        }
+
+        public void Logoff()
+        {
+            ResetToggleVariables();
+        }
+
+        public void DisplayMyProfile()
+        {
+            ResetToggleVariables();
+            display_profile_page = false;
+        }
+
         public void DisplayRegister()
         {
             ResetToggleVariables();
@@ -85,15 +102,15 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
         public async Task DisplayMainFeed()
         {
-            await RenderPosts();
-
-            ResetToggleVariables();
+            await ResetToggleVariables();
             display_main_feed_page = true;
+            await RenderPosts();
+            await RenderUsersForSideBar();
         }
 
         public async Task DisplayUserProfile(int userId)
         {
-            UserDetailsViewModel.Posts = await GetPostsOfUser(userId);
+            Posts = await GetPostsOfUser(userId);
             UserDetailsViewModel.User.JPUser = await UserService.GetUserById(userId);
             UserDetailsViewModel.User.ProfileImgUrl = $"../images/profile_png_{userId}.png";
 
@@ -201,7 +218,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
                     JPPost jPPost = post;
 
-                    pd.Id = Posts.Count();
+                    pd.Id = DisplayPosts.Count();
                     pd.Post = jPPost;
                     DisplayPosts.Add(pd);
                 }
@@ -256,6 +273,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
                 Posts[postId].IfAddComment = true;
             }
         }
+
 
         public async Task AddComment(int postId)
         {
@@ -339,10 +357,6 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
         protected override async Task OnInitializedAsync()
         {
-            await RenderUsersForSideBar();
-            await RenderPosts();
-            display_init_loader = "display_none";
-
         }
 
 

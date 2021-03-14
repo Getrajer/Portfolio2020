@@ -47,6 +47,20 @@ p, a, input, label, div {
     padding: 0;
 }
 
+body::-webkit-scrollbar {
+    width: 0.6em;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #425192;
+    outline: 1px solid slategrey;
+}
+
 button {
     outline: none !important;
 }
@@ -547,14 +561,14 @@ body {
 }
 
 #login .form_validation {
-    padding: 0.2em 0;
+    padding: 0.1em 0;
 }
 
     #login .form_validation input {
         width: 100%;
         border: none;
         background-color: rgba(77, 86, 193, 0.6);
-        padding: 1em 0.7em;
+        padding: 1em 0.4em;
         color: white;
         text-align: center;
         border-radius: 30px;
@@ -589,7 +603,6 @@ body {
     font-weight: 600;
     font-size: 0.7rem;
     text-align: center;
-    padding: 5px 0;
 }
 
 #login .left .form_button {
@@ -620,7 +633,7 @@ body {
         }
 
 #login .register_redirect {
-    margin-top: 2em;
+    margin-top: 1.5em;
 }
 
     #login .register_redirect p {
@@ -878,6 +891,20 @@ body {
     background-color: white;
     overflow: scroll;
 }
+
+    .users_display .users_display_container::-webkit-scrollbar {
+        width: 0.6em;
+    }
+
+    .users_display .users_display_container::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .users_display .users_display_container::-webkit-scrollbar-thumb {
+        background-color: #425192;
+        outline: 1px solid slategrey;
+    }
 
 .users_display .user {
     margin: 1.5em 0;

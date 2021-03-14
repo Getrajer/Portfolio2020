@@ -27,7 +27,7 @@
 
 
                     <div class="form_container">
-                        <form>
+                        <div>
 
                             <div class="form_validation">
                                 <input placeholder="USERNAME" />
@@ -43,7 +43,7 @@
                                 <button @onclick="DisplayMainFeed">Login</button>
                             </div>
 
-                        </form>
+                        </div>
 
                     </div>
 
@@ -431,7 +431,6 @@
                                         else
                                         {
                                             <div class="add_comment_container">
-                                                <input @bind="post.CommentAddName" placeholder="Title of the comment" />
                                                 <textarea @bind="post.CommentAddBody" placeholder="You comment"></textarea>
                                                 <p>@post.ErrorResponse</p>
                                                 <button @onclick="() => AddComment(post.Id)">Add</button>
@@ -571,9 +570,9 @@
                     <div class="post_feed">
                         <div class="post_feed_container">
 
-                            @if (UserDetailsViewModel.Posts != null && UserDetailsViewModel.Posts.Any())
+                            @if (Posts != null && Posts.Any())
                             {
-                                @foreach (var post in UserDetailsViewModel.Posts)
+                                @foreach (var post in Posts)
                                 {
                                     <div class="post">
                                         <div class="post_body">
@@ -635,7 +634,6 @@
                                                 else
                                                 {
                                                     <div class="add_comment_container">
-                                                        <input @bind="post.CommentAddName" placeholder="Title of the comment" />
                                                         <textarea @bind="post.CommentAddBody" placeholder="You comment"></textarea>
                                                         <p>@post.ErrorResponse</p>
                                                         <button @onclick="() => AddComment(post.Id)">Add</button>
@@ -660,17 +658,17 @@
                 <nav>
                     <ul>
                         <li>
-                            <button>
+                            <button @onclick="DisplayIndex">
                                 <i class="fas fa-home"></i> Home
                             </button>
                         </li>
                         <li>
-                            <button>
+                            <button @onclick="DisplayMyProfile">
                                 <i class="fas fa-house-user"></i> My Profile
                             </button>
                         </li>
                         <li>
-                            <button>
+                            <button @onclick="Logoff">
                                 <i class="fas fa-sign-out-alt"></i> Logoff
                             </button>
                         </li>
