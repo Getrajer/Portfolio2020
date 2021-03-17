@@ -1,4 +1,5 @@
 ﻿@page "/About"
+@inherits AboutBase
 
 <head>
     <link rel="stylesheet" href="../css/about_style.css" />
@@ -128,105 +129,118 @@
     <div class="experiences_container">
 
         <div class="title">
-            <h1>Experiences</h1>
+            <h1>Experience</h1>
         </div>
 
         <div class="experiences">
 
             <div class="experience">
-                <div class="toggler_name">
+                <div @onclick="DisplayIS" class="toggler_name">
                     <div class="expand_icon">
-                        <p>+</p>
+                        <p>@ISicon</p>
                     </div>
                     <div class="name_title">
                         <p>ActiveIS</p>
                     </div>
                 </div>
 
-                <div class="description">
-                    <h2>Technologies worked with: </h2>
+                @if (display_ActiveIS)
+                {
+                    <div class="description">
+                        <h2>Technologies worked with</h2>
 
-                    <ul>
-                        <li>C#</li>
-                        <li>.NET</li>
-                        <li>Umbraco V8</li>
-                        <li>HTML, CSS</li>
-                        <li>Javascript</li>
-                        <li>Visio</li>
-                        <li>Adobe Ilutrator</li>
-                    </ul>
+                        <ul>
+                            <li>C#</li>
+                            <li>.NET</li>
+                            <li>Umbraco V8</li>
+                            <li>HTML, CSS</li>
+                            <li>Javascript</li>
+                            <li>Visio</li>
+                            <li>Adobe Ilutrator</li>
+                        </ul>
 
-                    <h2>Responsibilities: </h2>
+                        <h2>Responsibilities</h2>
 
-                    <ul>
-                        <li>Creating Microservices</li>
-                        <li>Creating APIs</li>
-                        <li>Creating websites with Umbraco CMS</li>
-                        <li>Implementing static website templates to Umbraco website</li>
-                        <li>Creating documentation</li>
-                        <li>Data mining</li>
-                        <li>Bugfixing</li>
-                    </ul>
+                        <ul>
+                            <li>Creating Microservices</li>
+                            <li>Creating APIs</li>
+                            <li>Creating websites with Umbraco CMS</li>
+                            <li>Implementing static website templates to Umbraco website</li>
+                            <li>Creating documentation</li>
+                            <li>Data mining</li>
+                            <li>Bugfixing</li>
+                        </ul>
 
-                </div>
+                    </div>
+                }
+
             </div>
 
             <div class="experience">
-                <div class="toggler_name">
+                <div @onclick="DisplayFreelance" class="toggler_name">
                     <div class="expand_icon">
-                        <p>+</p>
+                        <p>@freeIcon</p>
                     </div>
                     <div class="name_title">
                         <p>Freelance</p>
                     </div>
                 </div>
 
-                <div class="description">
-                    <h2>Technologies worked with: </h2>
+                @if (display_freelance)
+                {
+                    <div class="description">
+                        <h2>Technologies worked with</h2>
 
-                    <ul>
-                        <li>HTML, CSS</li>
-                        <li>Javascript</li>
-                        <li>React</li>
-                        <li>Adobe Ilutrator</li>
-                        <li>Shopify</li>
-                    </ul>
+                        <ul>
+                            <li>HTML, CSS</li>
+                            <li>Javascript</li>
+                            <li>React</li>
+                            <li>Adobe Ilutrator</li>
+                            <li>Shopify</li>
+                        </ul>
 
-                    <h2>What I was doing: </h2>
+                        <h2>What I was doing</h2>
 
-                    <ul>
-                        <li>Creating static websites</li>
-                        <li>Creating Shopify websites</li>
-                    </ul>
+                        <ul>
+                            <li>Creating static websites</li>
+                            <li>Creating Shopify websites</li>
+                        </ul>
 
-                </div>
+                    </div>
+                }
+
+
             </div>
 
 
             <div class="experience">
-                <div class="toggler_name">
+                <div @onclick="DisplayEzsat" class="toggler_name">
                     <div class="expand_icon">
-                        <p>+</p>
+                        <p>@EzsatIcon</p>
                     </div>
                     <div class="name_title">
                         <p>Ezsat Esport</p>
                     </div>
                 </div>
 
-                <div class="description">
-                    <h2>Technologies worked with: </h2>
+                @if (display_Ezsat)
+                {
+                    <div class="description">
+                        <h2>Technologies worked with</h2>
 
-                    <ul>
-                        <li>HTML, CSS</li>
-                        <li>Javascript</li>
-                        <li>.Net Core 3.1</li>
-                    </ul>
+                        <ul>
+                            <li>HTML, CSS</li>
+                            <li>Javascript</li>
+                            <li>.Net Core 3.1</li>
+                        </ul>
 
-                    <h2>What I was doing: </h2>
+                        <h2>What I was doing</h2>
 
-                    <p>I created e-sport portal from the static Html,Css template to .Net Core 3.1 portal for organization in my local city. At the peak there were 100+ teams participating. Users were able to create accounts, sign in to tournaments and see results of the games. Administrators were creating posts and maintain games results, leaderboards ect. </p>
+                        <p>I created e-sport portal from the static Html,Css template to .Net Core 3.1 portal for organization in my local city. At the peak there were 100+ teams participating. Users were able to create accounts, sign in to tournaments and see results of the games. Administrators were creating posts and maintain games results, leaderboards ect. </p>
 
-                </div>
+                    </div>
+                }
+
             </div>
 
 

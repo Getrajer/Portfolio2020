@@ -346,11 +346,17 @@ header .right_f{
 /*End of About 1 Section*/
 
 /*Experience*/
+#experiences ul {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 #experiences {
     display: flex;
     justify-content: center;
     padding: 5em 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    background-color: rgb(42, 48, 96);
 }
 
 #experiences .experiences_container{
@@ -361,6 +367,7 @@ header .right_f{
 #experiences .title{
     text-align: center;
     padding-bottom: 4em;
+    color:white;
 }
 
 #experiences .title h1{
@@ -368,16 +375,17 @@ header .right_f{
 }
 
 #experiences .experience{
-    border: 1px solid rgba(0, 0, 0, 0.10);
-    border-radius: 1em;
     margin: 1em 0;
-    padding-right: 1em;
-    cursor: pointer;
 }
 
 #experiences .toggler_name{
+    border-radius: 1em;
+    padding-right: 1em;
     display: grid;
+    cursor: pointer;
     grid-template-columns: 70px 1fr;
+    background-color:#fff;
+    border: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 #experiences .toggler_name .expand_icon{
@@ -386,8 +394,7 @@ header .right_f{
     align-content:center;
     align-items:center;
     font-size:2.5rem;
-    background-color:rgb(42, 48, 96);
-    color:#fff;
+    font-weight:900;
     border-radius: 0.3em;
 }
 
@@ -402,13 +409,22 @@ header .right_f{
 }
 
 #experiences .description{
-    display:none;
+    text-align:center;
+    padding: 1em 2em;
+    color:white;
 }
+
+#experiences .description h2{
+    padding: 0.5em 0;
+}
+
 
 
 
 /*End Experience*/
 /*Blog*/
+
+
 #blog_home {
     display: -webkit-box;
     display: -ms-flexbox;
