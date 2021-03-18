@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Portfolio2020.Models.JsonPlaceholderApiModels
 {
-    public class JpCommentDisplay
+    public class JPUserDTO
     {
-        public JPComment JPComment { get; set; }
+        public JPUser JPUser { get; set; }
         public string ProfileImgUrl { get; set; }
     }
 }

@@ -9,9 +9,9 @@ namespace Portfolio2020.Models.JsonPlaceholderApiModels
     {
         public JPUserDetailsViewModel()
         {
-            User = new JPUserDisplay();
+            User = new JPUserDTO();
         }
 
-        public JPUserDisplay User { get; set; }
+        public JPUserDTO User { get; set; }
     }
 }

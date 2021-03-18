@@ -9,11 +9,11 @@ namespace Portfolio2020.Models.JsonPlaceholderApiModels
     {
         public JPGalleriesViewModel()
         {
-            Albums = new List<JpAlbumDisplay>();
-            User = new JPUserDisplay();
+            Albums = new List<JpAlbumDTO>();
+            User = new JPUserDTO();
         }
 
-        public List<JpAlbumDisplay> Albums { get; set; }
-        public JPUserDisplay User { get; set; }
+        public List<JpAlbumDTO> Albums { get; set; }
+        public JPUserDTO User { get; set; }
     }
 }

@@ -35,9 +35,9 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
         #endregion
 
-        public List<JPUserDisplay> Users = new List<JPUserDisplay>();
+        public List<JPUserDTO> Users = new List<JPUserDTO>();
         public IEnumerable<JPPhoto> Photos { get; set; }
-        public List<JPPostDisplay> Posts = new List<JPPostDisplay>();
+        public List<JPPostDTO> Posts = new List<JPPostDTO>();
 
         #region Variables
         protected int post_display_modyfier = 1;
@@ -123,7 +123,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
             List<JPAlbum> Albums = await GetGalleriesOfUser(userId);
             for(int i = 0; i < Albums.Count; i++)
             {
-                JpAlbumDisplay jpAlbumDisplay = new JpAlbumDisplay();
+                JpAlbumDTO jpAlbumDisplay = new JpAlbumDTO();
                 jpAlbumDisplay.Album = Albums[i];
                 JPPhoto photo = await GetPhotoOfId(1);
                 jpAlbumDisplay.ExamplePhotoUrl = photo.ThumbNailUrl;
@@ -169,14 +169,14 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
                 if(post != null)
                 {
-                    JPPostDisplay pd = new JPPostDisplay();
+                    JPPostDTO pd = new JPPostDTO();
                     IEnumerable<JPComment> comments = await CommentService.GetCommentsOfPosId(post.Id);
 
                     if(comments != null)
                     {
                         foreach(var c in comments)
                         {
-                            JpCommentDisplay displayC = new JpCommentDisplay();
+                            JpCommentDTO displayC = new JpCommentDTO();
                             displayC.JPComment = c;
                             int num = RandomNumber(1, 10);
                             displayC.ProfileImgUrl = $"../images/profile_png_{num}.png";
@@ -192,23 +192,23 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
             }
         }
 
-        public async Task<List<JPPostDisplay>> GetPostsOfUser(int userId)
+        public async Task<List<JPPostDTO>> GetPostsOfUser(int userId)
         {
-            List<JPPostDisplay> DisplayPosts = new List<JPPostDisplay>();
+            List<JPPostDTO> DisplayPosts = new List<JPPostDTO>();
             IEnumerable<JPPost> userPosts = await PostService.GetAllPostsOfUser(userId);
 
             if(userPosts != null)
             {
                 foreach (var post in userPosts)
                 {
-                    JPPostDisplay pd = new JPPostDisplay();
+                    JPPostDTO pd = new JPPostDTO();
                     IEnumerable<JPComment> comments = await CommentService.GetCommentsOfPosId(post.Id);
 
                     if (comments != null)
                     {
                         foreach (var c in comments)
                         {
-                            JpCommentDisplay displayC = new JpCommentDisplay();
+                            JpCommentDTO displayC = new JpCommentDTO();
                             displayC.JPComment = c;
                             int num = RandomNumber(1, 10);
                             displayC.ProfileImgUrl = $"../images/profile_png_{num}.png";
@@ -243,7 +243,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
                 int i = 1;
                 foreach(var user in users)
                 {
-                    JPUserDisplay userD = new JPUserDisplay();
+                    JPUserDTO userD = new JPUserDTO();
                     userD.JPUser = user;
                     userD.ProfileImgUrl = $"../images/profile_png_{i}.png";
                     Users.Add(userD);
@@ -291,7 +291,7 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
 
                 if (responseComment != null)
                 {
-                    JpCommentDisplay displayC = new JpCommentDisplay();
+                    JpCommentDTO displayC = new JpCommentDTO();
                     displayC.JPComment = responseComment;
                     displayC.ProfileImgUrl = $"../images/profile_png_1.png";
                     Posts[postId].Comments.Add(displayC);
@@ -337,14 +337,14 @@ namespace Portfolio2020.Pages.JPSocialMedia.ComponentBases
             return await PhotoService.GetPhotoOfId(photoId);
         }
 
-        public async Task<List<JPPhotoDisplay>> GetPhotossOfAlbumId(int albumId)
+        public async Task<List<JPPhotoDTO>> GetPhotossOfAlbumId(int albumId)
         {
             IEnumerable<JPPhoto> IPhotos = await PhotoService.GetPhotosOfAlbum(albumId);
-            List<JPPhotoDisplay> ReturnPhotos = new List<JPPhotoDisplay>();
+            List<JPPhotoDTO> ReturnPhotos = new List<JPPhotoDTO>();
             
             foreach(var photoV in IPhotos)
             {
-                JPPhotoDisplay photoDisplay = new JPPhotoDisplay();
+                JPPhotoDTO photoDisplay = new JPPhotoDTO();
                 photoDisplay.Photo = photoV;
                 photoDisplay.Id = ReturnPhotos.Count();
                 ReturnPhotos.Add(photoDisplay);

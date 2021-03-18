@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Portfolio2020.Models.JsonPlaceholderApiModels
 {
-    public class JpAlbumDisplay
+    public class JpAlbumDTO
     {
-        public JpAlbumDisplay()
+        public JpAlbumDTO()
         {
             Album = new JPAlbum();
             ExamplePhotoUrl = "";

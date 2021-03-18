@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace Portfolio2020.Models.JsonPlaceholderApiModels
 {
-    public class JPPostDisplay
+    public class JPPostDTO
     {
-        public JPPostDisplay()
+        public JPPostDTO()
         {
-            Comments = new List<JpCommentDisplay>();
+            Comments = new List<JpCommentDTO>();
         }
 
         public int Id { get; set; }
@@ -18,6 +18,6 @@ namespace Portfolio2020.Models.JsonPlaceholderApiModels
         public string CommentAddBody { get; set; }
         public string ErrorResponse { get; set; }
         public bool IfAddComment { get; set; }
-        public List<JpCommentDisplay> Comments { get; set; }
+        public List<JpCommentDTO> Comments { get; set; }
     }
 }
